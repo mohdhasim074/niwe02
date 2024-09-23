@@ -1,0 +1,105 @@
+{% load static %} {% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Wind Potential Sites for setting up Wind Projects_MOD NOC details
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="Wind-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h6>
+          <a href="{% static '/images/Condition_MOD.pdf' %}" class="text-dark"
+            >General conditions of NOC for construction of Wind Power Projects
+            (Para (i) updated w.e.f 05.06.2024)
+          </a>
+          <span
+            class="blink_me"
+            style="
+              background-color: red;
+              padding: 1px 5px 4px;
+              color: #fff;
+              border-radius: 4px;
+            "
+            >New</span
+          >
+        </h6>
+        <ol style="list-style-type: disc"  >
+          <li>
+            <h5 class="pt-3">
+              <a
+                href="{% static '/images/Condition_MOD.pdf' %}"
+                target="_blank"
+                class="text-dark pt-3 pb-3"
+              >
+                JPG Map
+              </a>
+              <span
+                class="blink_me"
+                style="
+                  background-color: red;
+                  padding: 2px 5px 4px;
+                  color: #fff;
+                  border-radius: 4px;
+                  font-size: 15px;
+                "
+                >New</span
+              >
+            </h5>
+          </li>
+
+          <ul style="color: #000">
+            <a href="{% static '/images/map/AP.jpg' %}"
+              ><li>Andhra Pradesh</li></a
+            >
+            <a href="{% static '/images/map/GJ.jpg' %}"><li>Gujarat</li></a>
+            <a href="{% static '/images/map/KA.jpg' %}"><li>Karnataka</li></a>
+            <a href="{% static '/images/map/MH.jpg' %}"><li>Maharashtra</li></a>
+            <a href="{% static '/images/map/RJ.jpg' %}"><li>Rajasthan</li></a>
+            <a href="{% static '/images/map/TN.jpg' %}"><li>Tamil Nadu</li></a>
+          </ul>
+
+          <li>
+            <h5 class="pt-3">
+              KML File
+
+              <span
+                class="blink_me"
+                style="
+                  background-color: red;
+                  padding: 2px 5px 4px;
+                  color: #fff;
+                  border-radius: 4px;
+                  font-size: 15px;
+                "
+                >New</span
+              >
+            </h5>
+          </li>
+          <ul style="color: #000">
+            <a href="{% static '/images/map/AP.kmz' %}"
+              ><li>Andhra Pradesh</li></a
+            >
+            <a href="{% static '/images/map/GJ.kmz' %}"><li>Gujarat</li></a>
+            <a href="{% static '/images/map/KA.kmz' %}"><li>Karnataka</li></a>
+            <a href="{% static '/images/map/MH.kmz' %}"><li>Maharashtra</li></a>
+            <a href="{% static '/images/map/RJ.kmz' %}"><li>Rajasthan</li></a>
+            <a href="{% static '/images/map/TN.kmz' %}"><li>Tamil Nadu</li></a>
+          </ul>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

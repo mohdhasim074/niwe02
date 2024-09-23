@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Certification Scheme</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home Page</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--   -->
+          <p>
+            Certification scheme is based on IS/IEC 61400-22:2010 Wind Turbines
+            Part 22 Conformity Testing and Certification. The scope of
+            certification services defined below,
+          </p>
+          <ol style="list-style-type: square">
+            <li>
+              Type Certification of wind turbines and their components as per
+              IS/IEC 61400-22:2010.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

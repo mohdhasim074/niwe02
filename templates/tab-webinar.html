@@ -1,0 +1,51 @@
+ {% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">webinar</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">webinar</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        {% for item in webinar %}
+
+        <h4 class="font-italic mb-1"> NIWE Webinar Schedule</h4>
+        <div class="card mx-auto">
+          <div class="col-lg-2 col-md-2 col-sm-6 offset-md-4">
+            <a href="{{ item.docs.url }}" target="_blank">
+              <div class="sm-card-design text-center">
+                <img
+                  src=" {{ item.image.url }}  "
+                  alt="img"
+                  class="img-fluid"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

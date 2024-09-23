@@ -1,0 +1,701 @@
+{% load static %} {% include 'header.html' %}
+<!-- slider start -->
+
+<section class="container-fluid p-0 m-0">
+  <div class="row">
+    <div class="col-md-12 col-12 p-0 m-0"> 
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <img
+              src="{% static '/images/slider/bg1.png' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static  '/images/slider/bg2.png' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/bg3.png' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section width="100%" id="divContent">
+  <div class="news">
+    <div class="news-side-div">
+      <h3>Highlights</h3>
+    </div>
+
+    <div class="running-news">
+      <marquee width="100%" direction="left" behavior="scroll" class="pt-2">
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          Empanelment of Lender’s Financial Advisor (LFA) for monitoring of
+          IREDA funded RE Projects</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          Stay Updated with the Latest News and Offers.</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          IREDA Dominates 13th PSE Excellence Awards with Five Accolades</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          Stay Updated with the Latest News and Offers.</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          Stay Updated with the Latest News and Offers.</a
+        >
+      </marquee>
+    </div>
+  </div>
+</section>
+
+<!-- about section start -->
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12" >
+        <div class="about-section pt-4">
+          <h2><span style="color: #00899a">Director’s </span> Message</h2>
+          <div class="line"></div>
+
+          {% for data in dgm %}
+          <div class="row">
+            <div class="col-md-4 col-12">
+              <div class="director-img">
+                {% if data.Dirs_image %}
+                <img src="{{data.Dirs_image.url}}" class="pb-1" />
+
+                {% else %}
+                <!-- <img src="{% static '/images/men.png' %}" class="pb-1"> -->
+
+                <img src="media/images/men.png" class="pb-1" />
+                {% endif %}
+                <h4 class="text-center">Dr. Rajesh Katyal</h4>
+                <h6 class="text-center">Director General</h6>
+              </div>
+            </div>
+            <div class="col-md-8 col-12" >
+              <p>{{data.description|striptags}}</p>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+            >
+              What’s New
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link mx-1"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+            >
+              New in MNRE
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-contact-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-contact"
+              type="button"
+              role="tab"
+              aria-controls="pills-contact"
+              aria-selected="false"
+            >
+              Events
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent" id="divContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-home"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+          >
+            <ul class="itme-lists">
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-profile"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab"
+          >
+            <ul class="itme-lists">
+              <a href="#">
+                <li>
+                  New MNRE for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+          >
+            <ul class="itme-lists">
+              <a href="#">
+                <li>
+                  Event for options for posting of Group B Officers to the grade
+                  of Assistant Commissioner vide Office order No. 171/2023 dated
+                  10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+
+              <a href="#">
+                <li>
+                  Calling for options for posting of Group B Officers to the
+                  grade of Assistant Commissioner vide Office order No. 171/2023
+                  dated 10.10.2023 reg.
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Manuals section -->
+<section class="container-fluid bg-light text-center mt-2" >
+  <div class="container pt-4 pb-4" id="divContent">
+    <div class="row">
+      <!-- Panel 1: Manuals -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel1')"
+          aria-expanded="false"
+          aria-controls="panel1"
+        >
+          RESEARCH AND DEVELOPMENT (R&D)
+        </button>
+        <div class="faq__panel d-none" id="panel1">
+          <p class="faq__answer">
+            R&D supports time bound and mission oriented Research & Development
+            programmes to achieve world class, reliable and cost effective
+            technology in wind power systems. RDAF supports the industry to
+            analyse the big data obtained from wind and solar resource
+            measurements. <a href="{% url 'r&d' %}">view more...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Transfer & Posting -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel2')"
+          aria-expanded="false"
+          aria-controls="panel2"
+        >
+          CERTIFICATION & INFORMATION TECHNOLOGY
+        </button>
+        <div class="faq__panel d-none" id="panel2">
+          <p class="faq__answer">
+            The Division carries out Type certification of wind turbines based
+            on IS/IEC 61400-22, And also involved in creating the necessary IT
+            infrastructure for effective dissemination of information.
+
+            <a href="{% url 'certificate' %}">view more...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Welfare Schemes -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel3')"
+          aria-expanded="false"
+          aria-controls="panel3"
+        >
+          TESTING, STANDARDS AND REGULATION (S&R)
+        </button>
+        <div class="faq__panel d-none" id="panel3">
+          <p class="faq__answer">
+            The Division provides various services for the healthy and orderly
+            growth of Wind Energy Sector such as: Standardization works in Wind
+            Energy Sector, Facilitation for Grid Synchronization of Prototype of
+            wind turbines and provides the technical support to MNRE for the
+            implementation of Revised List of Models and Manufacturers of wind
+            turbines (RLMM). <a href="{% url 's&d' %}">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Suggestions -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel4')"
+          aria-expanded="false"
+          aria-controls="panel4"
+        >
+          WIND RESOURCE ASSESSMENT`
+        </button>
+        <div class="faq__panel d-none" id="panel4">
+          <p class="faq__answer">
+            The testing services offered by NIWE are accrediated by National
+            Board for Testing and Calibration Laboratories (NABL) as per the
+            requirement of ISO/IEC 17025. The division offer services such as
+            Power performance measurement, Safety and function testing, Load
+            measurements etc. <a href="{% url 'wra' %}">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 5: Civil List -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel5')"
+          aria-expanded="false"
+          aria-controls="panel5"
+        >
+          OFFSHORE WIND DEVELOPMENT
+        </button>
+        <div class="faq__panel d-none" id="panel5">
+          <p class="faq__answer">
+            The Division identifies resource rich regions in the country by
+            conducting wind resource micro survey and offers its services to the
+            wind farm developers. To prepare wind map for the nation, it is
+            assessing and analyzing wind resources.
+            <a href="{% url 'owd' %}">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 6: Ongoing/Upcoming Infrastructure Projects -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel6')"
+          aria-expanded="false"
+          aria-controls="panel6"
+        >
+          SKILL DEVELOPMENT & TRAINING
+        </button>
+        <div class="faq__panel d-none" id="panel6">
+          <p class="faq__answer">
+            To serve as finest information centre in wind energy by collecting,
+            collating and analyzing the related information. National and
+            International training workshops are being organized regularly for
+            the benefit of stakeholders.
+            <a href="{% url 'sdt' %}">view more..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 7: Missing APAR/IPR -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel7')"
+          aria-expanded="false"
+          aria-controls="panel7"
+        >
+          Missing APAR/IPR
+        </button>
+        <div class="faq__panel d-none" id="panel7">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+
+      <!-- Panel 8: Half Yearly Brochure -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel8')"
+          aria-expanded="false"
+          aria-controls="panel8"
+        >
+          Half Yearly Brochure
+        </button>
+        <div class="faq__panel d-none" id="panel8">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+
+      <!-- Panel 9: Annual Vehicle Reports -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel9')"
+          aria-expanded="false"
+          aria-controls="panel9"
+        >
+          Annual Vehicle Reports
+        </button>
+        <div class="faq__panel d-none" id="panel9">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+
+      <!-- Panel 10: Annual Vehicle Reports (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel10')"
+          aria-expanded="false"
+          aria-controls="panel10"
+        >
+          Annual Vehicle Reports
+        </button>
+        <div class="faq__panel d-none" id="panel10">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+
+      <!-- Panel 11: Annual Vehicle Reports (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel11')"
+          aria-expanded="false"
+          aria-controls="panel11"
+        >
+          Annual Vehicle Reports
+        </button>
+        <div class="faq__panel d-none" id="panel11">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+
+      <!-- Panel 12: Annual Vehicle Reports (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel12')"
+          aria-expanded="false"
+          aria-controls="panel12"
+        >
+          Annual Vehicle Reports
+        </button>
+        <div class="faq__panel d-none" id="panel12">
+          <p class="faq__answer">your answer here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Photo Gallery -->
+
+<section class="container">
+  <div class="gallery">
+    <div class="row align-items-center">
+      <div class="col-md-4 col-12">
+        <div class="content">
+          <h4>Our Gallery</h4>
+
+          <h1>Explore Our Photos and Video Gallery</h1>
+
+          <a href="{% url 'gallery' %}">
+            <button class="view-btn mt-3">View All</button></a
+          >
+        </div>
+      </div>
+      <div class="col-md-8 col-12">
+        <div class="gallery-slider">
+          <div class="carousel-wrap">
+            <div class="owl-carousel">
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt="img1"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt="img2"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt="img"
+                  />
+                </div>
+              </div>
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // JavaScript function to toggle panel visibility
+  function toggleAnswer(panelId) {
+    var panel = document.getElementById(panelId);
+    var button = document.querySelector(`button[aria-controls="${panelId}"]`);
+
+    if (panel.classList.contains("d-none")) {
+      panel.classList.remove("d-none");
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      panel.classList.add("d-none");
+      button.setAttribute("aria-expanded", "false");
+    }
+  }
+</script>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

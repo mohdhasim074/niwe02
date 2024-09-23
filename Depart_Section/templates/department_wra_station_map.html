@@ -1,0 +1,45 @@
+{% load static %} {% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Publications for Sale {{ item.head}}</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Publications for Sale {{ item.head}}
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row ">
+     
+      <div class="col-md-8">
+        <div class=" col-md-9 offset-md-2" >
+            <img class="img-fluid"
+              src="{%  static '/images/SRRA_Stations_map.jpg.jpg' %}"
+              alt="stations-map"
+            />
+        </div>
+      </div>
+
+      <div class="  col-md-4">{% include 'depart-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

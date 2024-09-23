@@ -1,0 +1,81 @@
+{% include 'header.html' %} {% load static %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FOWPI Report</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'owd' %}">Offshore Wind Development</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Fowpi Report</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ol>
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_COWI-EU_ESIA_Practice_and_IFI_requirements_for_Offshore_Wind.pdf' %}"
+            target="_blank"
+            ><li>
+              FOWPI COWI - EU ESIA Practice and IFI requirements for Offshore
+              Wind
+            </li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_ERM-Indian_ESIA_Regulatory_Framework_for_Offshore_Wind.pdf' %}"
+            target="_blank"
+            ><li>
+              FOWPI ERM - Indian ESIA Regulatory Framework for Offshore Wind
+            </li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_Metocean_Study.pdf' %}"
+            target="_blank"
+            ><li>FOWPI Metocean Study</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_Weather_Windows.pdf' %}"
+            target="_blank"
+            ><li>FOWPI Metocean Weather Windows for installation</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_Metocean_Data_Requirements.pdf' %}"
+            target="_blank"
+            ><li>FOWPI Metocean Data Requirements</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_Advisory_Foundation_Design.pdf' %}"
+            target="_blank"
+            ><li>Advisory Foundation Concept Design Report</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_Procedures_for_Offshore_Wind.pdf' %} "
+            target="_blank"
+            ><li>Procedures for Offshore Wind</li></a
+          >
+        </ol>
+      </div>
+
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

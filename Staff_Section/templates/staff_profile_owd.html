@@ -1,0 +1,180 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Offshore Wind Development (OWD)</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'contact' %}">Contact Us </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Offshore Wind Development (OWD)
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="staff-dev">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <!-- sidenav bar -->
+        {% include 'sidenav.html' %}
+      </div>
+
+      <div class="col-md-8 col-12">
+        <div class="staff-table">
+          <div class="table-responsive">
+            <table
+              class="table table-bordered table-striped"
+              style="margin-top: 0px"
+            >
+              <thead class="table__head">
+                <tr>
+                  <th><i class="fa fa-user" aria-hidden="true"></i> Name</th>
+                  <th>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Contact
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+                {% for staff in owdStaff %}
+                <tr>
+                  <td>
+                    <a href="{% url 'owd_staff_photo' staff.id %} "> {{staff.name}}</a>
+                    <br />
+                    {{staff.position}}
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i
+                    >{{staff.email}}
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i
+                    >{{staff.phone_number}}
+                  </td>
+                </tr>
+                {% endfor %} {% comment %}
+                <tr>  
+                  <td>
+                    SMT.DEEPA KURUP
+                    <br />
+                    Additional Director & Division Head (i/c)
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    deepa@niwe.res.in
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    044-22463982/83/84
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    SHRI.BHUKYA RAMDAS
+                    <br />
+                    Deputy Director (Technical)
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    bhukyaramdas@niwe.res.in
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i> 044-2246
+                    3982/83/84
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    SMT.M.C.LAVANYA
+
+                    <br />
+                    Deputy Director (Technical)
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    mclavanya@niwe.res.in
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i> 044-2246
+                    3982/83/84
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    SHRI.B.KRISHNAN
+
+                    <br />
+                    Assistant Director
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    krishnanb@niwe.res.in
+
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i> 044-2246
+                    3982/83/84
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    SHRI.NAVEEN MUTHU. R.
+
+                    <br />
+                    Junior Engineer
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    naveen@niwe.res.in
+
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    044-22463982/83/84
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    SHRI.M.NANDAKUMAR
+
+                    <br />
+                    Technician
+                  </td>
+
+                  <td>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    nanda@niwe.res.in
+
+                    <br />
+                    <i class="fa fa-phone" aria-hidden="true"></i> 044-2246
+                    3982/83/84
+                  </td>
+                </tr>
+                {% endcomment %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

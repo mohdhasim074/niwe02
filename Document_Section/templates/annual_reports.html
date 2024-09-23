@@ -1,0 +1,85 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Annual Reports</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container" mt-2>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Annual Reports</li>
+    </ol>
+  </nav>
+</div>
+
+<section>
+  <div class="container py-1">
+    <div class="row col-12 mx-auto">
+      <div class="col-md-9 mt-4 order-lg-1 order-2">
+        <p>
+          &nbsp The development of programs and the transfer of best practices
+          during the action research were the core subjects of the NIWE's agenda
+          and the annual reports are the most important research tool available
+          for the effective information dissemination of the Institute's,
+          technology & research developments and educated investors.
+        </p>
+        <p>
+          Annual Reports enable the people to stay up to date on an Institute's
+          yearly outlook. With this idea, the NIWE's Annual Report is placed
+          here to update our activities to the people who browse the site.
+        </p>
+        <p>
+          NIWE's Annual Report is published regularly, in Hindi and English and
+          it is also available on the website of NIWE
+        </p>
+        <div class="tab-content" id="v-pills-tabContent">
+          <!--left side tab content-area -->
+
+          <div
+            class="tab-pane fade rounded bg-white show active"
+            id="wind-energy"
+            role="tabpanel"
+            aria-labelledby="wind-energy"
+          > 
+            <div class="row col-12 mx-auto px-0">
+              {% for item in annual %}
+              <div class="col-lg-3 col-md-2 col-sm-6 col-12">
+                <a href="{{ item.docs.url }}" target="_blank">
+                  <div class="card sm-card-design text-center px-8 py-4 mt-4">
+                    <h5 class="card-title">{{ item.year|safe }}</h5>
+                    <img
+                      src="{{ item.image.url }}"
+                      alt="img"
+                      class="img-fluid"
+                    />
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+
+            <!--div close for row-->
+          </div>
+          <!--div close for tab-pane-->
+        </div>
+        <!--div close for tab content-->
+      </div>
+      <!--div close for col-md-9-->
+      <div class="col-md-3 mt-4 order-lg-2 order-1">
+        {% include 'department_side_tabs.html' %}
+      </div>
+
+      <!--div close for col-md-3-->
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

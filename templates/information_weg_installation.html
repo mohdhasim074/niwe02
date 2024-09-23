@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Weg Installation</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home Page</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Weg Installation
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hwed-sec">
+  <div class="container">
+    <a href="/weg_install_India"
+      ><h5 class="text-dark">India - Year Wise</h5></a
+    >
+    <a href="/weg_install_country_wise"
+      ><h5 class="text-dark">World - Country Wise</h5></a
+    >
+  </div>
+</section>
+<!-- footer -->
+
+{% include 'footer.html' %}

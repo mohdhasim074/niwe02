@@ -1,0 +1,78 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Finance</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Finance</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="finance-sec" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul>
+          <li>
+            Certificate of Registration of Societies for name change of C-WET to
+            NIWE
+          </li>
+          <li>Non-deduction Certificate</li>
+          <li>Notification Under Section 35 of the Income-tax Act</li>
+          <li>Service Tax Registration Certificate</li>
+          <li>
+            DSIR recognized NIWE is Research Institution, for the purposes of
+            availing Customs / Central Excise Duty Exemption
+          </li>
+          <li>
+            DSIR recognition of NIWE as a Scientific and Industrial Research
+            Organisation(SIROs)
+          </li>
+          <li>
+            Authorisation to Director (F&A) to Certify, Sign Custom / Excise
+            Duty certificates, etc.. and other Statutory papers in the absence
+            of Director General on leave, tour, etc.
+          </li>
+          <li>NIWE Remittances</li>
+          <li>
+            TDS under Chapter XVII-,13 of the Income-tax Act, 1961 on service
+            tax component comprised in the payments made to residents -
+            clarification regarding
+          </li>
+          <li>
+            Gratuity recognition under Rule 2(1) of Part C of Fourth Schedule to
+            the Income Tax Act, 1961
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="depart-side-tabs">
+          <ul>
+            <a href="department_fna_admin.html">
+              <li>Administration</li>
+            </a>
+            <a href="department_fna_finance.html">
+              <li>Finance</li>
+            </a>
+            <a href="department_fna_purchase.html">
+              <li>Purchase</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

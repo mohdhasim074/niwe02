@@ -1,0 +1,104 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Training Calendar for 2023-24</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent pt-2">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Training Calendar
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        <h3 class="font-italic mb-1 text-center text-primary pb-4">
+          TRAINING CALENDAR 2024-25
+        </h3>
+
+        <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-success text-white">
+                <h3 class="text-center">NATIONAL TRAINING COURSES</h3>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>26th National Training Course on "Wind Energy Technology"</td>
+              <td>21.08.2024</td>
+              <td>23.08.2024</td>
+              <td>3 Days</td>
+            </tr>
+
+            <tr>
+              <th scope="row">2</th>
+              <td>27th National Training Course on "Wind Energy Technology"</td>
+              <td>18.12.2024</td>
+              <td>20.12.2024</td>
+              <td>3 Days</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-primary text-white">
+                <h3 class="text-center">NATIONAL TRAINING COURSES</h3>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>
+                Special Training Course on "Wind Energy Technology" for the
+                officials of Gail (India) Limited
+              </td>
+              <td>24.07.2024</td>
+              <td>26.07.2024</td>
+              <td>3 Days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

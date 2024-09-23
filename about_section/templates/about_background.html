@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">BACKGROUND</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'us' %}">About Us</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">BACKGROUND</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div"id="divContent" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'aboutsidenav.html' %}</div>
+      <div class="col-md-8" >
+        <div class="dgm-text">
+          {% for data in background %}
+
+          <p>{{data.description|safe}}</p>
+
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

@@ -1,0 +1,73 @@
+{% include "header.html" %} {% load static %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Fowind Report</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'owd' %}">Offshore Wind Development</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Fowind Report</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ol type="I">
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWIND_Policy.pdf' %} "
+            target="_blank"
+            ><li>FOWIND Policy Outlook</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/PFA_GJ.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Pre Feasiblity Study on Gujarat</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/PFS_TN.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Pre Feasiblity Study on Tamil nadu</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/FOWIND_SC.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Supply Chain Report</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/FEASIBILITY-STUDY-FOR-OFFSHORE-.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Feasiblity Study on Gujarat</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/FEASIBILITY-STUDY-FOR-OFFSHORE-IN-TAMIL-NADU.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Feasiblity Study on Tamil Nadu</li></a
+          >
+          <a
+            href=" {% static '/pdf/depart-side-tabs/FOWIND_2017_Final_Outlook_2032.pdf' %}"
+            target="_blank"
+            ><li>FOWIND Report on Road map 0 to 5 GW</li></a
+          >
+        </ol>
+      </div>
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% include "footer.html" %}

@@ -1,0 +1,129 @@
+{% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">List of Certified Model</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div">
+  <div class="container mt-5">
+    <div class="row col-12">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <!-- code -->
+        <div class="dgm-text">
+          <div class="table">
+            <table class="table table-bordered">
+              <thead class="thead-light">
+                <tr>
+                  <th class="text-center">S.no</th>
+                  <th>Client Name and Address</th>
+                  <th class="text-nowrap">Wind Turbine Model & Capacity</th>
+                  <th class="text-nowrap">Certification Scheme</th>
+                  <th class="text-nowrap">Certificate Number</th>
+                  <th class="text-nowrap">Validity up to</th>
+                  <th class="text-nowrap">Present Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">1</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Suzlon Energy Limited, Tree Lounge, Level 0 One Earth, Opp. Magarpatta City, Hadapsar, Pune-411028"
+                  >
+                    M/s. Suzlon Energy Limited,<br />
+                    Tree Lounge, Level 0 One Earth,<br />
+                    Opp. Magarpatta City,<br />
+                    Hadapsar, Pune-411028
+                  </td>
+                  <td>S-60 / 1000 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-III-003</td>
+                  <td>Issued - Valid upto 30.06.2003</td>
+                  <td>Expired</td>
+                </tr>
+                <tr>
+                  <td class="text-center">2</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Enercon (India) Limited, 'Enercon Tower', A-9, Veera Industrial Estate, Veera Desai Road, Andheri (West), Mumbai - 400 053"
+                  >
+                    M/s. Enercon (India) Limited,<br />
+                    "Enercon Tower", A-9,<br />
+                    Veera Industrial Estate,<br />
+                    Veera Desai Road,<br />
+                    Andheri (West),<br />
+                    Mumbai - 400 053
+                  </td>
+                  <td>E-30 - 230 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-005-R2</td>
+                  <td>Renewed - Valid upto 15.04.2005</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">3</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Suzlon Energy Limited, Tree Lounge, Level 0 One Earth, Opp. Magarpatta City, Hadapsar, Pune-411028"
+                  >
+                    M/s. Suzlon Energy Limited,<br />
+                    Tree Lounge, Level 0 One Earth,<br />
+                    Opp. Magarpatta City,<br />
+                    Hadapsar, Pune-411028
+                  </td>
+                  <td>N-3335/350 kW and N-3330/300 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-II-002-R2</td>
+                  <td>Renewed - Valid upto 24.11.2005</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <tr>
+                  <td class="text-center">4</td>
+                  <td
+                    data-toggle="tooltip"
+                    title="M/s. Chiranjeevi Wind Energy Limited, No.26-A, Kamaraj Road, Mahalingapuram"
+                  >
+                    M/s. Chiranjeevi Wind Energy Limited,<br />
+                    No.26-A, Kamaraj Road,<br />
+                    Mahalingapuram
+                  </td>
+                  <td>C2920 / 250 kW</td>
+                  <td>TAPS-2000</td>
+                  <td>PTC-I-010</td>
+                  <td>Issued - Valid upto 30.09.2006</td>
+                  <td><span>Expired</span></td>
+                </tr>
+                <!-- Additional rows can be added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

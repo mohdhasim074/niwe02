@@ -1,0 +1,62 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Finance</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Admin</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="finance-sec" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h5>
+          Revised format of ACR
+          <span
+            class="blink_me"
+            style="
+              background-color: red;
+              padding: 1px 5px 4px;
+              color: #fff;
+              border-radius: 4px;
+            "
+            >New</span
+          >
+        </h5>
+
+        <h5 class="pt-2">NIWE Welfare Fund Scheme</h5>
+      </div>
+      <div class="col-md-4">
+        <div class="depart-side-tabs">
+          <ul>
+            <a href="{% url 'admin' %}">
+              <li>Administration</li>
+            </a>
+            <a href="{% url 'finance' %}">
+              <li>Finance</li>
+            </a>
+
+            <a href="{% url 'purchase' %}">
+              <li>Purchase</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

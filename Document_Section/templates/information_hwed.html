@@ -1,0 +1,53 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Revised Guidelines for Wind Power Project</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Revised Guidelines for Wind Power Project
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="hwed-sec">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-success">
+          <tr class="text-center">
+            <th scope="col">Sl.No</th>
+            <th scope="col" colspan="2">Description</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        {% for data in revised %}
+        <tbody>
+          <tr>
+            <th scope="row">{{data.sr_No}}</th>
+            <td colspan="2">{{data.description|safe}}</td>
+            <td>{{data.date}}</td>
+          </tr>
+
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

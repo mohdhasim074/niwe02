@@ -1,0 +1,53 @@
+{% include 'header.html' %} {% load static %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">gallery</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 's&d' %}"> Testing and Standards & Regulation</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Wind Turbine Test Station
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="main-div">
+  <div class="container">
+    <h2>Wind Turbine Test Station</h2>
+<div class="container">
+   <div class="row mx-auto gallery">
+      {% for photo in terbine_photo %}
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+        <a href="{{ photo.terbine_photo.url }}" class="big">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ photo.terbine_photo.url }} "
+                class="card-img-top"
+                alt="wind terbine photo"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% include 'footer.html' %}

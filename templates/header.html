@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static '/images/title-logo.png' %}"
+      type="image/x-icon"
+    />
+    <!-- <link rel="icon" href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type="image/x-icon"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>NATIONAL INSTITUTE OF WIND ENERGY</title>
+
+    <!-- bootstrap 5.0  --> 
+
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- fa fa icons -->
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- custom css -->
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/custom.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/simple-lightbox.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
+    <!-- Google Translate API Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </head>
+
+  <body style="top:0px;">
+    <!-- header first -->
+    <header class="main-head">
+      <!-----------------------------------------Top Bar HTML-------------------------------->
+
+      <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 col-md-6 col-12 m-0 p-0">
+              <div class="small-image">
+                <img
+                  src="{% static '/images/india.png' %}"
+                  alt=""
+                  class="img-responsive"
+                  style="width: 40px"
+                />
+                <span>Government of India</span>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-6 col-12" id="head-m-topbar">
+              <div class="small-text">
+                <div class="d-flex">
+                  <!-- Skip to main content link -->
+                  <a href="#home" class="skip-to-content text-body"
+                    >Skip to Main Content</a
+                  >
+                  <div class="verticle-devider"></div>
+                  <a href="{% url 'screen-reader-access' %}" class="text-body"> Screen Reader Access</a>
+                  
+                  <div class="verticle-devider"></div>
+                  <a href="{% url 'sitemap' %} " class="text-body">Sitemap</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12" id="head-m-topbar">
+              <div class="language-text text-center">
+                <!-- Google Translate Hidden Element -->
+                <div id="google_translate_element" style="display: flex">
+                  <!-- Language Selection Spans with Google Translate -->
+                  <!-- <span class="mx-1" >English</span>
+                  <span class="mx-3">हिन्दी</span>
+                  <span class="grade-div"><a href="#">A-</a></span>
+                  <span class="grade-div"><a href="#">A</a></span>
+                  <span class="grade-div"><a href="#">A+</a></span>
+                  -->
+                  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                        href="#" id="linkIncrease">A<sup>+</sup></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                        href="#" id="linkReset">A</a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                        href="#" id="linkDecrease">A<sup>-</sup></a>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-----------------------------------------Top Bar HTML-------------------------------->
+    </header>
+    <!-- header second -->
+    <header class="second-div">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-1 col-md-3 col-12 p-0 m-0">
+            <a href="">
+              <img
+                src="{% static '/images/logo-niwe.png' %}"
+                class="mobile-img"
+              />
+            </a>
+          </div>
+
+          <div class="col-lg-8 col-md-6 col-12">
+            <div class="header-text">
+              <h4 class="">NATIONAL INSTITUTE OF WIND ENERGY</h4>
+              <h3>Ministry of New and Renewable Energy, Government of India</h3>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-12">
+            <a href="https://mnre.gov.in/">
+              <img src="{% static '/images/sidelogo.png' %}" class="amritimg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0">
+      <div class="container">
+        <!-- Navbar toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {% comment %} logo {% endcomment %}
+        <img
+          src="{% static '/images/logo-niwe.png' %}"
+          class="mobile-nav img-responsive"
+        />
+
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!-- Nav -->
+          <div class="navbar-nav mx-lg-auto">
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                id="home"
+                href="/"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <!-- visitors- count -->
+            <!-- 
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="/"
+                aria-current="page"
+                >Total Visitors  </a
+              >
+            </li>
+            -->
+            <!-- About- Us -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'us' %}"
+                aria-current="page"
+                >About Us</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href=" {% url 'dgm' %} "
+                    >DIRECTOR GENERAL'S MESSAGE</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'background' %}"
+                    >BACKGROUND</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'charter' %}"
+                    >CHARTER</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'org' %}"
+                    >ORGANIZATIONAL CHART</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'quality' %}"
+                    >QUALITY POLICY</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% static '/images/ISO_CERTIFICATE.pdf/' %}"
+                    >MANAGEMENT SYSTEM CERTIFICATE</a
+                  >
+                </li>
+           
+               <li>
+                  <a class="dropdown-item" href="{% url 'dg_staff' %}"
+                    >STAFF PROFILE</a
+                  >
+                </li>
+              
+              </ul>
+            </li>
+            {% comment %} drop-down {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'departments' %}"
+                aria-current="page"
+                >Department</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% comment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'departments' %}"
+                    >Department</a
+                  >
+                </li>
+                {% endcomment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'r&d' %}"
+                    >RESEARCH AND DEVELOPMENT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'certificate' %}"
+                    >CERTIFICATION AND INFORMATION TECHNOLOGY</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 's&d' %}"
+                    >TESTING, STANDARDS & REGULATION</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'wra' %}"
+                    >WIND RESOURCE ASSESSMENT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'owd' %}"
+                    >OFFSHORE WIND DEVELOPMENT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'sdt' %}"
+                    >SKILL DEVELOPMENT & TRAINING</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'finance' %}"
+                    >FINANCE & ADMINISTRATION</a
+                  >
+                </li>
+              </ul>
+            </li>
+            {% comment %} media {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'medias' %}"
+                aria-current="page"
+                >Media
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'awards' %}">AWARDS</a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% static '/images/NIWE_Citizen_Charter-2022.pdf' %}"
+                    >CITIZEN CHARTER</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'gallery' %}"
+                    >GALLERY</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'events' %}">EVENTS</a>
+                </li>
+              </ul>
+            </li>
+            {% comment %} serivces {% endcomment %}
+            <li class="dropdown">
+              <a class="nav-item nav-link" href="/services/" aria-current="page"
+                >Services</a
+              >
+            </li>
+            {% comment %} Careers {% endcomment %}
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'career' %}"
+                aria-current="page"
+                >Careers</a
+              >
+            </li>
+            <li class="dropdown">
+              <a class="nav-item nav-link" href="/tenders/" aria-current="page"
+                >Tenders</a
+              >
+            </li>
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'rti' %}"
+                aria-current="page"
+                >RTI</a
+              >
+            </li>
+            {% comment %} Documents {% endcomment %}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'document' %}"
+                aria-current="page"
+                >Documents</a
+              >
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="{% url 'GenInfo' %}"
+                    >GENERAL INFORMATION</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'hwed' %}"
+                    >REVISED GUIDELINES FOR WIND POWER PROJECT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'power_policy' %}"
+                    >WIND POWER POLICY</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/information_weg_installation/"
+                    >WEG INSTALLATION</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'newsletters' %}"
+                    >NEWSLETTER</a
+                  >
+                </li>
+                {% comment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'amrit_mahotsav' %}"
+                    >AMRIT MAHOTSAV</a
+                  >
+                </li>
+                {% endcomment %}
+                <li>
+                  <a class="dropdown-item" href="{% url 'annual_reports' %}"
+                    >ANNUAL REPORTS</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'related_links' %}"
+                    >RELATED LINKS</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'retention' %}"
+                    >RECORDS RETENTION SCHEDULE</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="{% static '/images/NIWE_website_seurtiy_audit_certificate.pdf' %}"
+                    target="_blank"
+                    >NIWE WEBSITE SECURITY AUDIT</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'faq' %}">FAQS</a>
+                </li>
+              </ul>
+            </li>
+            {% comment %} contact {% endcomment %}
+            <li class="dropdown">
+              <a
+                class="nav-item nav-link"
+                href="{% url 'contact' %}"
+                aria-current="page"
+                >Contact Us</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a class="nav-item nav-link" href="#" id="search-icn"
+                ><i class="fa fa-search" aria-hidden="true"></i
+              ></a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="dearch-div" style="display: none">
+      <div class="container">
+        <form id="search-form">
+          <input type="search" id="search-input" placeholder="Search here" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

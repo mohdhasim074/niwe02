@@ -1,0 +1,131 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Library</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8 dgm-text">
+        <h5 class="font-italic">Prof. Anna Mani Information Centre</h5>
+        <p class="font-italic ps-3 pb-2">
+          &nbsp &nbsp &nbsp &nbsp The Library is an important source of
+          information to the NIWE for its development. NIWE library has been
+          named as "Prof. Anna Mani Information Centre". NIWE library provides
+          effective information support in different activities to the NIWE. The
+          library is being strengthened regularly by adding more books,
+          periodicals (Indian and foreign journals and magazine), standards,
+          reports and etc. The collection is mainly on the subjects like wind
+          energy, renewable energy, energy, sustainable energy and related
+          subjects like electrical, electronics, mechanical and environmental
+          sciences and has good collection in general and computer books also.
+        </p>
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td colspan="2">Books</td>
+              <td>2200</td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td>Print</td>
+              <td>Print and Online</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-borderd">
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Title of the Journals and Magazines</th>
+              <th>Subscription Status</th>
+            </tr>
+            <tr>
+              <th colspan="3">International Journals</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>IEEJ - Energy Journal</td>
+              <td>Print Copy</td>
+            </tr>
+
+            <tr>
+              <th colspan="3">International Magazines</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">National Journals</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">National Magazines</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">Institutional Membership</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">National Daily News Papers</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th colspan="3">National Magazines</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2"></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

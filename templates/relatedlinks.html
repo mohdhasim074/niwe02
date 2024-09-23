@@ -1,0 +1,1639 @@
+{% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Related Links</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Realted Links</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="document-div" id="divContent">
+  <div class="container">
+    <h4 class="pb-2">INDIA</h4>
+    <div class="accordion" id="related_links">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            {{relLinks.0.title}}
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse auto"
+          aria-labelledby="headingOne"
+          data-bs-parent="#related_links"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="https://www.ireda.in/" target="blank">
+                <li>Indian Renewable Energy Development Agency - IREDA</li></a
+              >
+              <a href="https://www.mnre.gov.in/" target="blank">
+                <li>Ministry of New and Renewable Energy - MNRE</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            WIND ENERGY ASSOCIATIONS
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="http://www.inwea.org/" target="blank"
+                ><li>Indian Wind Energy Association - INWEA</li></a
+              >
+              <a href="https://www.windpro.org/" target="blank"
+                ><li>Indian Wind Power Association - IWPA</li></a
+              >
+              <a href="https://www.indianwindpower.com/" target="blank"
+                ><li>
+                  Indian Wind Turbine Manufactures Association - IWTMA
+                </li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            WIND ENERGY RESEARCH INSTITUTIONS
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="https://niwe.res.in/" target="blank"
+                ><li>National Institute of Wind Energy - NIWE</li></a
+              >
+              <a href="https://www.wisein.org/" target="blank"
+                ><li>World Institute of Sustainable Energy - WISE</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            RENEWABLE ENERGY
+          </button>
+        </h2>
+        <div
+          id="collapseFour"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFour"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a
+                href="http://energy.sourceguides.com/index.shtml"
+                target="blank"
+                ><li>The Source for Renewable Energy</li></a
+              >
+              <a href="https://www.windpowerindia.com/" target="blank"
+                ><li>Wind Power India</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFive"
+            aria-expanded="false"
+            aria-controls="collapseFive"
+          >
+            PERIODICALS : Newsletter / Magazine / Journals
+          </button>
+        </h2>
+        <div
+          id="collapseFive"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFive"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href=""><li>PAVAN - News Letter</li></a>
+              <a
+                href="https://akshayurja.gov.in/res/renw-all-india-cp"
+                target="blank"
+                ><li>Akshay Urja - Renewable Energy A newsletter of MNRE</li></a
+              >
+              <a href="https://biofuels-news.com/" target="blank"
+                ><li>BioFules International</li></a
+              >
+              <a href="http://www.cogenindia.org/newsletter.html" target="blank"
+                ><li>Cane Cogen India</li></a
+              >
+              <a href="https://www.cleanindiajournal.com/" target="blank"
+                ><li>Clean India Journal</li></a
+              >
+              <a href="https://www.currentscience.ac.in/" target="blank"
+                ><li>Current Science</li></a
+              >
+              <a href="https://www.downtoearth.org.in/" target="blank"
+                ><li>Down to Earth</li></a
+              >
+              <a href="https://www.electricalindia.in/" target="blank"
+                ><li>Electrical India</li></a
+              >
+              <a href="https://www.electronicsforu.com/" target="blank"
+                ><li>Electronics for You</li></a
+              >
+              <a href="https://www.aipnpc.org/" target="blank"
+                ><li>Energy Manager</li></a
+              >
+              <a href=""><li>Renewable Energy Latest</li></a>
+              <a
+                href="http://www.inwea.org/information/publications/inwind-chronicle"
+                target="blank"
+                ><li>In Wind Chronicle - India Wind Energy Association</li></a
+              >
+              <a href=""><li>India Green File</li></a>
+              <a href="https://indjst.org/" target="blank"
+                ><li>Indian Journal of Science and technology</li></a
+              >
+              <a href="https://www.ias.ac.in/resonance/" target="blank"
+                ><li>Resonance (Journal of Science and Education)</li></a
+              >
+              <a href=""><li>South Asia Green File</li></a>
+              <a
+                href="https://www.indianjournals.com/ijor.aspx?target=ijor:tidee&type=home"
+                target="blank"
+                ><li>
+                  TERI - TIDEE (Information Digest on Energy and Environment)
+                </li></a
+              >
+              <a
+                href="http://bookstore.teriin.org/book_inside.php?material_id=437"
+                target="blank"
+                ><li>TERI - Energy Data Directory</li></a
+              >
+              <a href=""><li>TERI - Teriscope</li></a>
+              <a
+                href="https://www.iospress.com/loadtop/load.php?isbn=09730516"
+                target="blank"
+                ><li>TERI - Resource Energy and Development</li></a
+              >
+              <a href=""><li>TERI - Newswire</li></a>
+              <a href="https://terragreen.teriin.org/" target="blank"
+                ><li>TERI - Terragreen</li></a
+              >
+              <a href=""><li>TERI - Energy Security Insights</li></a>
+              <a href="https://www.windpowerindia.com/index.php" target="blank"
+                ><li>Wind Power India</li></a
+              >
+              <a href="https://www.windpro.org/monthlymag.html" target="blank"
+                ><li>WINDPRO - A monthly magazine</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSix"
+            aria-expanded="false"
+            aria-controls="collapseSix"
+          >
+            DEALERS / MANUFACTURES
+          </button>
+        </h2>
+        <div
+          id="collapseSix"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSix"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <h5>Large Wind Turbine Manufacturers</h5>
+            <ul class="wra-list">
+              <a href="http://cwel.in/" target="blank"
+                ><li>Boiler Marketing & Services</li></a
+              >
+              <a href="http://cwel.in/" target="blank"
+                ><li>Chiranjjeevi Wind Energy Limited.</li></a
+              >
+              <a href="http://elecon.nlihost.com/" target="blank"
+                ><li>Elecon Engineering Company Ltd.</li></a
+              >
+              <a href="http://www.enerconindia.net/index.jsp" target="blank"
+                ><li>Enercon India Ltd.</li></a
+              >
+              <a href="http://www.gamesacorp.com/en/" target="blank"
+                ><li>Gamesa Wind Turbine Pvt Ltd.</li></a
+              >
+              <a href="http://gvsl.in/" target="blank"
+                ><li>Garuda Vaayu Shakthi Ltd</li></a
+              >
+              <a href="https://www.gevernova.com/" target="blank"
+                ><li>GE Wind Energy India</li></a
+              >
+              <a href="https://www.ghodawatenergy.com/" target="blank"
+                ><li>Ghodawat Industries India Pvt. Ltd.</li></a
+              >
+              <a href="http://www.gwpl.co.in/" target="blank"
+                ><li>Global Wind Power Limited.</li></a
+              >
+              <a href="http://www.greenpowerservices.net/" target="blank"
+                ><li>Green Power Services</li></a
+              >
+              <a href="https://www.hindustancontrols.com/lander" target="blank"
+                ><li>Hindustan Controls & Equipment Pvt. Ltd.</li></a
+              >
+              <a href="https://inoxwind.com/" target="blank"
+                ><li>Inox Wind Limited.</li></a
+              >
+              <a href="http://www.kenersys.com/" target="blank"
+                ><li>Kenersys India Pvt Ltd</li></a
+              >
+              <a href="https://www.lmwindpower.com/" target="blank"
+                ><li>L M Glasfibre India Pvt. Ltd.</li></a
+              >
+              <a href="http://www.leitwind.in/" target="blank"
+                ><li>Leitner Shriram Manufacturing Limited</li></a
+              >
+              <a href="http://www.nagalaxmiindustries.com/" target="blank"
+                ><li>Nagalaxmi Industries</li></a
+              >
+              <a
+                href="https://www.hugedomains.com/domain_profile.cfm?d=nepcindia.com"
+                target="blank"
+                ><li>Natural Energy Processing Co. (NEPC)</li></a
+              >
+              <a href="http://pioneerwincon.com/main.htm" target="blank"
+                ><li>Pioneer Wincon Private Ltd.</li></a
+              >
+              <a href="https://www.regenpowertech.com/" target="blank"
+                ><li>Regen Powertech Pvt. Ltd.</li></a
+              >
+              <a href="http://www.rkwind.com/" target="blank"
+                ><li>RK Wind Ltd.</li></a
+              >
+              <a href="http://rsindiagroups.com/" target="blank"
+                ><li>R.S. India Group</li></a
+              >
+              <a href="https://www.rnfebtech.com/" target="blank"
+                ><li>R.N. FEB TECH</li></a
+              >
+              <a href="http://www.rrbenergy.com/" target="blank"
+                ><li>RRB Energy Ltd.</li></a
+              >
+              <a href="http://www.shriramepc.com/" target="blank"
+                ><li>Shriram EPC Ltd.</li></a
+              >
+              <a href="http://sivawind.com/" target="blank"
+                ><li>Siva Windturbine India Pvt. Ltd.</li></a
+              >
+              <a href="http://www.swl.co.in/" target="blank"
+                ><li>Southern Wind Farms Ltd.</li></a
+              >
+              <a href="http://www.suzlon.com/" target="blank"
+                ><li>Suzlon Energy Ltd.</li></a
+              >
+              <a href="http://www.vestas.com/" target="blank"
+                ><li>Vestas Wind Technology India Private Ltd.</li></a
+              >
+              <a href="http://www.windcareindia.com/" target="blank"
+                ><li>Wind care India Pvt. Ltd.</li></a
+              >
+              <a href="http://www.wintecenergy.com/" target="blank"
+                ><li>Wintec Energy Ltd.</li></a
+              >
+              <a href="http://www.winwind.in/" target="blank"
+                ><li>WinWinD</li></a
+              >
+              <a href="http://www.zusmagreenpower.com/" target="blank"
+                ><li>Zusma Green Power Solutions Pvt. Ltd.</li></a
+              >
+            </ul>
+
+            <h5>Small Wind Turbine Manufacturers</h5>
+
+            <ul class="wra-list">
+              <a href="http://www.lightuplife.net/"
+                >3R Care (India) Pvt. Ltd.</a
+              >
+              <a href="http://www.airstreamindia.com/" target="blank"
+                ><li>AirStream India</li></a
+              >
+              <a href="http://www.aurovillewindsystems.com/" target="blank"
+                ><li>Auroville Wind Systems</li></a
+              >
+              <a
+                href="http://fairdealcorporates.web.officelive.com/default.aspx"
+                target="blank"
+                ><li>Fairdeal Corporates Sales And Services</li></a
+              >
+              <a href="http://www.windsolarzone.com/" target="blank"
+                ><li>Luminous Renewable Energy Solutions (P) Ltd</li></a
+              >
+              <a href="http://www.machinocraft.com/" target="blank"
+                ><li>Machinocraft Energy Systems Pvt. Ltd.</li></a
+              >
+              <a href="http://www.novergy.co.in/" target="blank"
+                ><li>Novergy Energy Solutions Pvt. Ltd.</li></a
+              >
+              <a href="http://www.sidilu.com/contactus.htm" target="blank"
+                ><li>Sidilu Renewable Energy</li></a
+              >
+              <a href="http://www.spitzenenergy.com/index.asp" target="blank"
+                ><li>Spitzen Energy Solutions</li></a
+              >
+              <a
+                href="http://www.supernovawindsolar.com/home.html"
+                target="blank"
+                ><li>Supernova Technologies Pvt. Ltd.</li></a
+              >
+              <a href="http://www.windsolarzone.com/index.php" target="blank"
+                ><li>UD Energy Systems Private Ltd.</li></a
+              >
+              <a href="http://www.unitronenergy.com/" target="blank"
+                ><li>Unitron Energy Systems Pvt. Ltd.</li></a
+              >
+              <a href="http://www.v-enertek.com/" target="blank"
+                ><li>Vaigunth Ener Tek (P) Ltd.</li></a
+              >
+              <a href="http://victorywind.in/home" target="blank"
+                ><li>Victory Winfarm Services Pvt. Ltd.</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSeven">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSeven"
+            aria-expanded="false"
+            aria-controls="collapseSeven"
+          >
+            STATE NODAL AGENCIES
+          </button>
+        </h2>
+        <div
+          id="collapseSeven"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSeven"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p>
+              An area where a number of wind electric generators are installed
+              is known as a wind farm. The essential requirements for
+              establishment of a wind farm for optimal exploitation of the wind
+              are
+            </p>
+            <ul class="wra-list">
+              <a href="" target="blank"
+                ><li>
+                  ANDAMAN & NICOBAR ISLANDS - Andaman & Nicobar Administration
+                </li></a
+              >
+              <a href="http://www.nedcap.gov.in/" target="blank"
+                ><li>
+                  ANDHRA PRADESH - Non Conventional Energy Development
+                  Corporation of Andhra Pradesh (NEDCAP)
+                </li></a
+              >
+              <a href="http://www.apeda.co.in/home/" target="blank"
+                ><li>
+                  ARUNACHAL PRADESH - Arunachal Pradesh Energy Development
+                  Agency (APEDA)
+                </li></a
+              >
+              <a href="http://www.assamrenewable.org/" target="blank"
+                ><li>ASSAM - Assam Energy Development Agency (AEDA)</li></a
+              >
+              <a href="http://energy.bih.nic.in/Main.htm" target="blank"
+                ><li>
+                  BIHAR - Bihar Renewable Energy Development Agency (BREDA)
+                </li></a
+              >
+              <a href="http://chandigarh.gov.in/" target="blank"
+                ><li>CHANDIGARH - Chandigarh Administration</li></a
+              >
+              <a href="http://www.credacg.org/" target="blank"
+                ><li>
+                  CHHATTISGARH - Chhattisgarh State Renewable Energy Development
+                  Agency (CREDA)
+                </li></a
+              >
+              <a href="http://dnh.nic.in/" target="blank"
+                ><li>
+                  DADRA & NAGAR HAVELI - Administration of Dadra & Nagar Haveli
+                </li></a
+              >
+              <a href="http://www.delhitransco.gov.in/" target="blank"
+                ><li>DELHI - Delhi Transco Ltd</li></a
+              >
+              <a href="" target="blank"
+                ><li>GOA - Goa Energy Development Agency</li></a
+              >
+              <a href="http://www.geda.org.in/" target="blank"
+                ><li>GUJARAT - Gujarat Energy Development Agency (GEDA)</li></a
+              >
+              <a href="http://www.hareda.gov.in/" target="blank"
+                ><li>
+                  HARYANA - Haryana Renewal Energy Development Agency (HAREDA)
+                </li></a
+              >
+              <a href="http://himurja.nic.in/" target="blank"
+                ><li>
+                  HIMACHAL PRADESH - Himachal Pradesh Energy Development Agency
+                  (HIMURJA)
+                </li></a
+              >
+              <a href="http://jakeda.nic.in/" target="blank"
+                ><li>
+                  JAMMU AND KASHMIR - Jammu & Kashmir Energy Development Agency
+                  (JAKEDA)
+                </li></a
+              >
+              <a href="http://www.jreda.com/" target="blank"
+                ><li>
+                  JHARKHAND - Jharkhand Renewable Energy Development Agency
+                  (JREDA)
+                </li></a
+              >
+              <a
+                href="http://www.indiabuildinginfo.com/virtual-clean/kredl/kredl.htm"
+                target="blank"
+                ><li>
+                  KARNATAKA - Karnataka Renewable Energy Development Agency Ltd.
+                  (KREDL)
+                </li></a
+              >
+              <a href="http://anert.gov.in/" target="blank"
+                ><li>
+                  KERALA - Agency for Non-Conventional Energy and Rural
+                  Technology (ANERT)
+                </li></a
+              >
+              <a href="http://lakpower.nic.in/" target="blank"
+                ><li>
+                  LAKSHADWEEP - Administration of Union Territory of Lakshadweep
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  LEH-LADAKH - Ladakh Renewable Energy Development Agency
+                </li></a
+              >
+              <a href="http://www.mprenewable.nic.in/" target="blank"
+                ><li>
+                  MADHYA PRADESH - Madhya Pradesh Urja Vikas Nigam Ltd. (MPUVN)
+                </li></a
+              >
+              <a href="http://www.mahaurja.com/" target="blank"
+                ><li>
+                  MAHARASHTRA - Maharashtra Energy Development Agency (MEDA)
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  MANIPUR - Manipur Renewable Energy Development Agency
+                  (MANIREDA)
+                </li></a
+              >
+              <a href="http://mnreda.gov.in/" target="blank"
+                ><li>
+                  MEGHALAYA - Meghalaya Non-conventional & Rural Energy
+                  Development Agency (MNREDA)
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>MIZORAM - Zoram Energy Development Agency (ZEDA)</li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  NAGALAND - Nagaland Renewable Energy Development Agency
+                  (NREDA)
+                </li></a
+              >
+              <a href="http://www.oredaorissa.com/" target="blank"
+                ><li>
+                  ORISSA - Orissa Renewable Energy Development Agency (OREDA)
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  PONDICHERRY - Renewable Energy Agency of Pondicherry
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>PUNJAB - Punjab Energy Development Agency (PEDA)</li></a
+              >
+              <a href="http://www.rrecl.com/" target="blank"
+                ><li>
+                  RAJASTHAN - Rajasthan Renewable Energy Corporation Limited
+                  (RRECL)
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  SIKKIM - Sikkim Renewable Energy Development Agency, (SKM)
+                </li></a
+              >
+              <a href="http://www.teda.gov.in/" target="blank"
+                ><li>
+                  TAMIL NADU - Tamilnadu Energy Development Agency (TEDA)
+                </li></a
+              >
+              <a href="http://treda.nic.in/" target="blank"
+                ><li>
+                  TRIPURA - Tripura Renewable Energy Development Agency (TREDA)
+                </li></a
+              >
+              <a href="http://neda.up.nic.in/" target="blank"
+                ><li>
+                  UTTAR PRADESH - Non-conventional Energy Development Agency
+                  (NEDA)
+                </li></a
+              >
+              <a href="" target="blank"
+                ><li>
+                  UTTRANCHAL - Uttranchal Renewable Energy Development Agency
+                  (UREDA)
+                </li></a
+              >
+              <a href="http://www.wbreda.org/" target="blank"
+                ><li>
+                  WEST BENGAL - West Bengal Renewable Energy Development Agency
+                  (WBREDA)
+                </li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEight">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEight"
+            aria-expanded="false"
+            aria-controls="collapseEight"
+          >
+            NATIONAL VOTERS SERVICE
+          </button>
+        </h2>
+        <div
+          id="collapseEight"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEight"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="https://eci.gov.in/" target="blank"
+                ><li>National Voter's Service Portal</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingNine">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseNine"
+            aria-expanded="false"
+            aria-controls="collapseNine"
+          >
+            OTHER LINKS
+          </button>
+        </h2>
+        <div
+          id="collapseNine"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingNine"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="http://www.conzerv.com/about/index.htm" target="blank"
+                ><li>Conzerv Systems Pvt. Ltd - Smart energy Management</li></a
+              >
+              <a
+                href="http://www.greenfieldgroup.com/site/content/Default/"
+                target="blank"
+              >
+                <li>Greenfield Consulting Group</li></a
+              >
+              <a
+                href="http://www.indiamart.com/metamintubesindia"
+                target="blank"
+              >
+                <li>Metamin Tubes India</li></a
+              >
+              <a href="http://www.power-technology.com/" target="blank">
+                <li>Power Technology</li></a
+              >
+              <a href="http://www.reconenergy.com/" target="blank">
+                <li>Re-Con Energy Consultant</li></a
+              >
+              <a href="http://www.skf.com/"> <li>SKF India Limited</li></a>
+              <a href="http://weccsolutions.com/" target="blank">
+                <li>Wind Energy Consulting and Contracting Inc.</li></a
+              >
+              <a href="http://www.yashikasolar.com/" target="blank">
+                <li>Yashika Solar Energy Corporation</li></a
+              >
+              <a href="https://solaractionalliance.org" target="blank">
+                <li>Solar Action Alliance</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="pb-3 pt-4">REST OF THE WORLD</h4>
+
+      <div class="accordion-item border">
+        <h2 class="accordion-header" id="headingTen">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTen"
+            aria-expanded="false"
+            aria-controls="collapseTen"
+          >
+            Comparison between Fossil Fuels and Wind
+          </button>
+        </h2>
+        <div
+          id="collapseTen"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTen"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href=" http://cleanenergycouncil.org.au/" target="blank">
+                <li>Clean energy Council</li></a
+              >
+              <a href="http://www.gwec.net/index.php?id=28 " target="blank">
+                <li>Global Wind Energy Council - GWEC</li></a
+              >
+              <a href="http://www.nationalwind.org/" target="blank">
+                <li>National Wind Coordinating Collaborative - NWCC</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEleven">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEleven"
+            aria-expanded="false"
+            aria-controls="collapseEleven"
+          >
+            GOVERNMENTAL INSTITUTIONS
+          </button>
+        </h2>
+        <div
+          id="collapseEleven"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEleven"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a
+                href="http://www.ens.dk/en-us/Sider/forside.aspx"
+                target="blank"
+              >
+                <li>Danish Energy Authority</li></a
+              >
+              <a
+                href="http://www.ens.dk/graphics/publikationer/energipolitik_uk/e21uk/index.htm"
+                target="blank"
+              >
+                <li>The Energy 21 Plan</li></a
+              >
+              <a
+                href="http://www1.eere.energy.gov/windandhydro/"
+                target="blank"
+              >
+                <li>U.S. Department of Energy Wind Energy Program</li></a
+              >
+              <a
+                href="http://www.ens.dk/graphics/Publikationer/Forsyning_UK/Wind_Power99.pdf"
+                target="blank"
+              >
+                <li>
+                  Wind Power in Denmark: Technology, Policies and Results
+                </li></a
+              >
+              <a href="http://www.energy.ca.gov/wind/" target="blank">
+                <li>Wind Energy in California</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwl">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwl"
+            aria-expanded="false"
+            aria-controls="collapseTwl"
+          >
+            WIND ENERGY ASSOCIATIONS
+          </button>
+        </h2>
+        <div
+          id="collapseTwl"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwl"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="http://www.awea.org/">
+                <li>American Wind Energy Association - AWEA</li></a
+              >
+              <a href="http://www.igwindkraft.at/">
+                <li>Austrian Wind Energy Association - Auswind</li></a
+              >
+              <a href="http://www.auswea.com.au/">
+                <li>Australian Wind Energy Association - AUSWEA</li></a
+              >
+              <a href="http://www.awca.asn.au/">
+                <li>Australian Windmill contractors Association - AWCA</li></a
+              >
+              <a href="http://www.bwea.com/">
+                <li>British Wind Energy Association - BWEA</li></a
+              >
+              <a href="http://www.canwea.ca/index_e.php">
+                <li>Canadian Wind Energy Association - canwea</li></a
+              >
+              <a href="http://www.windpower.org/en/">
+                <li>Danish Wind Industry Association</li></a
+              >
+              <a href="http://ens.dk/en-us/Sider/forside.aspx">
+                <li>Danish Energy Agency</li></a
+              >
+              <a href="http://www.dkvind.dk/eng/index.htm">
+                <li>Danish Wind turbine Owners Association</li></a
+              >
+              <a href="http://www.tuuleenergia.ee/">
+                <li>Estonian Wind Power Association - EWPA</li></a
+              >
+              <a href="http://www.ewea.org/">
+                <li>European Wind Energy Association - EWEA</li></a
+              >
+              <a href="http://www.ewindea.org/">
+                <li>Egyptian Wind Energy Association - EGWEA</li></a
+              >
+              <a href="http://www.tuulivoimayhdistys.fi/in+english">
+                <li>Finnish Wind Power Association</li></a
+              >
+              <a href="http://www.fiwea.org/">
+                <li>Faroe Islands Wind Energy Association - FIWEA</li></a
+              >
+              <a href="http://www.wind-energie.de/home/">
+                <li>German Wind Energy Association - BWE</li></a
+              >
+              <a href="http://www.iwea.com/">
+                <li>Irish Wind Energy Association - IWEA</li></a
+              >
+              <a href="http://www.iowawindenergy.org/">
+                <li>Iowa Wind Energy Association - IWEA</li></a
+              >
+              <a href="http://www.nwea.nl/english">
+                <li>Nederlandse Wind Energie Associatie - NWEA</li></a
+              >
+              <a href="http://www.windenergy.org.nz/">
+                <li>New Zealand Wind Energy Association - NZWEA</li></a
+              >
+              <a href="http://www.vindkraft.no/">
+                <li>Norwegian Wind Power Association</li></a
+              >
+              <a href="http://www.afriwea.org/"
+                ><li>South African Wind Energy Association - AfriWEA</li></a
+              >
+              <a href="http://www.aeeolica.es/en/">
+                <li>
+                  Spanish Wind energy Association - Asociation Empresarial
+                  Eolica - aee
+                </li></a
+              >
+              <a href="http://www.eastriver.coop/energy/sdwea/">
+                <li>South Dakota Wind Energy Association</li></a
+              >
+              <a href="http://www.svensk-vindkraft.org/">
+                <li>Swedish Wind Energy Association</li></a
+              >
+              <a href="http://www.wwindea.org/">
+                <li>World Wind Energy Association - WWEA</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThre">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThre"
+            aria-expanded="false"
+            aria-controls="collapseThre"
+          >
+            WIND ENERGY RESEARCH INSTITUTIONS
+          </button>
+        </h2>
+        <div
+          id="collapseThre"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThre"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="http://www.absenergyresearch.com/">
+                <li>ABS Energy research</li></a
+              >
+              <a href="http://www.wtamu.edu/research/aei/">
+                <li>
+                  Alternative Energy Institute -- West Texas State University
+                </li></a
+              >
+              <a href="http://www-cenerg.cma.fr/welcomeng.html">
+                <li>
+                  Centre D' Energetique (France, Center for Energy Studies)
+                </li></a
+              >
+              <a href="http://www.cranfield.ac.uk/index.jsp">
+                <li>
+                  Cranfield University (U.K.) Wind Turbine Research Group
+                </li></a
+              >
+              <a
+                href="http://www.lr.tudelft.nl/live/pagina.jsp?id=5e540101-dbf5-4694-85d6-b80f9ac6ff3a&lang=en"
+              >
+                <li>
+                  Delft University of Technology, Institute for wind energy
+                </li></a
+              >
+              <a href="http://www.ecn.nl/">
+                <li>Energy research Centre of the Netherlands - ECN</li></a
+              >
+              <a href="http://www.nrel.gov/">
+                <li>National Renewable Energy Laboratory (NREL)</li></a
+              >
+              <a href="http://www.nrel.gov/wind/">
+                <li>National Wind Technology Center</li></a
+              >
+              <a href="http://www.ntnu.no/research/renewable-energy-research">
+                <li>
+                  Norwegian University of Science and Technology - NTNU -
+                  Renewable Energy Research
+                </li></a
+              >
+              <a href="http://www.me.orst.edu/WRC/95-04.html">
+                <li>Oregan State University Wind Research Cooperative</li></a
+              >
+              <a href="http://www.pnl.gov/">
+                <li>Pacific Northwest Laboratory</li></a
+              >
+              <a href="http://www.picoturbine.com/">
+                <li>PicoTurbine Windmill and Solar Projects</li></a
+              >
+              <a
+                href="http://www.risoe.dk/Research/sustainable_energy/wind_energy.aspx?sc_lang=en"
+              >
+                <li>Risoe National Laboratory for Sustainable Energy</li></a
+              >
+              <a href="http://www.cclrc.ac.uk/">
+                <li>Rutherford Laboratory (U.K.)</li></a
+              >
+              <a href="http://www.sandia.gov/wind/">
+                <li>Sandia National Laboratories -- Wind Energy</li></a
+              >
+              <a href="http://www.berlinwind.com/englisch/about-us/">
+                <li>Technical University of Berlin Wind Turbines</li></a
+              >
+              <a href="http://www.dtu.dk/English.aspx">
+                <li>Technical University of Denmark</li></a
+              >
+              <a href="http://www.utsa.edu/today/2009/07/energyalliance.cfm">
+                <li>
+                  The University of Texas at San Antonio - UTSA - Energy
+                  research
+                </li></a
+              >
+              <a href="http://www.aerospace-institute.com/index.htm">
+                <li>TU Berlin Aerospace Institute</li></a
+              >
+              <a href="http://www.uni-muenster.de/en/">
+                <li>University of Muenster</li></a
+              >
+              <a href="http://www.wisein.org/">
+                <li>World institute of sustainable energy - WISE</li></a
+              >
+              <a href="http://www.wwei.nu/">
+                <li>World Wind Energy Institute - WWEI</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFortn">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFortn"
+            aria-expanded="false"
+            aria-controls="collapseFortn"
+          >
+            RENEWABLE ENERGY
+          </button>
+        </h2>
+        <div
+          id="collapseFortn"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFortn"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <a href="http://www.renewables.ca/" target="blank">
+                <li>Canadian Association for Renewable Energies</li></a
+              >
+              <a href="http://www.nie.ac.in/crest/index.htm" target="blank">
+                <li>
+                  Center for Renewable Energy & Sustainable Technology (CREST)
+                </li></a
+              >
+              <a href="http://www.eurorex.com/" target="blank">
+                <li>EuroREX: the Europeanv Renewable Energy Exchange</li></a
+              >
+              <a href="https://www.iwr-institut.de/en/" target="blank">
+                <li>
+                  International Economic Platform for Renewable Energies (IWR)
+                  -- (Germany)
+                </li></a
+              >
+              <a
+                href="http://www.uni-muenster.de/Energie/wind/Welcomee.html"
+                target="blank"
+              >
+                <li>
+                  International Network for Sustainable energy (INFORSE)
+                </li></a
+              >
+              <a href="http://www.nrel.gov/" target="blank">
+                <li>
+                  International solar and renewable energy conferences calendar
+                </li></a
+              >
+              <a
+                href="http://www.ecs.umass.edu/mie/labs/rerl/index.html"
+                target="blank"
+              >
+                <li>
+                  Massachusetts University Renewable Energy Research Laboratory
+                </li></a
+              >
+              <a href="http://www.nrel.gov/wind/" target="blank">
+                <li>
+                  National Renewable Energy Laboratory (NREL) -- Wind
+                  Information
+                </li></a
+              >
+              <a href="http://www.folkecenter.net/gb/" target="blank">
+                <li>Nordisk Folkecenter for Renewable energy</li></a
+              >
+              <a
+                href="http://www.renewableenergyworld.com/rea/home"
+                target="blank"
+              >
+                <li>Renewable Energy World.com</li></a
+              >
+              <a href="http://www.renewable.com/" target="blank">
+                <li>Renewable Technologies, Inc.</li></a
+              >
+              <a href="http://www.energy.wa.gov.au/" target="blank">
+                <li>
+                  Sustainable Energy Industries Council of Australia (SEICA) --
+                  Renewable energy and energy efficiency businesses in Australia
+                </li></a
+              >
+              <a href="http://www.eren.doe.gov/" target="blank">
+                <li>
+                  U.S. Department of Energy - Energy Efficiency and Renewable
+                  Energy Network
+                </li></a
+              >
+              <a href="http://wcre.org/" target="blank">
+                <li>World Council for renewable energy</li></a
+              >
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFiftn">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFiftn"
+            aria-expanded="false"
+            aria-controls="collapseFiftn"
+          >
+            PERIODICALS : Newsletter / Magazine / Journals
+          </button>
+        </h2>
+        <div
+          id="collapseFiftn"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingFiftn"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <ul class="wra-list">
+              <li>
+                <a href="http://pubs.asce.org/journals/energy/" target="blank"
+                  >ASCE Journal of Energy Engineering</a
+                >
+              </li>
+              <li>
+                <a href="http://www.awea.org/" target="blank"
+                  >AWEA - Wind Energy Weekly</a
+                >
+              </li>
+              <li>
+                <a href="http://www.eaem.co.uk/" target="blank"
+                  >Energy and Environmental management</a
+                >
+              </li>
+              <li>
+                <a href="http://www.ewea.org/index.php?id=58" target="blank"
+                  >EWEA - Wind Direction</a
+                >
+              </li>
+              <li>
+                <a href="http://www.futureenergymagazine.com/" target="blank"
+                  >Future Energy</a
+                >
+              </li>
+              <li>
+                <a href="http://www.green-energy-news.com/" target="blank"
+                  >Green Energy news</a
+                >
+              </li>
+              <li>
+                <a href="http://www.wapa.gov/es/greennews/" target="blank"
+                  >Green Power and market research news</a
+                >
+              </li>
+              <li>
+                <a href="http://www.homepower.com/home/" target="blank"
+                  >Home Power magazine</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://eneken.ieej.or.jp/en/publication/index.html"
+                  target="blank"
+                  >IEEJ Energy Journal</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nawindpower.com/page.php?24" target="blank"
+                  >North American Wind Power</a
+                >
+              </li>
+              <li>
+                <a href="http://www.renewableenergyfocus.com/" target="blank"
+                  >Refocus</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.ises.org/ises.nsf/5c990687ba31ff01c12568b3004ef917/8eb9a73ea902c053c12568be004fa01a?OpenDocument"
+                  target="blank"
+                  >Renewable Energy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.elsevier.com/wps/find/journaldescription.cws_home/600126/description#description"
+                  target="blank"
+                  >Renewable Energy and Sustainable Energy Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.ises.org/ises.nsf/5c990687ba31ff01c12568b3004ef917/8eb9a73ea902c053c12568be004fa01a?OpenDocument"
+                  target="blank"
+                  >Solar Energy</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nrel.gov/analysis/sren/" target="blank"
+                  >State Renewable Energy news - NREL</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.sunwindenergy.com/swe/content/home/news.html"
+                  target="blank"
+                  >Sun and Wind Energy</a
+                >
+              </li>
+              <li>
+                <a href="http://www.renewables.ca/" target="blank"
+                  >TRENDS in Renewable Energies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.multi-science.co.uk/windeng.htm"
+                  target="blank"
+                  >Wind Engineering</a
+                >
+              </li>
+              <li>
+                <a href="http://www.wpm.co.nz/" target="blank"
+                  >Windpower Monthly -- World's leading Wind Energy news
+                  source</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windpoweronline.com/" target="blank"
+                  >Windpower On Line</a
+                >
+              </li>
+              <li>
+                <a href="http://www.emd.dk/WindPRO/Frontpage" target="blank"
+                  >WindPRO - EMD</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windstats.com/" target="blank"
+                  >WindStats Newsletter.
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSixtn">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSixtn"
+            aria-expanded="false"
+            aria-controls="collapseSixtn"
+          >
+            DEALERS / MANUFACTURES
+          </button>
+        </h2>
+        <div
+          id="collapseSixtn"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingSixtn"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p>
+              An area where a number of wind electric generators are installed
+              is known as a wind farm. The essential requirements for
+              establishment of a wind farm for optimal exploitation of the wind
+              are
+            </p>
+            <ul class="wra-list">
+              <li>
+                <a href="http://www.anglesey-wind.co.uk/" target="blank"
+                  >Anglesey Wind & Energy Ltd. -- Dealer/installer of wind
+                  equipment in UK</a
+                >
+              </li>
+              <li>
+                <a href="http://www.baywinds.com/" target="blank"
+                  >Bay Winds -- Midwest Jacobs Wind Energy dealer</a
+                >
+              </li>
+              <li>
+                <a href="http://www.bergey.com/" target="blank"
+                  >Bergey Windpower -- Manufactures small wind systems for a
+                  variety of applications</a
+                >
+              </li>
+              <li>
+                <a href="http://www.dynapower.com/" target="blank"
+                  >Dynapower -- Manufacturer of custom power electronics</a
+                >
+              </li>
+              <li>
+                <a href="http://www.lm.dk/" target="blank"
+                  >LM Glasfiber A/S -- Danish Turbine Blade manufacturer</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nordex-online.com/" target="blank"
+                  >Nordex Balden-Dorr GmbH -- German Turbine manufacturer.
+                  Subsidiary of Deutsche Babcock</a
+                >
+              </li>
+              <li>
+                <a href="http://www.secondwind.com/" target="blank"
+                  >Second Wind -- Manufacturers of wind Resource Assessment
+                  equipment</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windtec.com/" target="blank"
+                  >WINDTEC -- Austrian Wind Turbine manufacturer</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEightn">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseEightn"
+            aria-expanded="false"
+            aria-controls="collapseEightn"
+          >
+            Limitation
+          </button>
+        </h2>
+        <div
+          id="collapseEightn"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingEightn"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p>
+              An area where a number of wind electric generators are installed
+              is known as a wind farm. The essential requirements for
+              establishment of a wind farm for optimal exploitation of the wind
+              are
+            </p>
+            <ul class="wra-list">
+              <li>
+                <a href="http://www2.ademe.fr/" target="blank"
+                  >ADEME - French Environment and Energy Management Agency --
+                  (Francais).</a
+                >
+              </li>
+              <li>
+                <a href="http://www.aocwind.net/" target="blank"
+                  >Atlantic Orient Corp</a
+                >
+              </li>
+              <li>
+                <a href="http://www.browerco.com/" target="blank"
+                  >Brower & Co. -- Wind mapping and GIS and other services</a
+                >
+              </li>
+              <li>
+                <a href="http://www.btm.dk/" target="blank">BTM Consult Aps</a>
+              </li>
+              <li>
+                <a href="http://www.calenergy.org/" target="blank"
+                  >Calenergy.org</a
+                >
+              </li>
+              <li>
+                <a href="http://www.sustainableenergy.com/" target="blank"
+                  >Canadian Sustainable Energy Website</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windpower.org/EN/core.htm" target="blank"
+                  >Denmark: Wind Energy Information</a
+                >
+              </li>
+              <li>
+                <a href="http://www.ecn.nl/en/" target="blank"
+                  >ECN, Petten, The Netherlands</a
+                >
+              </li>
+              <li>
+                <a href="http://www.eole.org/" target="blank"
+                  >EOLE -- French-speaking Internet site dedicated to wind
+                  energy</a
+                >
+              </li>
+              <li>
+                <a href="http://www.epicland.com/" target="blank"
+                  >Epic Land Solutions</a
+                >
+              </li>
+              <li>
+                <a href="http://www.flender.com.my/" target="blank"
+                  >Flender Service -- Maintenance, repair and retrofitting of
+                  drive trains used in the wind turbine industry</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://members.tripod.com/~michailidis/index.html"
+                  target="blank"
+                  >Greece Wind Energy</a
+                >
+              </li>
+              <li>
+                <a href="http://www.green-ener-tech.dk/" target="blank"
+                  >Green-Ener-Tech Aps -- Sindal, Denmark</a
+                >
+              </li>
+              <li>
+                <a href="http://www.homepower.com/" target="blank"
+                  >Home Power</a
+                >
+              </li>
+              <li>
+                <a href="http://www.helimax.com/" target="blank"
+                  >Helimax Energy</a
+                >
+              </li>
+              <li>
+                <a href="http://telosnet.com/wind/index.html" target="blank"
+                  >Illustrated History of Wind Power Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.hovemere.com/products/mdwl_for_wind_farms.htm"
+                  target="blank"
+                  >Lidar Systems for Wind Farms</a
+                >
+              </li>
+              <li>
+                <a href="http://www.knightandcarver.com/" target="blank"
+                  >Knight & Carver -- Building and Repairing Wind Turbine
+                  Blades</a
+                >
+              </li>
+              <li>
+                <a href="http://www.maywind.com/" target="blank"
+                  >Maywind -- German turbine monitoring controls company</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://global.mitsubishielectric.com/bu/windpower/index.html"
+                  target="blank"
+                  >Mitsubishi Electric -- Wind Power Generation System</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windpower.com/" target="blank"
+                  >NAE - Northern Alternative Energy -- Minnesota-based wind
+                  power development company</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nrel.gov/gis/wind.html" target="blank"
+                  >NREL wind energy resource maps</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nationalwind.org/" target="blank"
+                  >National Wind Coordinating Committee</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nrel.gov/wind/" target="blank"
+                  >National Wind Technology Center</a
+                >
+              </li>
+              <li>
+                <a href="http://home.wxs.nl/~windsh" target="blank"
+                  >Netherlands: Wind Service Holland</a
+                >
+              </li>
+              <li>
+                <a href="http://www.newalternativesfund.com/" target="blank"
+                  >New Alternatives Fund</a
+                >
+              </li>
+              <li>
+                <a href="http://www.new-energy-portal.com/" target="blank"
+                  >New Energy Portal</a
+                >
+              </li>
+              <li>
+                <a href="http://www.nwpwr.com/" target="blank"
+                  >Northwest Power Co.</a
+                >
+              </li>
+              <li>
+                <a href="http://www.selsam.com/" target="blank"
+                  >Selsam Innovations</a
+                >
+              </li>
+              <li>
+                <a href="http://www.windenergy.com/" target="blank"
+                  >Southwest Windpower Inc. -- Battery-charging wind turbines</a
+                >
+              </li>
+              <li>
+                <a href="http://www.me3.org/newsletters/" target="blank"
+                  >Sustainable Minnesota Newsletter</a
+                >
+              </li>
+              <li>
+                <a href="http://www.me3.org/issues/wind/" target="blank"
+                  >Sustainable Minnesota Wind Energy Resources</a
+                >
+              </li>
+              <li>
+                <a href="http://www.synergypowercorp.com/" target="blank"
+                  >Synergy Power Corp.</a
+                >
+              </li>
+              <li>
+                <a href="http://www.dtu.dk/English.aspx" target="blank"
+                  >Technical University of Denmark</a
+                >
+              </li>
+              <li>
+                <a href="http://www.dtu.dk/English.aspx" target="blank"
+                  >TNO - Netherlands Organization for Applied Scientific
+                  Research</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://home.tudelft.nl/index.php?id=7414&L=1"
+                  target="blank"
+                  >TU Delft - Delft University Clean Technology Institute
+                  (Netherlands)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.newcastle.edu.au/school/engineering/research/wind-energy-group/"
+                  target="blank"
+                  >University of Newcastle, Australia, Wind Group</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.cc.utah.edu/~djl3109/windhome.html"
+                  target="blank"
+                  >University of Utah</a
+                >
+              </li>
+              <li>
+                <a href="http://www.er.doe.gov/" target="blank"
+                  >U.S. Department of Energy - Office of Energy Research</a
+                >
+              </li>
+              <li>
+                <a href="http://www.vestas.dk/" target="blank"
+                  >Vestas Wind Systems A/S</a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://www.thewindpower.net/country-datasheet-10-netherlands.php"
+                  target="blank"
+                  >Way of the Wind -- Wind Info in the Netherlands</a
+                >
+              </li>
+              <li>
+                <a href="http://windeis.anl.gov/" target="blank"
+                  >Wind Energy Developement Programmatic EIS Information Center
+                  Wind Power</a
+                >
+              </li>
+              <li>
+                <a href="http://www.wintecenergy.com/" target="blank"
+                  >Wintec Ltd. -- Windfarm operator in the San Gorgonio Pass,
+                  Calif</a
+                >
+              </li>
+              <li>
+                <a href="http://www.wind-works.org/" target="blank"
+                  >Wind-Works</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

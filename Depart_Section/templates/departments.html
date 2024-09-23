@@ -1,0 +1,94 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Department</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">Department</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="department-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'r&d' %}">{{depart.0.title|safe}} </a></h3>
+          {{depart.0.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fa fa-certificate" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'certificate' %}">{{depart.1.title|safe}}</a></h3>
+          {{depart.1.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-wrench"></i>
+          </div>
+          <h3><a href=" {% url 's&d' %}">{{depart.2.title|safe}}</a></h3>
+          {{depart.2.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fa fa-window-restore" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'wra' %} ">{{depart.3.title|safe}}</a></h3>
+          {{depart.3.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-broom"></i>
+          </div>
+          <h3><a href="{% url 'owd' %}">{{depart.4.title|safe}}</a></h3>
+          {{depart.4.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fa fa-laptop" aria-hidden="true"></i>
+          </div>
+          <h3><a href="{% url 'sdt' %}"> {{depart.5.title|safe}}</a></h3>
+          {{depart.5.description|safe}}
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-plug"></i>
+          </div>
+          <h3><a href="{% url 'finance' %}">{{depart.6.title|safe}}</a></h3>
+          {{depart.6.description|safe}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'footer.html' %}
