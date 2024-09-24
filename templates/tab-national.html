@@ -33,14 +33,16 @@
           <p class="font-italic mb-2 text-light bg-success">
             {{ item.serial}} &nbsp &nbsp
 
-        <a href="{% url 'national_training_data' item.id %}" target="_blank" class="text-light">
-
-            {% comment %} <a href="{{ item.url }}" target="_blank" class="text-light"> {% endcomment %}
+            <a
+              href="{% url 'national_training_data' item.id %}"
+              target="_blank"
+              class="text-light"
+            >
               {{ item.title }}
             </a>
           </p>
         </div>
-        {% endfor %} 
+        {% endfor %}
       </div>
 
       <div class="col-md-4">{% include "side-tab.html" %}</div>

@@ -793,6 +793,41 @@ ul {
 }
 
 
+.tab-itec{
+  background-color:#00899a;
+  color:#fff;
+  font-weight:600;
+  font-size:18px;
+  padding:8px 20px;
+  box-shadow: 2px 3px 2px #e8e9e8f7;
+  transition: all ease-in 0.3s;
+  border:1px solid #00899a;
+  border-radius:15px;
+
+}
+.tab-itec:hover{
+  background-color:#fff;
+  color:#00899a;
+  transform:translateY(-3px);
+}
+.tab-itec:active{
+   transform: translateY(0px);
+}
+.itec-img-div{
+  position: relative;
+  width:100%;
+  padding: 1rem;
+}
+.itec-img-div img{
+  width: 100%;
+}
+.tab-itec-div{
+  position: absolute;
+  top:2rem;
+  right:3rem;
+  width: fit-content;
+}
+
 
 /* about section css */
 .head-div {
@@ -829,7 +864,7 @@ ul {
   color: #fff;
 } */
 .dgm-div p{
-font-size: 18px;
+/* font-size: 18px; */
 }
 
 .dgm-div h4{

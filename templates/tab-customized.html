@@ -24,7 +24,7 @@
   </nav>
 </div>
 
-<section class="rnd-div" id="divContent">
+<section class="dgm-div" id="divContent">
   <div class="container">
     <div class="row col-12">
       <div class="col-md-8">
@@ -32,7 +32,7 @@
         <div class="col-12">
           <p class="font-italic mb-2 text-light bg-secondary">
             {{ item.serial}} &nbsp &nbsp
-            <a href="{{ item.link }}" target="_blank" class="text-light">
+            <a href="{% url 'customize_sub_training' item.id %}" target="_blank" class="text-light">
               {{ item.title }}
             </a>
           </p>

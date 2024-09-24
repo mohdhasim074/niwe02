@@ -6,9 +6,9 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num,\
-    SDT_National_Page, SDT_InternationalTraining_eitec,\
-    SDT_InternationalTraining_sub_eitec
+    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num, \
+    SDT_National_Page, SDT_InternationalTraining_eitec, \
+    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -46,6 +46,7 @@ class TestingAdmin(admin.ModelAdmin):
     # list_display = ('title', 'description', 'document_File')
     list_display = ('title', 'description')
     search_fields = ('id',)
+    list_filter = ('id',)
     
     ordering = ['id']
 
@@ -53,6 +54,7 @@ class TestingAdmin(admin.ModelAdmin):
 class WindTerBinephotoAdmin(admin.ModelAdmin):
     list_display = ('image')
     search_fields = ('id',)
+    list_filter = ('id',)
     
     ordering = ['id']
 
@@ -70,6 +72,8 @@ class Department_Testing_TypeInline(admin.StackedInline):
 class DepartTestingMeasureAdmin(admin.ModelAdmin):
     inlines = [Department_Testing_TypeInline]
     search_fields = ('id',)
+    list_filter = ('id',)
+    
     ordering = ['id']   
 
 
@@ -83,54 +87,69 @@ class Workshop_SDT_PhotosInline(admin.TabularInline):
 class Workshop_SDT(admin.ModelAdmin):
     inlines = [Workshop_SDT_PhotosInline]
     search_fields = ('id',)
+    list_filter = ('id',)
+    
     ordering = ['id']   
 # 
+
+
+class SDT_Customized_TrainingInline(admin.StackedInline):
+    model = SDT_Customize_Training_Sub
+    extra = 1
+
+    
+@admin.register(SDT_Customize_Training)
+class Customized_Training(admin.ModelAdmin):
+    inlines = [SDT_Customized_TrainingInline]
+    
+    list_display = ('title',)
+    ordering = ['id']
+
 
 # 
 class SDT_Nationals_pagesInline(admin.StackedInline):
     model = SDT_National_Page
-    extra=1
+    extra = 1
 
 
 @admin.register(SDT_National)
 class SDT_Nationals(admin.ModelAdmin):
     inlines = [SDT_Nationals_pagesInline]
     list_display = ('title', 'id',)
-    search_fields=('id',)
+    search_fields = ('id',)
+    list_filter = ('id',)
+    
     ordering = ['id']
 
 
-class SDT_InterNational_SubEitc_pagesInline(admin.StackedInline):
+class SDT_InternationalTrainingSubEitecInline(admin.StackedInline):  # You can also use TabularInline for a table format
     model = SDT_InternationalTraining_sub_eitec
-    extra = 1
+    extra = 1  # Number of extra forms shown by default
 
 
-class SDT_InterNationalEitc_pagesInline(admin.StackedInline):
-    inlines = [SDT_InterNational_SubEitc_pagesInline]
+class SDT_InternationalTrainingEitecInline(admin.StackedInline):
     model = SDT_InternationalTraining_eitec
-    extra = 1
+    extra = 1  # Number of extra forms shown by default
+    inlines = [SDT_InternationalTrainingSubEitecInline]
 
 
 @admin.register(SDT_InternationalTraining)
-class TrainingInternationalAdmin(admin.ModelAdmin):
-    inlines = [SDT_InterNationalEitc_pagesInline]
+class SDTInternationalTrainingAdmin(admin.ModelAdmin):
+    inlines = [SDT_InternationalTrainingEitecInline]
     list_display = ('title',)
+    ordering = ['id']
     search_fields = ('id',)
-    ordering = ['id']
 
 
-# 
-@admin.register(depart_documents)
-class departDocumentsAdmin(admin.ModelAdmin): 
-
-    list_display = ('Description', 'Version', 'Download')
-    search_fields = ('version', 'id')
-    ordering = ['id']
+# Register other models individually if needed
+admin.site.register(SDT_InternationalTraining_eitec)
+admin.site.register(SDT_InternationalTraining_sub_eitec)
 
 
 # 
 @admin.register(Wind_Resources_Assessment)
 class Wind_Res_Admin(admin.ModelAdmin):
+    search_fields = ('id',)
 
     list_display = ('title', 'description')
     ordering = ['id']
@@ -205,12 +224,6 @@ class FnAdmin(admin.ModelAdmin):
     
 @admin.register(SDT_vayumitra)
 class VayumitraAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    ordering = ['id']
-
-
-@admin.register(SDT_Customize_Training)
-class Customized_Training(admin.ModelAdmin):
     list_display = ('title',)
     ordering = ['id']
 

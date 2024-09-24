@@ -4,7 +4,7 @@
   <div class="overlay d-flex align-items-center">
     <div class="container">
       <h1 class="text-white">
-        {% for national in national_data %} {{national.title}} {% endfor %}
+        {% for national in custom %} {{national.title}} {% endfor %}
       </h1>
     </div>
   </div>
@@ -24,15 +24,21 @@
         <a href="{% url 'national_training' %}">National Training</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        {% for national in national_data %} {{national.title}} {% endfor %}
+        {% for national in custom %} {{national.title}} {% endfor %}
       </li>
     </ol>
   </nav>
 </div>
-  
+
 <section class="dgm-div" id="divContent">
   <div class="container">
-    {% for national in national_data %} {{national.data|safe}} {% endfor %}
+    <div class="row">
+      <div class="col-12">
+        <div class="">
+          {% for national in custom %} {{national.data|safe}} {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 {% include 'footer.html' %}

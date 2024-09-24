@@ -7,7 +7,8 @@ from Document_Section.models import WEG_Installation_Details_India, \
 from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra, \
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
-    SDT_National_Page
+    SDT_National_Page, SDT_InternationalTraining_eitec, \
+    SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec
 
 
 def index(request):
@@ -133,8 +134,6 @@ def Library(request):
     return render (request, 'tab-library.html')
 
 
-
-
 # 
 def ITEC_training(request):
     return render (request, 'tab-ITEC.html')
@@ -144,11 +143,6 @@ def short_term_course(request):
     short = SDT_Short_Term.objects.all()
     context = {"short": short}
     return render (request, 'tab-short.html', context)
-
-
-def customize_training(request):
-    customize = SDT_Customize_Training.objects.all()
-    return render (request, 'tab-customized.html', {"customize":customize})
 
 
 def training_calander(request):
@@ -193,6 +187,18 @@ def workshop_confrence_images(request, workshop_id):
     return render(request, "tab-workshop_photo.html", content)
 
 
+def customize_training(request):
+    customize = SDT_Customize_Training.objects.all()
+    return render (request, 'tab-customized.html', {"customize":customize})
+
+
+def customize_training_sub(request, id):
+    item = get_object_or_404(SDT_Customize_Training, id=id)
+    custom = SDT_Customize_Training_Sub.objects.filter(item=item).order_by('id')
+    content = {"item": item, "custom":custom}
+    return render(request, "tab-customized_sub.html", content)
+
+
 # 
 # 
 def national_training(request):
@@ -207,24 +213,23 @@ def national_training_data(request, data_id):
     return render(request, "tab-national-data.html", content)
 
 
-def international_training(request):
-    international = SDT_InternationalTraining.objects.all()
-    content = {"international": international}
-    return render (request, 'tab-international.html', content)
+def training_list(request):
+    trainings = SDT_InternationalTraining.objects.all()
+    return render(request, 'tab-international.html', {'trainings': trainings})
 
 
-def international_training_eitec(request):
-    # international = SDT_InternationalTraining.objects.all()
-    # content = {"international": international}
-    return render (request, 'tab-international-eitc.html', )
+def eitec_detail(request, training_slug):
+    training = get_object_or_404(SDT_InternationalTraining, slug=training_slug)
+    eitecs = SDT_InternationalTraining_eitec.objects.filter(item=training)
+    return render(request, 'tab-international-eitc.html', {'training': training, 'eitecs': eitecs})
 
 
-def international_training_sub_eitec(request):
-    # international = SDT_InternationalTraining.objects.all()
-    # content = {"international": international}
-    return render (request, 'tab-international-sub-eitc.html',)
+def sub_eitec_detail(request, eitec_slug):
+    eitec = get_object_or_404(SDT_InternationalTraining_eitec, slug=eitec_slug)
+    sub_eitecs = SDT_InternationalTraining_sub_eitec.objects.filter(eitec=eitec)
+    return render(request, 'tab-international-sub-eitc.html', {'eitec': eitec, 'sub_eitecs': sub_eitecs})
 
-    
+
 # 
 def vayumitra_sdt(request):
     vayumitra = SDT_vayumitra.objects.all()

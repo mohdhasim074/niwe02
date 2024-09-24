@@ -77,22 +77,24 @@ urlpatterns = [
     # 
      path('newsletters', views.newsletters, name='newsletters'),
     path('annual_reports', views.annual_reports, name='annual_reports'),
-    path('international_training/', views.international_training),
-    path('international_training/', views.international_training_eitec, name='international_eitec'),
-    path('international_training/', views.international_training_sub_eitec,name='international_sub_eitc'),
+    
+    path('inter-national-trainings/', views.training_list, name='international_training_list'),
+    path('inter-national-trainings/<slug:training_slug>/', views.eitec_detail, name='international_training_eitec'),
+    path('inter-national-trainings/eitec/<slug:eitec_slug>/', views.sub_eitec_detail, name='international_training_sub_eite'),
 
     path('national-training/', views.national_training, name='national_training'),
     path('national-training/<int:data_id>/', views.national_training_data, name='national_training_data'),
 
     path('short_term_course/', views.short_term_course, name='short_term_course'),
     path('customize_training/', views.customize_training, name='customize_training'),
+    path('customize_training/<int:id>', views.customize_training_sub, name='customize_sub_training'),
      path('training_calander/', views.training_calander, name='training_calander'),
      path('global_wind_day/', views.global_wind_day, name='global_wind_day'),
      path('webinar/', views.webinar, name='webinar'),
      path('workshop_confrence/', views.workshop_confrence, name='workshop_confrence'),
      path('workshop_confrence/<int:workshop_id>/', views.workshop_confrence_images, name='workshop_confrence_year'),
      path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
-    
+     
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

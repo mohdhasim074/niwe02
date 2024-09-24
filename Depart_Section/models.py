@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from django.utils.text import slugify
 
 
 # Create your models here.\
@@ -26,6 +27,7 @@ class Testing_and_Standards_Regulation(models.Model):
     
 class Wind_Terbine_photo(models.Model):
     terbine_photo = models.ImageField(upload_to='subalbums/')
+
 
 # 
 # 
@@ -60,14 +62,17 @@ class Department_testing_measureType(models.Model):
 class SDT_Customize_Training(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=255)
-    link = models.URLField()
+    # link = models.URLField()
+
+
+class SDT_Customize_Training_Sub(models.Model):
+    item = models.ForeignKey(SDT_Customize_Training, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    data = HTMLField(null=True, blank=True)
 
     def __str__(self):
-     return self.title
-
-    def get_link_url(self):
-        return self.link.url  # Returns the URL of the uploaded file
-
+        return f"National-training  of {self.item.title}"
+ 
     
 class SDT_Webinar(models.Model):
     title = models.CharField(max_length=255,)
@@ -113,39 +118,65 @@ class SDT_workshop_type(models.Model):
 
     def __str__(self):
         return f"workshop-testing  of {self.item.title}"
+
     
 class SDT_National(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=200)
 
+
 class SDT_National_Page(models.Model):
     item = models.ForeignKey(SDT_National, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     data = HTMLField(null=True, blank=True)
+
     def __str__(self):
         return f"National-training  of {self.item.title}"
 
 
 class SDT_InternationalTraining(models.Model):
     title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, blank=True)  # Add slug field
     image = models.ImageField(upload_to='annual-reports/')
-    # url = models.URLField()
-    # url = models.URLField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
 
 class SDT_InternationalTraining_eitec(models.Model):
     item = models.ForeignKey(SDT_InternationalTraining, on_delete=models.CASCADE)
     serial = models.IntegerField()
     title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, blank=True)  # Add slug field
+
+    def __str__(self):
+        return f"{self.serial}. {self.title} ({self.item.title})"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class SDT_InternationalTraining_sub_eitec(models.Model):
     eitec = models.ForeignKey(SDT_InternationalTraining_eitec, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, blank=True)  # Add slug field
     data = HTMLField(null=True, blank=True)
-   
+
     def __str__(self):
-        return f"InterNationalSubEitec-training  of {self.item.title}"
-        
+        return f"International Sub EITEC training of {self.eitec.item.title} - {self.title}"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
     
 class SDT_vayumitra(models.Model):
     serial = models.IntegerField()
