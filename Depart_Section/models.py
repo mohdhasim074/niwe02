@@ -142,7 +142,7 @@ class SDT_InternationalTraining_sub_eitec(models.Model):
     eitec = models.ForeignKey(SDT_InternationalTraining_eitec, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     data = HTMLField(null=True, blank=True)
-
+   
     def __str__(self):
         return f"InterNationalSubEitec-training  of {self.item.title}"
         
