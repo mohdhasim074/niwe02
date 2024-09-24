@@ -28,8 +28,6 @@ class Wind_Terbine_photo(models.Model):
     terbine_photo = models.ImageField(upload_to='subalbums/')
 
 # 
-
-
 # 
 class depart_documents(models.Model):
     Description	 = models.CharField(max_length=100)
@@ -57,31 +55,6 @@ class Department_testing_measureType(models.Model):
    
     def __str__(self):
         return f"Department-testing  of {self.item.title}"
-
-
-class SDT_workshop(models.Model):
-    url = models.CharField(max_length=255)  # max_length is required
-    title = models.CharField(max_length=255)  # max_length is required
-
-
-class SDT_workshop_type(models.Model):
-    item = models.ForeignKey(SDT_workshop, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='images/')
-
-    def __str__(self):
-        return f"workshop-testing  of {self.item.title}"
-
-    
-class SDT_InternationalTraining(models.Model):
-    title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='annual-reports/')
-    url = models.URLField()
-
-    def __str__(self):
-     return self.title
-
-    def get_url_url(self):
-        return self.url.url  # Returns the URL of the uploaded file
 
 
 class SDT_Customize_Training(models.Model):
@@ -127,20 +100,53 @@ class SDT_GlobalWindDay(models.Model):
 
     def get_url_url(self):
         return self.url.url  # Returns the URL of the uploaded file
-    
+
+
+class SDT_workshop(models.Model):
+    url = models.CharField(max_length=255)  # max_length is required
+    title = models.CharField(max_length=255)  # max_length is required
+
+
+class SDT_workshop_type(models.Model):
+    item = models.ForeignKey(SDT_workshop, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return f"workshop-testing  of {self.item.title}"
     
 class SDT_National(models.Model):
     serial = models.IntegerField()
-    title = models.CharField(max_length=255)
-    url = models.URLField()
+    title = models.CharField(max_length=200)
+
+class SDT_National_Page(models.Model):
+    item = models.ForeignKey(SDT_National, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    data = HTMLField(null=True, blank=True)
+    def __str__(self):
+        return f"National-training  of {self.item.title}"
+
+
+class SDT_InternationalTraining(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='annual-reports/')
+    # url = models.URLField()
+    # url = models.URLField(max_length=200, unique=True)
+
+class SDT_InternationalTraining_eitec(models.Model):
+    item = models.ForeignKey(SDT_InternationalTraining, on_delete=models.CASCADE)
+    serial = models.IntegerField()
+    title = models.CharField(max_length=200)
+
+
+class SDT_InternationalTraining_sub_eitec(models.Model):
+    eitec = models.ForeignKey(SDT_InternationalTraining_eitec, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    data = HTMLField(null=True, blank=True)
 
     def __str__(self):
-     return self.title
-
-    # def get_url_url(self):
-    #     return self.url.url  # Returns the URL of the uploaded file
-
-
+        return f"InterNationalSubEitec-training  of {self.item.title}"
+        
+    
 class SDT_vayumitra(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=255)
@@ -156,6 +162,7 @@ class Wind_Resources_Assessment(models.Model):
     title = models.CharField(max_length=255)  # max_length is required
     description = HTMLField(null=True, blank=True)
 
+
 class WRA_Sale_publication(models.Model):
     serial = models.IntegerField()
     product = models.CharField(max_length=250)
@@ -163,7 +170,7 @@ class WRA_Sale_publication(models.Model):
     total_amount1 = models.CharField(max_length=250)
     total_amount2 = models.CharField(max_length=250)
     charge = models.CharField(max_length=250)
-    remarks= models.CharField(max_length=250)
+    remarks = models.CharField(max_length=250)
 
 
 class WRA_srra_stations(models.Model):
@@ -177,18 +184,17 @@ class WRA_srra_stations(models.Model):
     total = models.CharField(max_length=250)
 
 
-
 class WRA_Numeric_Wind(models.Model):
     serial = models.IntegerField()
     domain = models.CharField(max_length=250)
     number_station = models.IntegerField()
-    error_of_wind_speed=models.DecimalField( max_digits=10, decimal_places=2)
+    error_of_wind_speed = models.DecimalField(max_digits=10, decimal_places=2)
+
 
 class WRA_Micro_Servey(models.Model):
     serial = models.IntegerField()
     state = models.CharField(max_length=250)
     stations = models.IntegerField()
-
 
 
 class WRA_Estimated_Potential(models.Model):
@@ -201,6 +207,7 @@ class WRA_Estimated_Potential(models.Model):
 class WRA_Srra_Station_phases(models.Model):
     head = models.CharField(max_length=250)
     phase_type = models.CharField(max_length=250)
+
     
 class WRA_Srra_Phase_num(models.Model):
     phase = models.ForeignKey(WRA_Srra_Station_phases, on_delete=models.CASCADE)
@@ -213,7 +220,6 @@ class WRA_Srra_Phase_num(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=3)
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()    
-
 
 
 # owd

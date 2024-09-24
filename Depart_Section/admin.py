@@ -6,7 +6,9 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num
+    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num,\
+    SDT_National_Page, SDT_InternationalTraining_eitec,\
+    SDT_InternationalTraining_sub_eitec
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -15,6 +17,7 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     
 @admin.register(Departments)
 class DepartmentAdmin(admin.ModelAdmin):
+    search_fields = ('id',)
 
     list_display = ('title', 'description')
     ordering = ['id']
@@ -24,12 +27,15 @@ class DepartmentAdmin(admin.ModelAdmin):
 @admin.register(Skill_developements_training)
 class SkillAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
+    search_fields = ('id',)
+    
     ordering = ['id']
 
 
 # 
 @admin.register(Reserach_n_Development)
 class RnDAdmin(admin.ModelAdmin):
+    search_fields = ('id',)
 
     list_display = ('title', 'description', 'document_File')
     ordering = ['id']
@@ -39,11 +45,15 @@ class RnDAdmin(admin.ModelAdmin):
 class TestingAdmin(admin.ModelAdmin):
     # list_display = ('title', 'description', 'document_File')
     list_display = ('title', 'description')
+    search_fields = ('id',)
+    
     ordering = ['id']
 
 
 class WindTerBinephotoAdmin(admin.ModelAdmin):
     list_display = ('image')
+    search_fields = ('id',)
+    
     ordering = ['id']
 
 
@@ -59,6 +69,7 @@ class Department_Testing_TypeInline(admin.StackedInline):
 @admin.register(Department_testing_measure)
 class DepartTestingMeasureAdmin(admin.ModelAdmin):
     inlines = [Department_Testing_TypeInline]
+    search_fields = ('id',)
     ordering = ['id']   
 
 
@@ -71,7 +82,41 @@ class Workshop_SDT_PhotosInline(admin.TabularInline):
 @admin.register(SDT_workshop)
 class Workshop_SDT(admin.ModelAdmin):
     inlines = [Workshop_SDT_PhotosInline]
+    search_fields = ('id',)
     ordering = ['id']   
+# 
+
+# 
+class SDT_Nationals_pagesInline(admin.StackedInline):
+    model = SDT_National_Page
+    extra=1
+
+
+@admin.register(SDT_National)
+class SDT_Nationals(admin.ModelAdmin):
+    inlines = [SDT_Nationals_pagesInline]
+    list_display = ('title', 'id',)
+    search_fields=('id',)
+    ordering = ['id']
+
+
+class SDT_InterNational_SubEitc_pagesInline(admin.StackedInline):
+    model = SDT_InternationalTraining_sub_eitec
+    extra = 1
+
+
+class SDT_InterNationalEitc_pagesInline(admin.StackedInline):
+    inlines = [SDT_InterNational_SubEitc_pagesInline]
+    model = SDT_InternationalTraining_eitec
+    extra = 1
+
+
+@admin.register(SDT_InternationalTraining)
+class TrainingInternationalAdmin(admin.ModelAdmin):
+    inlines = [SDT_InterNationalEitc_pagesInline]
+    list_display = ('title',)
+    search_fields = ('id',)
+    ordering = ['id']
 
 
 # 
@@ -178,18 +223,6 @@ class SDT_Global(admin.ModelAdmin):
 
 @admin.register(SDT_Webinar)
 class SDT_Webinars(admin.ModelAdmin):
-    list_display = ('title',)
-    ordering = ['id']
-
-
-@admin.register(SDT_National)
-class SDT_Nationals(admin.ModelAdmin):
-    list_display = ('title', 'url')
-    ordering = ['id']
-
-    
-@admin.register(SDT_InternationalTraining)
-class TrainingInternationalAdmin(admin.ModelAdmin):
     list_display = ('title',)
     ordering = ['id']
 

@@ -78,7 +78,12 @@ urlpatterns = [
      path('newsletters', views.newsletters, name='newsletters'),
     path('annual_reports', views.annual_reports, name='annual_reports'),
     path('international_training/', views.international_training),
-    path('national_training/', views.national_training, name='national_training'),
+    path('international_training/', views.international_training_eitec, name='international_eitec'),
+    path('international_training/', views.international_training_sub_eitec,name='international_sub_eitc'),
+
+    path('national-training/', views.national_training, name='national_training'),
+    path('national-training/<int:data_id>/', views.national_training_data, name='national_training_data'),
+
     path('short_term_course/', views.short_term_course, name='short_term_course'),
     path('customize_training/', views.customize_training, name='customize_training'),
      path('training_calander/', views.training_calander, name='training_calander'),

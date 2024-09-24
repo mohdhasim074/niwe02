@@ -1,39 +1,42 @@
 {% include 'header.html' %}
 
-
-
-    <section class="head-div">
-        <div class="overlay d-flex align-items-center">
-            <div class="container">
-                <h1 class="text-white">Certification and Information Technology (C&IT)</h1>
-            </div>
-        </div>
-
-    </section>
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Certification and Information Technology (C&IT)
+      </h1>
+    </div>
+  </div>
+</section>
 
 <div class="container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent p-0">
       <li class="breadcrumb-item"><a href="/">Home </a></li>
-      <li class="breadcrumb-item"><a href="{% url 'contact' %}">Contact Us </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> Certification and Information Technology (C&IT)</li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'contact' %}">Contact Us </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification and Information Technology (C&IT)
+      </li>
     </ol>
   </nav>
 </div>
 
+<section class="staff-dev" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <!-- sidenav bar -->
+        {% include 'sidenav.html' %}
+      </div>
+      <div class="col-md-8 col-12">
+        <div class="staff-table">
+          <div class="table-responsive">
 
 
-    <section class="staff-dev">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-12">
-                    <!-- sidenav bar -->
-                    {% include 'sidenav.html' %}
-                </div>
-                <div class="col-md-8 col-12">
-                    <div class="staff-table">
-                        <div class="table-responsive">
-                            <table class="table table-bordered   table-striped" style="margin-top:20px">
+             <table class="table table-bordered   table-striped" style="margin-top:20px">
                                 <thead class="table__head">
                                     <tr>
                                         <th><i class="fa fa-user" aria-hidden="true"></i> Name</th>
@@ -83,11 +86,10 @@
                                         {% endfor %}
                                     </tr>
 
-                                    </tr>
+                                    <tr>
 
                                             <td colspan="2">Certification</td>
 
-                                    <tr>
 
                                         <tr>
                                             {% for staff in staffs %}
@@ -109,15 +111,14 @@
 
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- footer -->
 
- 
-    <!-- footer -->
-
-    {% include 'footer.html' %}
+{% include 'footer.html' %}

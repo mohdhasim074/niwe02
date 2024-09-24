@@ -6,7 +6,8 @@ from Document_Section.models import WEG_Installation_Details_India, \
 
 from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra, \
     SDT_InternationalTraining, SDT_National, \
-    SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term
+    SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
+    SDT_National_Page
 
 
 def index(request):
@@ -132,16 +133,6 @@ def Library(request):
     return render (request, 'tab-library.html')
 
 
-def international_training(request):
-    international = SDT_InternationalTraining.objects.all()
-    content = {"international": international}
-    return render (request, 'tab-international.html', content)
-
-
-# 
-def national_training(request):
-    national = SDT_National.objects.all()
-    return render (request, 'tab-national.html', {"national": national})
 
 
 # 
@@ -151,8 +142,8 @@ def ITEC_training(request):
 
 def short_term_course(request):
     short = SDT_Short_Term.objects.all()
-    context={"short": short}
-    return render (request, 'tab-short.html',context)
+    context = {"short": short}
+    return render (request, 'tab-short.html', context)
 
 
 def customize_training(request):
@@ -167,13 +158,13 @@ def training_calander(request):
 def global_wind_day(request):
     globals = SDT_GlobalWindDay.objects.all()
     context = {"globals": globals}
-    return render (request, 'tab-global.html',context)
+    return render (request, 'tab-global.html', context)
 
 
 def webinar(request):
     webinar = SDT_Webinar.objects.all()
     context = {"webinar": webinar}
-    return render (request, 'tab-webinar.html',context)
+    return render (request, 'tab-webinar.html', context)
 
 
 # 
@@ -200,9 +191,41 @@ def workshop_confrence_images(request, workshop_id):
     photos = SDT_workshop_type.objects.filter(item=item).order_by('id')
     content = {"item": item, "photos":photos}
     return render(request, "tab-workshop_photo.html", content)
+
+
 # 
+# 
+def national_training(request):
+    national = SDT_National.objects.all()
+    return render (request, 'tab-national.html', {"national": national})
 
 
+def national_training_data(request, data_id):
+    item = get_object_or_404(SDT_National, id=data_id)
+    national_data = SDT_National_Page.objects.filter(item=item).order_by('id')
+    content = {"item": item, "national_data":national_data}
+    return render(request, "tab-national-data.html", content)
+
+
+def international_training(request):
+    international = SDT_InternationalTraining.objects.all()
+    content = {"international": international}
+    return render (request, 'tab-international.html', content)
+
+
+def international_training_eitec(request):
+    # international = SDT_InternationalTraining.objects.all()
+    # content = {"international": international}
+    return render (request, 'tab-international-eitc.html', )
+
+
+def international_training_sub_eitec(request):
+    # international = SDT_InternationalTraining.objects.all()
+    # content = {"international": international}
+    return render (request, 'tab-international-sub-eitc.html',)
+
+    
+# 
 def vayumitra_sdt(request):
     vayumitra = SDT_vayumitra.objects.all()
     content = {"vayumitra": vayumitra}

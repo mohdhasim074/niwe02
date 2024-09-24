@@ -24,7 +24,7 @@
   </nav>
 </div>
 
-<section class="dgm-div" id="divContent">
+<section class="rnd-div" id="divContent">
   <div class="container py-1">
     <div class="row col-12 mx-auto">
       <div class="col-md-8 mt-4 order-lg-1 order-2">
@@ -41,7 +41,7 @@
             <div class="row col-12 mx-auto px-0">
               {% for item in international %}
               <div class="col-lg-3 col-md-2 col-sm-6 col-12">
-                <a href="{{ item.url.url }}" target="_blank">
+                <a href="{{ item.url }}" target="_blank">
                   <div class="card sm-card-design text-center px-8 py-4 mt-4">
                     <h5 class="card-title text-primary">{{ item.title|safe }}</h5>
                     <img

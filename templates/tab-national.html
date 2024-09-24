@@ -18,14 +18,13 @@
         <a href="{% url 'sdt' %}">Skill Development & Training</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        National Training 
+        National Training
       </li>
     </ol>
   </nav>
 </div>
 
-
-<section class="dgm-div">
+<section class="about-div" id="divContent">
   <div class="container">
     <div class="row col-12">
       <div class="col-md-8">
@@ -33,13 +32,17 @@
         <div class="col-12">
           <p class="font-italic mb-2 text-light bg-success">
             {{ item.serial}} &nbsp &nbsp
-            <a href="{{ item.url.url }}" target="_blank" class="text-light">
+
+        <a href="{% url 'national_training_data' item.id %}" target="_blank" class="text-light">
+
+            {% comment %} <a href="{{ item.url }}" target="_blank" class="text-light"> {% endcomment %}
               {{ item.title }}
             </a>
           </p>
         </div>
-        {% endfor %}
+        {% endfor %} 
       </div>
+
       <div class="col-md-4">{% include "side-tab.html" %}</div>
     </div>
   </div>
