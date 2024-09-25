@@ -9,7 +9,8 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     WRA_Estimated_Potential,  \
     SDT_National_Page, SDT_InternationalTraining_eitec, \
     SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub,\
-    WRA_Srra_Station_phases
+    WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda,\
+    WRA_Srra_Station_anert, WRA_Srra_Station_ams
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -143,7 +144,7 @@ class SDTInternationalTrainingAdmin(admin.ModelAdmin):
 
 
 # Register other models individually if needed
-admin.site.register(SDT_InternationalTraining_eitec)
+# admin.site.register(SDT_InternationalTraining_eitec)
 admin.site.register(SDT_InternationalTraining_sub_eitec)
 
 
@@ -206,6 +207,37 @@ class Wra_Srra_phase(admin.ModelAdmin):
     list_filter=('id',)
     ordering = ['id']
     
+@admin.register(WRA_Srra_Station_phaseII)
+class Wra_Srra_phaseII(admin.ModelAdmin):
+    
+    search_fields = ('station_id','id',)
+    list_display=('station_id',)
+    list_filter=('id',)
+    ordering = ['id']
+    
+@admin.register(WRA_Srra_Station_meda)
+class Wra_Srra_phase_meda(admin.ModelAdmin):
+    
+    search_fields = ('station_id','id',)
+    list_display=('station_id',)
+    list_filter=('id',)
+    ordering = ['id']
+    
+@admin.register(WRA_Srra_Station_anert)
+class Wra_Srra_phase_anert(admin.ModelAdmin):
+    
+    search_fields = ('station_id','id',)
+    list_display=('station_id',)
+    list_filter=('id',)
+    ordering = ['id']
+    
+@admin.register(WRA_Srra_Station_ams)
+class Wra_Srra_phase_ams(admin.ModelAdmin):
+    
+    search_fields = ('station_id','id',)
+    list_display=('station_id',)
+    list_filter=('id',)
+    ordering = ['id']
     
 # 
 @admin.register(Offshore_Wind_Development)

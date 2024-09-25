@@ -237,8 +237,6 @@ class WRA_Estimated_Potential(models.Model):
 
 
 class WRA_Srra_Station_phases(models.Model):
-    head = models.CharField(max_length=250)
-    phase_type = models.CharField(max_length=250)
     
     station_id = models.IntegerField()
     station_name = models.CharField(max_length=250)
@@ -250,6 +248,54 @@ class WRA_Srra_Station_phases(models.Model):
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()  
 
+
+class WRA_Srra_Station_phaseII(models.Model):
+    
+    station_id = models.IntegerField()
+    station_name = models.CharField(max_length=250)
+    location = models.CharField(max_length=250)
+    district = models.CharField(max_length=250)
+    state = models.CharField(max_length=250)
+    comission_date = models.DateField(auto_now=False, auto_now_add=False)
+    latitude = models.DecimalField(max_digits=10, decimal_places=3)
+    longitude = models.DecimalField(max_digits=10, decimal_places=3)
+    elavation = models.IntegerField()  
+    
+class WRA_Srra_Station_meda(models.Model):
+    
+    station_id = models.IntegerField()
+    station_name = models.CharField(max_length=250)
+    location = models.CharField(max_length=250)
+    district = models.CharField(max_length=250)
+    state = models.CharField(max_length=250)
+    comission_date = models.DateField(auto_now=False, auto_now_add=False)
+    latitude = models.DecimalField(max_digits=10, decimal_places=3)
+    longitude = models.DecimalField(max_digits=10, decimal_places=3)
+    elavation = models.IntegerField()  
+
+class WRA_Srra_Station_anert(models.Model):
+    
+    station_id = models.IntegerField()
+    station_name = models.CharField(max_length=250)
+    location = models.CharField(max_length=250)
+    district = models.CharField(max_length=250)
+    state = models.CharField(max_length=250)
+    comission_date = models.DateField(auto_now=False, auto_now_add=False)
+    latitude = models.DecimalField(max_digits=10, decimal_places=3)
+    longitude = models.DecimalField(max_digits=10, decimal_places=3)
+    elavation = models.IntegerField()  
+    
+class WRA_Srra_Station_ams(models.Model):
+    
+    station_id = models.IntegerField()
+    station_name = models.CharField(max_length=250)
+    location = models.CharField(max_length=250)
+    district = models.CharField(max_length=250)
+    state = models.CharField(max_length=250)
+    comission_date = models.DateField(auto_now=False, auto_now_add=False)
+    latitude = models.DecimalField(max_digits=10, decimal_places=3)
+    longitude = models.DecimalField(max_digits=10, decimal_places=3)
+    elavation = models.IntegerField()  
 
 # owd
 class Offshore_Wind_Development(models.Model):

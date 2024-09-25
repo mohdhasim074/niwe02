@@ -4,8 +4,8 @@
   <div class="overlay d-flex align-items-center">
     <div class="container">
       <h1 class="text-white">
-        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS {{
-        item.head}}
+        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS 
+        {% for item in wra_station %} {{ item.head}} {% endfor %}
       </h1>
     </div>
   </div>
@@ -22,8 +22,8 @@
         <a href="{% url 'wra' %}">Wind Resource Assessment (WRA)</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS {{
-        item.head}}
+        Consolidated list of Phase-I, II, MEDA SRRA stations & AMS 
+        {% for item in wra_station %} {{ item.head}} {% endfor %}
       </li>
     </ol>
   </nav>
@@ -65,14 +65,14 @@
             {% endfor %}
 
             <tr>
-                <td colspan="2">Total</td>
-                <td>51</td>
-                <td>60</td>
-                <td>4</td>
-                <td>8</td>
-                <td>2</td>
-                <td>125</td>
-              </tr>
+              <td colspan="2">Total</td>
+              <td>51</td>
+              <td>60</td>
+              <td>4</td>
+              <td>8</td>
+              <td>2</td>
+              <td>125</td>
+            </tr>
           </tbody>
         </table>
       </div>

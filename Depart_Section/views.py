@@ -3,7 +3,7 @@ from django.http import request
 from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
       Department_testing_measure, Department_testing_measureType, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential,  WRA_Srra_Station_phases
+    WRA_Estimated_Potential,  WRA_Srra_Station_phases, WRA_Srra_Station_phaseII
 from . models import Reserach_n_Development, Testing_and_Standards_Regulation, Departments, Wind_Resources_Assessment, Finance_and_Administration, Offshore_Wind_Development, Skill_developements_training
 
 
@@ -152,6 +152,27 @@ def wra_srra_phases(request):
     context = {"station": station}
     return render (request, 'department_wra_srra_phase.html',context)
 
+def wra_srra_phaseII(request):
+    station = WRA_Srra_Station_phaseII.objects.order_by('id')
+    context = {"station": station}
+    return render (request, 'department_wra_srra_phaseII.html',context)
+
+def wra_srra_phase_meda(request):
+    station = WRA_Srra_Station_phaseII.objects.order_by('id')
+    context = {"station": station}
+    return render (request, 'department_wra_srra_stations_meda.html',context)
+
+    
+def wra_srra_phase_anert(request):
+    station = WRA_Srra_Station_phaseII.objects.order_by('id')
+    context = {"station": station}
+    return render (request, 'department_wra_srra_stations_anert.html', context)
+
+    
+def wra_srra_phase_ams(request):
+    station = WRA_Srra_Station_phaseII.objects.order_by('id')
+    context = {"station": station}
+    return render (request, 'department_wra_srra_stations_ams.html', context)
 
 
 def wra_station_map(request):

@@ -4,7 +4,7 @@
   <div class="overlay d-flex align-items-center">
     <div class="container">
       <h1 class="text-white">
-        {% for national in sub_eitec %} {{national.title}} {% endfor %}
+        {% for national in sub_eitecs %} {{national.title}} {% endfor %}
       </h1>
     </div>
   </div>
@@ -26,7 +26,7 @@
         >
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        {% for national in sub_eitec %} {{national.title}} {% endfor %}
+        {% for national in sub_eitecs %} {{national.title}} {% endfor %}
       </li>
     </ol>
   </nav>
@@ -34,7 +34,7 @@
 
 <section class="rnd-div" id="divContent">
   <div class="container">
-    {% for national in sub_eitec %} {{national.data|safe}} {% endfor %}
+    {% for national in sub_eitecs %} {{national.data|safe}} {% endfor %}
   </div>
 </section>
 {% include 'footer.html' %}
