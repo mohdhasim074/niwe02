@@ -134,6 +134,43 @@ class SDT_National_Page(models.Model):
         return f"National-training  of {self.item.title}"
 
 
+class SDT_Eitc_Trainings(models.Model):
+    serial = models.CharField(max_length=10)
+    project_title = models.CharField(max_length=200)
+    no_of_country = models.IntegerField()
+    no_of_participants = models.IntegerField()
+
+    def __str__(self):
+        return self.serial
+
+
+class SDT_Eitc_Sub_Training(models.Model):
+    item = models.ForeignKey(SDT_Eitc_Trainings, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    data = HTMLField(null=True, blank=True)
+
+    def __str__(self):
+        return f"Training-Calender  of {self.item.project_title}"
+
+
+class SDT_Training_calender(models.Model):
+    training_type = models.CharField(max_length=100, default='Default Training Type')
+    serial = models.IntegerField()
+    description = models.CharField(max_length=200)
+    date_from = models.DateField(auto_now=False, auto_now_add=False)
+    date_To = models.DateField(auto_now=False, auto_now_add=False)
+    duration = models.CharField(max_length=200)
+    
+
+class SDT_Training_Sub_calender(models.Model):
+    item = models.ForeignKey(SDT_Training_calender, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    data = HTMLField(null=True, blank=True)
+
+    def __str__(self):
+        return f"Training-Calender  of {self.item.description}"
+
+
 class SDT_InternationalTraining(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)  # Add slug field
@@ -260,6 +297,7 @@ class WRA_Srra_Station_phaseII(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=3)
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()  
+
     
 class WRA_Srra_Station_meda(models.Model):
     
@@ -273,6 +311,7 @@ class WRA_Srra_Station_meda(models.Model):
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()  
 
+
 class WRA_Srra_Station_anert(models.Model):
     
     station_id = models.IntegerField()
@@ -284,6 +323,7 @@ class WRA_Srra_Station_anert(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=3)
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()  
+
     
 class WRA_Srra_Station_ams(models.Model):
     
@@ -296,6 +336,7 @@ class WRA_Srra_Station_ams(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=3)
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
     elavation = models.IntegerField()  
+
 
 # owd
 class Offshore_Wind_Development(models.Model):

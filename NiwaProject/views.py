@@ -8,7 +8,9 @@ from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
     SDT_National_Page, SDT_InternationalTraining_eitec, \
-    SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec
+    SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec, \
+    SDT_Training_Sub_calender, SDT_Training_calender, SDT_Eitc_Trainings, \
+    SDT_Eitc_Sub_Training
 
 
 def index(request):
@@ -139,6 +141,31 @@ def ITEC_training(request):
     return render (request, 'tab-ITEC.html')
 
 
+def ITEC_trainings(request):
+    trainings = SDT_Eitc_Trainings.objects.all()
+    context = {
+        "trainings": trainings
+    }
+    return render (request, 'tab-ITEC-training.html', context)
+
+
+def ITEC_trainings_sub(request, training_id):
+    item = get_object_or_404(SDT_Eitc_Trainings, id=training_id)
+    sub_training = SDT_Eitc_Sub_Training.objects.filter(item=item).order_by('id')
+    context = {
+        "sub_training": sub_training, "item":item
+    }
+    return render (request, 'tab-ITEC-training-sub.html', context)
+
+
+def ITEC_training_countries(request):
+    return render (request, 'tab-ITEC-countries.html')
+
+
+def ITEC_training_feedback(request):
+    return render (request, 'tab-ITEC-feedback.html')
+
+
 def short_term_course(request):
     short = SDT_Short_Term.objects.all()
     context = {"short": short}
@@ -146,7 +173,15 @@ def short_term_course(request):
 
 
 def training_calander(request):
-    return render (request, 'tab-calender.html')
+    national = SDT_Training_calender.objects.all()
+    return render (request, 'tab-calender.html', {"national": national})
+
+
+def training_calander_sub(request, data_id):
+    item = get_object_or_404(SDT_Training_calender, id=data_id)
+    national_data = SDT_Training_Sub_calender.objects.filter(item=item).order_by('id')
+    content = {"item": item, "national_data":national_data}
+    return render(request, "tab-calender-sub.html", content)
 
 
 def global_wind_day(request):

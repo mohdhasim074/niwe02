@@ -26,23 +26,27 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="itec-img-div ">
-
-          <div class="row col-12 ms-auto mb-2 tab-itec-div ">
-
-            <div class="col-auto ">
-              <a href="" class="tab-itec"> option1 </a>
+        <div class="itec-img-div">
+          <div class="row col-12 ms-auto mb-2 tab-itec-div">
+            <div class="col-auto">
+              <a href="/itec/" class="tab-itec"> ITEC </a>
             </div>
 
             <div class="col-auto">
-              <a href="" class="tab-itec"> option1 </a>
+              <a href="{% url 'itec_training' %}" class="tab-itec">
+                TRAININGS
+              </a>
             </div>
             <div class="col-auto">
-              <a href="" class="tab-itec"> option1 </a>
+              <a href="{% url 'itec_countries' %}" class="tab-itec">
+                COUNTRIES
+              </a>
             </div>
 
             <div class="col-auto">
-              <a href="" class="tab-itec"> option1 </a>
+              <a href="{% url 'itec_feedback' %}" class="tab-itec">
+                FEEDBACK
+              </a>
             </div>
           </div>
           <img src="/static/images/itec-collage.png" alt="img-itec" />

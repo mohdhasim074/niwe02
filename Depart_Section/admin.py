@@ -10,7 +10,8 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_National_Page, SDT_InternationalTraining_eitec, \
     SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub,\
     WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda,\
-    WRA_Srra_Station_anert, WRA_Srra_Station_ams
+    WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender,\
+    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -106,8 +107,6 @@ class Customized_Training(admin.ModelAdmin):
     
     list_display = ('title',)
     ordering = ['id']
-
-
 # 
 class SDT_Nationals_pagesInline(admin.StackedInline):
     model = SDT_National_Page
@@ -120,8 +119,34 @@ class SDT_Nationals(admin.ModelAdmin):
     list_display = ('title', 'id',)
     search_fields = ('id',)
     list_filter = ('id',)
-    
     ordering = ['id']
+# 
+class SDT_TrainingInline(admin.StackedInline):
+    model = SDT_Training_Sub_calender
+    extra = 1
+
+@admin.register(SDT_Training_calender)
+class SDT_TrainingCalender(admin.ModelAdmin):
+    inlines = [SDT_TrainingInline]
+    list_display = ('id', 'description',)
+    search_fields = ('id','serial',)
+    list_filter = ('id',)
+    ordering = ['id']
+
+
+class SDT_EITC_TrainingInline(admin.StackedInline):
+    model = SDT_Eitc_Sub_Training
+    extra = 1
+
+
+@admin.register(SDT_Eitc_Trainings)
+class SDT_EITC_Training(admin.ModelAdmin):
+    inlines = [SDT_EITC_TrainingInline]
+    list_display = ('id', 'project_title',)
+    search_fields = ('id','serial',)
+    list_filter = ('id',)
+    ordering = ['id']
+
 
 
 class SDT_InternationalTrainingSubEitecInline(admin.StackedInline):  # You can also use TabularInline for a table format

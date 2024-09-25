@@ -73,7 +73,13 @@ urlpatterns = [
     
     path('academy/', views.Academy),
     path('library/', views.Library),
-    path('itc_training/', views.ITEC_training),
+    
+    path('itec/', views.ITEC_training),
+    path('itec_training/', views.ITEC_trainings, name='itec_training'),
+    path('itec_training/<int:training_id>', views.ITEC_trainings_sub, name='itec_training_sub'),
+    
+    path('itec_countries/', views.ITEC_training_countries, name='itec_countries'),
+    path('itec_feedback/', views.ITEC_training_feedback, name='itec_feedback'),
     # 
      path('newsletters', views.newsletters, name='newsletters'),
     path('annual_reports', views.annual_reports, name='annual_reports'),
@@ -88,7 +94,10 @@ urlpatterns = [
     path('short_term_course/', views.short_term_course, name='short_term_course'),
     path('customize_training/', views.customize_training, name='customize_training'),
     path('customize_training/<int:id>', views.customize_training_sub, name='customize_sub_training'),
+
      path('training_calander/', views.training_calander, name='training_calander'),
+     path('training_calander/<int:data_id>/', views.training_calander_sub, name='training_calander_sub'),
+     
      path('global_wind_day/', views.global_wind_day, name='global_wind_day'),
      path('webinar/', views.webinar, name='webinar'),
      path('workshop_confrence/', views.workshop_confrence, name='workshop_confrence'),

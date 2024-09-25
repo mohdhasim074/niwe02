@@ -12,8 +12,12 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent p-0">
       <li class="breadcrumb-item"><a href="/">Home </a></li>
-      <li class="breadcrumb-item"><a href="{% url 'contact' %}">Contact Us </a></li>
-      <li class="breadcrumb-item active" aria-current="page"> Skill Development & Training (SDT)</li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'contact' %}">Contact Us </a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Skill Development & Training (SDT)
+      </li>
     </ol>
   </nav>
 </div>
@@ -45,7 +49,9 @@
                 {% for staff in sdtStaff %}
                 <tr>
                   <td>
-                    <a href="{% url 'sdt_staff_photo' staff.id %} "> {{staff.name}}</a>
+                    <a href="{% url 'sdt_staff_photo' staff.id %} ">
+                      {{staff.name}}</a
+                    >
 
                     <br />
                     {{staff.position}}
@@ -60,25 +66,7 @@
                     >{{staff.phone_number}}
                   </td>
                 </tr>
-                {% endfor %} {% comment %}
-                <tr>
-                  <td>
-                    SHRI.GUNASEKARAN. M.R
-
-                    <br />
-                    Executive Secretary
-                  </td>
-
-                  <td>
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    gunasekaran@niwe.res.in
-
-                    <br />
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    044-22463982/83/84
-                  </td>
-                </tr>
-                {% endcomment %}
+                {% endfor %}
               </tbody>
             </table>
           </div>

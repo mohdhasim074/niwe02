@@ -339,12 +339,12 @@
       var currentFontSize = parseInt(divElement.css("font-size"));
 
       if (flag == "increase")
-        if (currentFontSize >= "24") currentFontSize = currentFontSize;
+        if (currentFontSize >= "27") currentFontSize = currentFontSize;
         else currentFontSize += 2;
       else if (flag == "decrease")
         if (currentFontSize <= "10") currentFontSize = currentFontSize;
         else currentFontSize -= 2;
-      else currentFontSize = 16;
+      else currentFontSize = 18;
 
       divElement.css("font-size", currentFontSize);
     }
