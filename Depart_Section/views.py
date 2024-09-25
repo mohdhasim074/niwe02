@@ -3,7 +3,7 @@ from django.http import request
 from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
       Department_testing_measure, Department_testing_measureType, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num
+    WRA_Estimated_Potential,  WRA_Srra_Station_phases
 from . models import Reserach_n_Development, Testing_and_Standards_Regulation, Departments, Wind_Resources_Assessment, Finance_and_Administration, Offshore_Wind_Development, Skill_developements_training
 
 
@@ -152,11 +152,6 @@ def wra_srra_phases(request):
     context = {"station": station}
     return render (request, 'department_wra_srra_phase.html',context)
 
-def wra_srra_phase(request, phase_id):
-    phase = get_object_or_404(WRA_Srra_Station_phases, id=phase_id)
-    station_num = WRA_Srra_Phase_num.objects.filter(phase=phase).order_by('id')
-    context = {"phase": phase, "station_num": station_num}
-    return render (request, 'department_wra_srra_phase.html', context)
 
 
 def wra_station_map(request):

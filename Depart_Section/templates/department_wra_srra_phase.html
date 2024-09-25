@@ -34,7 +34,7 @@
         <div class="pt-2">
           {% for phase in station %}
 
-          <h5>{{phase.phase_type}}</h5>
+          <h5>{{phase.phase_type}}</h5> 
           {% endfor %}
           <table class="table table-bordered">
             <thead>
@@ -51,7 +51,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for item in station_num %}
+              {% for item in station %}
 
               <tr>
                 <td>{{ item.station_id}}</td>
@@ -59,7 +59,7 @@
                 <td>{{ item.location}}</td>
                 <td>{{item.district}}</td>
                 <td>{{item.state}}</td>
-                <td><br />{{ item.comission }}</td>
+                <td><br />{{ item.comission_date }}</td>
                 <td>{{ item.latitude}}</td>
                 <td>{{ item.longitude}}</td>
                 <td>{{ item.elavation}}</td>

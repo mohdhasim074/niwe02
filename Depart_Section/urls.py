@@ -33,7 +33,6 @@ urlpatterns = [
     path('department_wra_station_map', views.wra_station_map, name='wra_station_map'),
     
     path('department_wra-phase/', views.wra_srra_phases, name='wra_srra_phases'),
-    path('department_wra-phase/<int:phase_id>/', views.wra_srra_phase, name='wra_srra_phase_no'),
 
     path('department_wra-msr/', views.wra_micro_servey, name='wra_micro_servey'),
     path('department_wra-numwind/', views.wra_numerical_wind, name='wra_numerical_wind'),

@@ -6,9 +6,10 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential, WRA_Srra_Station_phases, WRA_Srra_Phase_num, \
+    WRA_Estimated_Potential,  \
     SDT_National_Page, SDT_InternationalTraining_eitec, \
-    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub
+    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub,\
+    WRA_Srra_Station_phases
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -192,19 +193,17 @@ class WRA_Servey(admin.ModelAdmin):
 class WRA_Power_Potential(admin.ModelAdmin):
     list_display = ('serial',)
     search_fields = ('serial',)
+    list_filter = ('id',)
+    
     ordering = ('id',)
     
     
-class WRA_srra_PhasInline(admin.StackedInline):
-    model = WRA_Srra_Phase_num
-    extra = 1
-
-
 @admin.register(WRA_Srra_Station_phases)
 class Wra_Srra_phase(admin.ModelAdmin):
-    inlines = [WRA_srra_PhasInline]
     
-    search_fields = ('station_id',)
+    search_fields = ('station_id','id',)
+    list_display=('station_id',)
+    list_filter=('id',)
     ordering = ['id']
     
     
@@ -214,17 +213,23 @@ class OwdAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'description')
     ordering = ['id']
+    list_filter = ('id','title',)
+    search_fields=('title','id',)
     inlines = [RelatedImageInline]
 
 
 @admin.register(Finance_and_Administration)
 class FnAdmin(admin.ModelAdmin):
     list_display = ('description', 'NIWE_Pan_ARN_GST_Details')
+    list_filter = ('id',)
 
     
 @admin.register(SDT_vayumitra)
 class VayumitraAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+    list_filter = ('id',)
+    list_display = ('id',)
+    search_fields=('id',)
+    
     ordering = ['id']
 
 

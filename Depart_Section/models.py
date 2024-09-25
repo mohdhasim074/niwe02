@@ -233,24 +233,22 @@ class WRA_Estimated_Potential(models.Model):
     state_ut = models.CharField(max_length=250)
     potential_50m = models.IntegerField()
     potential_80m = models.IntegerField()
-    
-    
+    # 
+
+
 class WRA_Srra_Station_phases(models.Model):
     head = models.CharField(max_length=250)
     phase_type = models.CharField(max_length=250)
-
     
-class WRA_Srra_Phase_num(models.Model):
-    phase = models.ForeignKey(WRA_Srra_Station_phases, on_delete=models.CASCADE)
     station_id = models.IntegerField()
     station_name = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
     district = models.CharField(max_length=250)
     state = models.CharField(max_length=250)
-    comission = models.DateField(auto_now=False, auto_now_add=False)
+    comission_date = models.DateField(auto_now=False, auto_now_add=False)
     latitude = models.DecimalField(max_digits=10, decimal_places=3)
     longitude = models.DecimalField(max_digits=10, decimal_places=3)
-    elavation = models.IntegerField()    
+    elavation = models.IntegerField()  
 
 
 # owd
