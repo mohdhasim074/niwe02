@@ -40,16 +40,108 @@
           sciences and has good collection in general and computer books also.
         </p>
         <table class="table table-bordered">
+          <thead>
+            <thead>
+              <tr>
+                <th>Sl. No</th>
+                <th>Type</th>
+                <th colspan="2">Print and Online</th>
+              </tr>
+            </thead>
+          </thead>
+
           <tbody>
             <tr>
               <td>1</td>
-              <td colspan="2">Books</td>
-              <td>2200</td>
+              <td>Books</td>
+              <td colspan="2">2200</td>
             </tr>
+            <tr>
+              <td>2</td>
+              <td>Donated Books</td>
+              <td colspan="2">457</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Standards (Hard Copy, CD ROM & PDF, NABL Standards)</td>
+              <td colspan="2">798</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Thesis and Project Report</td>
+              <td colspan="2">94</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td>Technical Report</td>
+              <td colspan="2">355</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Conference & Proceedings</td>
+              <td colspan="2">446</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Non-Book Materials</td>
+              <td colspan="2">166</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Annual Report</td>
+              <td colspan="2">166</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Subscribed Periodicals</td>
+              <td colspan="2">30</td>
+            </tr>
+
             <tr>
               <td colspan="2"></td>
               <td>Print</td>
               <td>Print and Online</td>
+            </tr>
+            <tr>
+              <th>9.1</th>
+              <td>International Journals</td>
+              <td>12</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>9.2</td>
+              <td>International Magazines</td>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>9.3</td>
+              <td>National Journals</td>
+              <td>6</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>9.4</td>
+              <td>National Magazine</td>
+              <td>9</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Back volume of periodicals</td>
+              <td colspan="2">560</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>Institutional Membership</td>
+              <td colspan="2">2</td>
+            </tr>
+
+            <tr>
+              <td>12</td>
+              <td>National Daily News papers</td>
+              <td colspan="2">13</td>
             </tr>
           </tbody>
         </table>
@@ -61,67 +153,44 @@
               <th>Title of the Journals and Magazines</th>
               <th>Subscription Status</th>
             </tr>
-            <tr>
-              <th colspan="3">International Journals</th>
-            </tr>
           </thead>
           <tbody>
+            {% for item in Library %}
+             {% if item.title_type == "International Journals" %}
             <tr>
-              <td>1</td>
-              <td>IEEJ - Energy Journal</td>
-              <td>Print Copy</td>
+              <th colspan="3">{{ item.title_type  }}International Journals</th>
             </tr>
 
             <tr>
-              <th colspan="3">International Magazines</th>
+              <td>1 {{ item.serial}}</td>
+              <td>IEEJ - Energy Journal {{ itme.title_of_magzines}}</td>
+              <td>Print Copy {{ item.subcription_status}}</td>
             </tr>
+            {% endif %} {% endfor %} 
+            
+            {% for item in Library %} 
+            {% if item.title_type == "International Magazines" %}
             <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
+              <th colspan="3">{{ item.title_type  }}International Magazines</th>
             </tr>
+
             <tr>
-              <th colspan="3">National Journals</th>
+              <td>1 {{ item.serial}}</td>
+              <td>IEEJ - Energy Journal {{ itme.title_of_magzines}}</td>
+              <td>Print Copy {{ item.subcription_status}}</td>
             </tr>
-            <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th colspan="3">National Magazines</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th colspan="3">Institutional Membership</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th colspan="3">National Daily News Papers</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th colspan="3">National Magazines</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td colspan="2"></td>
-              <td></td>
-            </tr>
+            {% endif %} {% endfor %}
+
+           
           </tbody>
         </table>
+        <div class="#">
+          <p>AutoLib Library Management Software Systems</p>
+          <p>
+            OPAC- Online Public Access :
+            http://itcsserver:8080/AutoLib/index.jsp
+          </p>
+        </div>
       </div>
       <div class="col-md-4">{% include "side-tab.html" %}</div>
     </div>
