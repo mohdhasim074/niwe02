@@ -22,17 +22,20 @@ class ComparisonBetweenFosilFuelAndWind(models.Model):
     Wind_Energy = HTMLField()
 
 
+
+
+
 # 
 class RevisedGuidelinesForProject(models.Model):
      
-     sr_No = models.IntegerField()
-     description = HTMLField()
-     date = models.DateField(auto_now=False, auto_now_add=False)
+    sr_No = models.IntegerField()
+    description = HTMLField()
+    date = models.DateField(auto_now=False, auto_now_add=False)
 
 
 class RecordsRetentionSchedule(models.Model):
-     ministry_Approval = models.FileField(upload_to='pdf/')
-     NIEW_Records_Retention_Schedule = models.FileField(upload_to='pdf/')
+    ministry_Approval = models.FileField(upload_to='pdf/')
+    NIEW_Records_Retention_Schedule = models.FileField(upload_to='pdf/')
 
 #
 
@@ -54,13 +57,14 @@ class AnnualReport(models.Model):
     year = models.CharField(max_length=100)
     image = models.ImageField(upload_to='annual-reports/')
     docs = models.FileField(upload_to='annual-reports/')
+
+
 def __str__(self):
      return self.year
 
+
 def get_docs_url(self):
         return self.docs.url  # Returns the URL of the uploaded file
-
-
 
 
 # 

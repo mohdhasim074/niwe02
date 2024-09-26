@@ -48,6 +48,7 @@ class NewslettersAdmin(admin.ModelAdmin):
     ordering = ['id']
 
 
+
 # 
 @admin.register(AnnualReport)
 class AnnualReportAdmin(admin.ModelAdmin): 

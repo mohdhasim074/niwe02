@@ -224,6 +224,13 @@ class SDT_vayumitra(models.Model):
         return self.title
 
 
+class SDT_Library(models.Model):
+    title_type = models.CharField(max_length=50, default='Library Type')
+    serial = models.IntegerField()
+    title_of_magzines = models.CharField(max_length=200)
+    subcription_status = models.CharField(max_length=50)
+
+
 # 
 #  Wind_Resources_Assessment
 class Wind_Resources_Assessment(models.Model):

@@ -10,7 +10,7 @@ from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra
     SDT_National_Page, SDT_InternationalTraining_eitec, \
     SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec, \
     SDT_Training_Sub_calender, SDT_Training_calender, SDT_Eitc_Trainings, \
-    SDT_Eitc_Sub_Training
+    SDT_Eitc_Sub_Training, SDT_Library
 
 
 def index(request):
@@ -133,7 +133,11 @@ def Academy(request):
 
 # library
 def Library(request):
-    return render (request, 'tab-library.html')
+    Library = SDT_Library.objects.all()
+    context = {
+        "Library":Library
+    }
+    return render (request, 'tab-library.html', context)
 
 
 # 

@@ -146,7 +146,7 @@
           </tbody>
         </table>
 
-        <table class="table table-borderd">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -158,26 +158,26 @@
             {% for item in Library %}
              {% if item.title_type == "International Journals" %}
             <tr>
-              <th colspan="3">{{ item.title_type  }}International Journals</th>
+              <th colspan="3">International Journals</th>
             </tr>
 
             <tr>
-              <td>1 {{ item.serial}}</td>
-              <td>IEEJ - Energy Journal {{ itme.title_of_magzines}}</td>
-              <td>Print Copy {{ item.subcription_status}}</td>
+              <td>{{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td> {{ item.subcription_status}}</td>
             </tr>
             {% endif %} {% endfor %} 
             
             {% for item in Library %} 
             {% if item.title_type == "International Magazines" %}
             <tr>
-              <th colspan="3">{{ item.title_type  }}International Magazines</th>
+              <th colspan="3">International Magazines</th>
             </tr>
 
             <tr>
-              <td>1 {{ item.serial}}</td>
-              <td>IEEJ - Energy Journal {{ itme.title_of_magzines}}</td>
-              <td>Print Copy {{ item.subcription_status}}</td>
+              <td> {{ item.serial}}</td>
+              <td>{{ item.title_of_magzines}}</td>
+              <td> {{ item.subcription_status}}</td>
             </tr>
             {% endif %} {% endfor %}
 

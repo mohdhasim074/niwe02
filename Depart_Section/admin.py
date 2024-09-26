@@ -11,7 +11,8 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub,\
     WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda,\
     WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender,\
-    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training
+    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training,\
+    SDT_Library
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -147,6 +148,13 @@ class SDT_EITC_Training(admin.ModelAdmin):
     list_filter = ('id',)
     ordering = ['id']
 
+
+@admin.register(SDT_Library)
+class SDT_Libraries(admin.ModelAdmin):
+    list_display = ('title_type', 'serial', 'id',)
+    search_fields = ('title_type', 'serial', 'id',)
+    list_filter = ('id', 'title_type',)
+    ordering = ['id']
 
 
 class SDT_InternationalTrainingSubEitecInline(admin.StackedInline):  # You can also use TabularInline for a table format
