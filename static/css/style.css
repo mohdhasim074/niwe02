@@ -1028,7 +1028,7 @@ ul {
   box-shadow: 0 0 0 0.25rem rgba(13, 109, 253, 0);
 }
 
-.rnd-div .accordion-button:not(.collapsed) {
+.rnd-div .accordion-button:not(.collapsed) { 
   color: #ffffff;
   background-color: rgb(212, 181, 0);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);

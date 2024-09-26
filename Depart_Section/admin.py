@@ -12,7 +12,7 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda,\
     WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender,\
     SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training,\
-    SDT_Library
+    SDT_Library, SDT_Global_Sub_Wind
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -298,10 +298,17 @@ class VayumitraAdmin(admin.ModelAdmin):
     ordering = ['id']
 
 
+class SDT_Global_SubInline(admin.StackedInline):
+    model = SDT_Global_Sub_Wind
+    extra=1
+
 @admin.register(SDT_GlobalWindDay)
 class SDT_Global(admin.ModelAdmin):
+    inlines = [SDT_Global_SubInline]
     list_display = ('title',)
     ordering = ['id']
+
+
 
 
 @admin.register(SDT_Webinar)

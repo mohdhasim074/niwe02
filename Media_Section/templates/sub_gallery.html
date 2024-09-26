@@ -27,9 +27,11 @@
 
 <section class="main-div" id="divContent">
   <div class="container">
+    
     <div class="row mx-auto gallery">
       <h4>Album: {{ album.title }}</h4>
       {% for sub_album in sub_albums %}
+
       <div class="col-lg-2 col-md-3 col-sm-6 col-12">
         <a href="{{ sub_album.image.url }}" class="big">
           <div class="card sub-gallery-card p-0">
@@ -44,6 +46,7 @@
           </div>
         </a>
       </div>
+
       {% endfor %}
     </div>
   </div>

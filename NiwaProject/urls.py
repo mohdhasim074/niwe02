@@ -99,6 +99,8 @@ urlpatterns = [
      path('training_calander/<int:data_id>/', views.training_calander_sub, name='training_calander_sub'),
      
      path('global_wind_day/', views.global_wind_day, name='global_wind_day'),
+     path('global_wind_day/<int:global_id>', views.gloabl_sub_wind_day, name='gloabl_sub_wind_day'),
+     
      path('webinar/', views.webinar, name='webinar'),
      path('workshop_confrence/', views.workshop_confrence, name='workshop_confrence'),
      path('workshop_confrence/<int:workshop_id>/', views.workshop_confrence_images, name='workshop_confrence_year'),

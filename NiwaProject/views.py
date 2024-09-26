@@ -10,7 +10,7 @@ from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra
     SDT_National_Page, SDT_InternationalTraining_eitec, \
     SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec, \
     SDT_Training_Sub_calender, SDT_Training_calender, SDT_Eitc_Trainings, \
-    SDT_Eitc_Sub_Training, SDT_Library
+    SDT_Eitc_Sub_Training, SDT_Library, SDT_Global_Sub_Wind
 
 
 def index(request):
@@ -192,6 +192,14 @@ def global_wind_day(request):
     globals = SDT_GlobalWindDay.objects.all()
     context = {"globals": globals}
     return render (request, 'tab-global.html', context)
+
+def gloabl_sub_wind_day(request, global_id):
+    item=get_object_or_404(SDT_GlobalWindDay, id=global_id)
+    sub_global = SDT_Global_Sub_Wind.objects.filter(item=item).order_by('id')
+    context={
+        "sub_global":sub_global, "item":item
+    }
+    return render (request, 'tab-global-sub.html', context)
 
 
 def webinar(request):

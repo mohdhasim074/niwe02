@@ -63,6 +63,7 @@ class SDT_Customize_Training(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=255)
     # link = models.URLField()
+    #  models.DateField(null=True, blank=True)
 
 
 class SDT_Customize_Training_Sub(models.Model):
@@ -94,17 +95,21 @@ class SDT_Short_Term(models.Model):
     def __str__(self):
         return self.title
 
+    #  models.DateField(null=True, blank=True)
+
     
 class SDT_GlobalWindDay(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=255)
-    url = models.URLField()
-
+    
     def __str__(self):
      return self.title
 
-    def get_url_url(self):
-        return self.url.url  # Returns the URL of the uploaded file
+
+class SDT_Global_Sub_Wind(models.Model):
+    item = models.ForeignKey(SDT_GlobalWindDay, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    description = HTMLField(null=True, blank=True)
 
 
 class SDT_workshop(models.Model):
@@ -190,6 +195,7 @@ class SDT_InternationalTraining_eitec(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)  # Add slug field
+    #  models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"{self.serial}. {self.title} ({self.item.title})"
@@ -229,7 +235,7 @@ class SDT_Library(models.Model):
     serial = models.IntegerField()
     title_of_magzines = models.CharField(max_length=200)
     subcription_status = models.CharField(max_length=50)
-
+    
 
 # 
 #  Wind_Resources_Assessment
@@ -243,9 +249,10 @@ class WRA_Sale_publication(models.Model):
     product = models.CharField(max_length=250)
     price = models.CharField(max_length=250)
     total_amount1 = models.CharField(max_length=250)
-    total_amount2 = models.CharField(max_length=250)
-    charge = models.CharField(max_length=250)
-    remarks = models.CharField(max_length=250)
+    total_amount2 = models.CharField(null=True, blank=True)
+    #  models.DateField(null=True, blank=True)
+    charge = models.CharField(max_length=50)
+    remarks = models.CharField(max_length=255)
 
 
 class WRA_srra_stations(models.Model):

@@ -24,7 +24,7 @@
         <a href="{% url 'national_training' %}">National Training</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        {% for national in custom %} {{national.title}} {% endfor %}
+        {% for national in custom %} {{national.title|safe}} {% endfor %}
       </li>
     </ol>
   </nav>
