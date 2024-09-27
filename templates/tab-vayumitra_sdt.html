@@ -24,7 +24,6 @@
   </nav>
 </div>
 
-
 <section class="rnd-div" id="divContent">
   <div class="container">
     <div class="row col-12">
@@ -67,16 +66,26 @@
           </p>
         </div>
         <div class="row py-2">
-          {% for item in vayumitra %}
           <div class="col-12">
+            <p class="fst-italic mb-2 text-light bg-success">
+              1 &nbsp &nbsp
+              <a href="#" target="_blank" class="text-light">
+                Last date for submission of Expression of Interest (EoI) of
+                Vayumitra Skill Development Programme for the FY 2024-&nbsp &nbsp25 is
+                extended upto 19.03.2024 till 03.30 PM
+              </a>
+            </p>
+
+            {% for item in vayumitra %}
             <p class="fst-italic mb-2 text-light bg-success">
               {{ item.serial}} &nbsp &nbsp
               <a href="{{ item.docs }}" target="_blank" class="text-light">
                 {{ item.title }}
               </a>
             </p>
+
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>
 

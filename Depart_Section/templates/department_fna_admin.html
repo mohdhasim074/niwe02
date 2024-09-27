@@ -23,8 +23,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h5>
-          Revised format of ACR
+        <h6>
+          <a href="/static/pdf/Revised_ACR_format.docx">
+            Revised format of ACR
+          </a>
           <span
             class="blink_me"
             style="
@@ -35,26 +37,16 @@
             "
             >New</span
           >
-        </h5>
+        </h6>
 
-        <h5 class="pt-2">NIWE Welfare Fund Scheme</h5>
+        <h6 class="pt-2">
+          <a href="/static/pdf/NIWE_Welfare_Fund_Scheme.pdf " target="_blank">
+            NIWE Welfare Fund Scheme
+          </a>
+        </h6>
       </div>
-      <div class="col-md-4">
-        <div class="depart-side-tabs">
-          <ul>
-            <a href="{% url 'admin' %}">
-              <li>Administration</li>
-            </a>
-            <a href="{% url 'finance' %}">
-              <li>Finance</li>
-            </a>
 
-            <a href="{% url 'purchase' %}">
-              <li>Purchase</li>
-            </a>
-          </ul>
-        </div>
-      </div>
+      <div class="col-md-4">{% include "depart-fa-side-tabs.html" %}</div>
     </div>
   </div>
 </section>

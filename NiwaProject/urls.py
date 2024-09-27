@@ -104,7 +104,9 @@ urlpatterns = [
      path('webinar/', views.webinar, name='webinar'),
      path('workshop_confrence/', views.workshop_confrence, name='workshop_confrence'),
      path('workshop_confrence/<int:workshop_id>/', views.workshop_confrence_images, name='workshop_confrence_year'),
+
      path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
+    #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
      
 ]
 if settings.DEBUG:

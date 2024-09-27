@@ -42,7 +42,15 @@ class Skill_developements_training(models.Model):
     title = models.CharField(max_length=255)  # max_length is required
     description = HTMLField(null=True, blank=True)
 
+class Department_Fna_Purchase(models.Model):
+    annexure=models.CharField(max_length=200)
+    docs = models.FileField(upload_to='departs/')
     
+class Department_Fna_Finance(models.Model):
+    title = models.CharField(max_length=200)
+    docs = models.FileField(upload_to='departs/')
+
+
 class Department_testing_measure(models.Model): 
     title = models.CharField(max_length=100)
 
@@ -152,7 +160,7 @@ class SDT_Eitc_Trainings(models.Model):
 class SDT_Eitc_Sub_Training(models.Model):
     item = models.ForeignKey(SDT_Eitc_Trainings, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    data = HTMLField(null=True, blank=True)
+    data = HTMLField( blank=True , default='.') 
 
     def __str__(self):
         return f"Training-Calender  of {self.item.project_title}"
@@ -170,7 +178,7 @@ class SDT_Training_calender(models.Model):
 class SDT_Training_Sub_calender(models.Model):
     item = models.ForeignKey(SDT_Training_calender, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    data = HTMLField(null=True, blank=True)
+    data = HTMLField( blank=True)
 
     def __str__(self):
         return f"Training-Calender  of {self.item.description}"
@@ -223,11 +231,18 @@ class SDT_InternationalTraining_sub_eitec(models.Model):
     
 class SDT_vayumitra(models.Model):
     serial = models.IntegerField()
-    title = models.CharField(max_length=255)
-    docs = models.FileField(upload_to='annual-reports/')
+    title = models.CharField(max_length=205)
+    # title_type = models.CharField(max_length=20, default='docs', blank=True)
+    # url = models.URLField(max_length=200, blank=True,)
+    docs = models.FileField(upload_to='annual-reports/', blank=True)
 
     def __str__(self):
         return self.title
+    
+# class SDT_Vayumitra_sub(models.Model):
+#     item = models.ForeignKey(SDT_vayumitra, on_delete=models.CASCADE)
+#     files = models.FileField(upload_to='annual-reports/', blank=True)
+#     url = models.URLField(max_length=200, blank=True)
 
 
 class SDT_Library(models.Model):
@@ -241,7 +256,7 @@ class SDT_Library(models.Model):
 #  Wind_Resources_Assessment
 class Wind_Resources_Assessment(models.Model):
     title = models.CharField(max_length=255)  # max_length is required
-    description = HTMLField(null=True, blank=True)
+    description = HTMLField( blank=True)
 
 
 class WRA_Sale_publication(models.Model):
@@ -249,10 +264,10 @@ class WRA_Sale_publication(models.Model):
     product = models.CharField(max_length=250)
     price = models.CharField(max_length=250)
     total_amount1 = models.CharField(max_length=250)
-    total_amount2 = models.CharField(null=True, blank=True)
+    total_amount2 = models.CharField( blank=True)
     #  models.DateField(null=True, blank=True)
     charge = models.CharField(max_length=50)
-    remarks = models.CharField(max_length=255)
+    remarks = models.CharField(max_length=275)
 
 
 class WRA_srra_stations(models.Model):
@@ -366,6 +381,6 @@ class RelatedImage(models.Model):
 #  finance
 class Finance_and_Administration(models.Model):
 
-    description = HTMLField()
-    NIWE_Pan_ARN_GST_Details = HTMLField()
+    description = HTMLField( blank=True)
+    NIWE_Pan_ARN_GST_Details = HTMLField( blank=True)
     

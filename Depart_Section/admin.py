@@ -6,13 +6,14 @@ from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     SDT_InternationalTraining, SDT_National, \
     SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential,  \
+    WRA_Estimated_Potential, \
     SDT_National_Page, SDT_InternationalTraining_eitec, \
-    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub,\
-    WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda,\
-    WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender,\
-    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training,\
-    SDT_Library, SDT_Global_Sub_Wind
+    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub, \
+    WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda, \
+    WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender, \
+    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training, \
+    SDT_Library, SDT_Global_Sub_Wind, Department_Fna_Purchase, \
+    Department_Fna_Finance
 
 # 
 # class ImageInline(admin.StackedInline):
@@ -108,6 +109,8 @@ class Customized_Training(admin.ModelAdmin):
     
     list_display = ('title',)
     ordering = ['id']
+
+
 # 
 class SDT_Nationals_pagesInline(admin.StackedInline):
     model = SDT_National_Page
@@ -121,16 +124,19 @@ class SDT_Nationals(admin.ModelAdmin):
     search_fields = ('id',)
     list_filter = ('id',)
     ordering = ['id']
+
+
 # 
 class SDT_TrainingInline(admin.StackedInline):
     model = SDT_Training_Sub_calender
     extra = 1
 
+
 @admin.register(SDT_Training_calender)
 class SDT_TrainingCalender(admin.ModelAdmin):
     inlines = [SDT_TrainingInline]
     list_display = ('id', 'description',)
-    search_fields = ('id','serial',)
+    search_fields = ('id', 'serial',)
     list_filter = ('id',)
     ordering = ['id']
 
@@ -144,7 +150,7 @@ class SDT_EITC_TrainingInline(admin.StackedInline):
 class SDT_EITC_Training(admin.ModelAdmin):
     inlines = [SDT_EITC_TrainingInline]
     list_display = ('id', 'project_title',)
-    search_fields = ('id','serial',)
+    search_fields = ('id', 'serial',)
     list_filter = ('id',)
     ordering = ['id']
 
@@ -197,10 +203,24 @@ class RelatedImageInline(admin.StackedInline):
     
 @admin.register(WRA_Sale_publication)
 class Wra_Sale_publications(admin.ModelAdmin):
-    list_display = ('serial', 'product', 'price',)
-    search_fields = ('id',)
+    list_display = ('product', 'serial', 'price',)
+    search_fields = ('id', 'serial',)
+    ordering = ['serial']
+
+    
+@admin.register(Department_Fna_Finance)
+class Department_FNA_Finances(admin.ModelAdmin):
+    list_display = ('title', 'id',)
+    search_fields = ('id', 'title',)
     ordering = ['id']
 
+
+@admin.register(Department_Fna_Purchase)
+class Department_FNA_Purchases(admin.ModelAdmin):
+    list_display = ('annexure', 'id',)
+    search_fields = ('id', 'annexure',)
+    ordering = ['id']
+    
     
 @admin.register(WRA_srra_stations)
 class Wra_Srra_Stations(admin.ModelAdmin):
@@ -235,42 +255,47 @@ class WRA_Power_Potential(admin.ModelAdmin):
 @admin.register(WRA_Srra_Station_phases)
 class Wra_Srra_phase(admin.ModelAdmin):
     
-    search_fields = ('station_id','id',)
-    list_display=('station_id',)
-    list_filter=('id',)
+    search_fields = ('station_id', 'id',)
+    list_display = ('station_id',)
+    list_filter = ('id',)
     ordering = ['id']
+
     
 @admin.register(WRA_Srra_Station_phaseII)
 class Wra_Srra_phaseII(admin.ModelAdmin):
     
-    search_fields = ('station_id','id',)
-    list_display=('station_id',)
-    list_filter=('id',)
+    search_fields = ('station_id', 'id',)
+    list_display = ('station_id',)
+    list_filter = ('id',)
     ordering = ['id']
+
     
 @admin.register(WRA_Srra_Station_meda)
 class Wra_Srra_phase_meda(admin.ModelAdmin):
     
-    search_fields = ('station_id','id',)
-    list_display=('station_id',)
-    list_filter=('id',)
+    search_fields = ('station_id', 'id',)
+    list_display = ('station_id',)
+    list_filter = ('id',)
     ordering = ['id']
+
     
 @admin.register(WRA_Srra_Station_anert)
 class Wra_Srra_phase_anert(admin.ModelAdmin):
     
-    search_fields = ('station_id','id',)
-    list_display=('station_id',)
-    list_filter=('id',)
+    search_fields = ('station_id', 'id',)
+    list_display = ('station_id',)
+    list_filter = ('id',)
     ordering = ['id']
+
     
 @admin.register(WRA_Srra_Station_ams)
 class Wra_Srra_phase_ams(admin.ModelAdmin):
     
-    search_fields = ('station_id','id',)
-    list_display=('station_id',)
-    list_filter=('id',)
+    search_fields = ('station_id', 'id',)
+    list_display = ('station_id',)
+    list_filter = ('id',)
     ordering = ['id']
+
     
 # 
 @admin.register(Offshore_Wind_Development)
@@ -278,8 +303,8 @@ class OwdAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'description')
     ordering = ['id']
-    list_filter = ('id','title',)
-    search_fields=('title','id',)
+    list_filter = ('id', 'title',)
+    search_fields = ('title', 'id',)
     inlines = [RelatedImageInline]
 
 
@@ -288,27 +313,32 @@ class FnAdmin(admin.ModelAdmin):
     list_display = ('description', 'NIWE_Pan_ARN_GST_Details')
     list_filter = ('id',)
 
-    
+
+# class VayumitraSubInline(admin.StackedInline):
+#     model = SDT_Vayumitra_sub
+#     extra = 1
+
+
 @admin.register(SDT_vayumitra)
 class VayumitraAdmin(admin.ModelAdmin):
+    # inlines = [VayumitraSubInline]
     list_filter = ('id',)
-    list_display = ('id',)
-    search_fields=('id',)
+    list_display = ( 'title','id',)
+    search_fields = ('id',)
     
     ordering = ['id']
 
 
 class SDT_Global_SubInline(admin.StackedInline):
     model = SDT_Global_Sub_Wind
-    extra=1
+    extra = 1
+
 
 @admin.register(SDT_GlobalWindDay)
 class SDT_Global(admin.ModelAdmin):
     inlines = [SDT_Global_SubInline]
     list_display = ('title',)
     ordering = ['id']
-
-
 
 
 @admin.register(SDT_Webinar)

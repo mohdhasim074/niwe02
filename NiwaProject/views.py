@@ -284,6 +284,15 @@ def vayumitra_sdt(request):
     return render (request, 'tab-vayumitra_sdt.html', content)
 
 
+# def vayumitra_sdt_sub(request, vayumitra_id):
+#     item = get_object_or_404(SDT_vayumitra, id=vayumitra_id)
+#     vayumitra_sub = SDT_Vayumitra_sub.objects.filter(item=item).order_by('id')
+#     context={
+#         "item": item, "vayumitra_sub":vayumitra_sub
+#     }
+#     return render (request, 'tab-vayumitra_sdt_sub.html', context)
+
+
 # 
 # newsletters :
 def newsletters(request):

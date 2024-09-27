@@ -5,10 +5,12 @@ urlpatterns = [
     
     path('depart_side_tabs/', views.depart_side_tabs, name='sideTab'),
     path('department_certification/', views.department_certification, name='certificate'),
+    
     path('department_fa/', views.department_fa, name='finance'),
     path('department_fna_admin/', views.department_fna_admin, name='admin'),
     path('department_fna_finance/', views.department_fna_finance, name='fin'),
     path('department_fna_purchase/', views.department_fna_purchase, name='purchase'),
+    
     path('department_owd_lidar_raw_data/', views.department_owd_lidar_raw_data, name='rawData'),
     path('department_owd/', views.department_owd, name='owd'),
     path('department_rnd/', views.department_rnd, name='r&d'),

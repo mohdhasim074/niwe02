@@ -3,7 +3,8 @@ from django.http import request
 from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
       Department_testing_measure, Department_testing_measureType, \
     WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential,  WRA_Srra_Station_phases, WRA_Srra_Station_phaseII
+    WRA_Estimated_Potential,  WRA_Srra_Station_phases, WRA_Srra_Station_phaseII,\
+    Department_Fna_Purchase, Department_Fna_Finance
 from . models import Reserach_n_Development, Testing_and_Standards_Regulation, Departments, Wind_Resources_Assessment, Finance_and_Administration, Offshore_Wind_Development, Skill_developements_training
 
 
@@ -28,11 +29,19 @@ def department_fna_admin(request):
 
 
 def department_fna_finance(request):
-    return render(request, "department_fna_finance.html")
+    Finance=Department_Fna_Finance.objects.all()
+    context={
+        "Finance":Finance
+    }
+    return render(request, "department_fna_finance.html", context)
 
 
 def department_fna_purchase(request):
-    return render(request, "department_fna_purchase.html")
+    purchase = Department_Fna_Purchase.objects.all()
+    context={
+        "purchase":purchase
+    }
+    return render(request, "department_fna_purchase.html", context)
 
 
 def department_owd_lidar_raw_data(request):
