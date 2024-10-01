@@ -110,16 +110,16 @@
           <div class="line"></div>
 
           {% for data in dgm %}
-          <div class="row">
+          <div class="row" id="divContent">
             <div class="col-md-4 col-12">
               <div class="director-img">
                 {% if data.Dirs_image %}
-                <img src="{{data.Dirs_image.url}}" class="pb-1" />
+                <img src="{{data.Dirs_image.url}}" class="pb-1" alt="dgm_img" />
 
                 {% else %}
                 <!-- <img src="{% static '/images/men.png' %}" class="pb-1"> -->
 
-                <img src="media/images/men.png" class="pb-1" />
+                <img src="media/images/men.png" class="pb-1" alt="dgm" />
                 {% endif %}
                 <h4 class="text-center">Dr. Rajesh Katyal</h4>
                 <h6 class="text-center">Director General</h6>
@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4">
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4"  id="divContent">
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <button
@@ -375,12 +375,12 @@
   </div>
 </section>
 <!-- Manuals section -->
-<section class="container-fluid bg-light text-center mt-2" >
+<section class="container-fluid bg-light text-center mt-2" id="divContent">
   <div class="container pt-4 pb-4" id="divContent">
     <div class="row">
       <!-- Panel 1: Manuals -->
       <div class="col-lg-4 col-md-6 col-12">
-        <button
+        <button              
           class="faq__question"
           onclick="toggleAnswer('panel1')"
           aria-expanded="false"
@@ -599,21 +599,20 @@
 </section>
 
 <!-- Photo Gallery -->
-
-<section class="container">
+<section class="container"  id="divContent">
   <div class="gallery">
     <div class="row align-items-center">
+      
       <div class="col-md-4 col-12">
         <div class="content">
           <h4>Our Gallery</h4>
-
           <h1>Explore Our Photos and Video Gallery</h1>
-
           <a href="{% url 'gallery' %}">
             <button class="view-btn mt-3">View All</button></a
           >
         </div>
       </div>
+
       <div class="col-md-8 col-12">
         <div class="gallery-slider">
           <div class="carousel-wrap">
@@ -641,7 +640,27 @@
                   <img
                     src="{% static '/images/img1725.jpg' %}"
                     class=""
-                    alt=""
+                    alt="img3"
+                  /> 
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt="img4"
+                  />
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="card">
+                  <img
+                    src="{% static '/images/img1725.jpg' %}"
+                    class=""
+                    alt="img5"
                   />
                 </div>
               </div>
@@ -650,25 +669,7 @@
                   <img
                     src="{% static '/images/img1725.jpg' %}"
                     class=""
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card">
-                  <img
-                    src="{% static '/images/img1725.jpg' %}"
-                    class=""
-                    alt="img"
-                  />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card">
-                  <img
-                    src="{% static '/images/img1725.jpg' %}"
-                    class=""
-                    alt=""
+                    alt="img6"
                   />
                 </div>
               </div>
@@ -680,21 +681,24 @@
   </div>
 </section>
 
-<script>
-  // JavaScript function to toggle panel visibility
-  function toggleAnswer(panelId) {
-    var panel = document.getElementById(panelId);
-    var button = document.querySelector(`button[aria-controls="${panelId}"]`);
-
-    if (panel.classList.contains("d-none")) {
-      panel.classList.remove("d-none");
-      button.setAttribute("aria-expanded", "true");
-    } else {
-      panel.classList.add("d-none");
-      button.setAttribute("aria-expanded", "false");
+<!--
+  <script>
+    // JavaScript function to toggle panel visibility
+    function toggleAnswer(panelId) {
+      var panel = document.getElementById(panelId);
+      var button = document.querySelector(`button[aria-controls="${panelId}"]`);
+  
+      if (panel.classList.contains("d-none")) {
+        panel.classList.remove("d-none");
+        button.setAttribute("aria-expanded", "true");
+      } else {
+        panel.classList.add("d-none");
+        button.setAttribute("aria-expanded", "false");
+      }
     }
-  }
-</script>
+  </script>
+
+-->
 
 <!-- footer -->
 

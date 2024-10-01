@@ -68,8 +68,8 @@
                   <td colspan="2">DG's Secretariat</td>
                 </tr>
 
-                {% for staff in dgStaff %} {% if staff.department == "DG's
-                Secretariat" %}
+                {% for staff in dgStaff %} 
+                {% if staff.department == "DG's Secretariat" %}
                 <tr>
                   <td>
                     <a href="{% url 'dg_staff_photo' staff.id %}">
