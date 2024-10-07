@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    $('.owl-carousel').owlCarousel({
+    $('.index-gallery').owlCarousel({
         loop: true,
         margin: 10,
         nav: true,
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 items: 1
             },
             1000: {
-                items: 2
+                items:2
             }
         }
     })

@@ -441,9 +441,17 @@
     </nav>
     <div class="dearch-div" style="display: none">
       <div class="container">
-        <form id="search-form">
+       <!--
+       <form id="search-form">
           <input type="search" id="search-input" placeholder="Search here" />
         </form>
+      -->
+
+      <form action="{% url 'search' %}" method="get" class="d-flex">
+        <input type="search" name="query" placeholder="Search here" class="form-control me-2" />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      
       </div>
     </div>
   </body>
