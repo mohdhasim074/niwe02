@@ -1,0 +1,42 @@
+<!-- search_results.html -->
+{% include 'header.html' %}
+
+
+<section class="rnd-div">
+    <div class="container">
+        <!-- for about sections -->
+
+        <ul>
+            {% for about in aboutUs %}
+                <li>{{ about.title }}: {{ about.description }}</li>
+            {% empty %}
+                {% comment %} <li>No data found.</li> {% endcomment %}
+               
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for about in background %}
+                <li>{{ about.description }}</li>
+            {% empty %}
+            {% endfor %}
+        </ul>
+        
+        <ul>
+            {% for department in departments %}
+                <li>{{ department.title }}: {{ department.description }}</li>
+            {% empty %}
+            {% endfor %}
+        </ul>
+        
+        <ul>
+            {% for certification_procedure in certification_procedures %}
+                <li>{{ certification_procedure.title }}: {{ certification_procedure.description }}</li>
+            {% empty %}
+            {% endfor %}
+        </ul>
+
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
