@@ -11,7 +11,7 @@ class Documents(models.Model):
 # 
 class GeneralInformation(models.Model):
     title = models.CharField(max_length=250)
-    description = HTMLField(blank=True)
+    description = HTMLField(blank=True) 
 
 
 # 

@@ -1,89 +1,77 @@
-
 {% load static %}
 {% include 'header.html' %}
 
-    <!-- nav end  -->
+<!-- nav end -->
 
-    <section class="head-div">
-        <div class="overlay d-flex align-items-center">
-            <div class="container">
-                <h1 class="text-white">Research and Development (R&D)</h1>
-            </div>
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Research and Development (R&D)</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Research and Development (R&D)</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="accordion" id="rnds1">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="rnd1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#collapseRnd" aria-expanded="true" aria-controls="collapseRnd">Research and Development (R&D)</button></h2>
+        <div id="collapseRnd" class="accordion-collapse collapse hide" 
+        aria-labelledby="rnd1" data-bs-parent="#rnds1">
+          <div class="accordion-body">
+            {% comment %} {{ data.Research_and_Development|safe }} {% endcomment %}R&D Unit of NIWE was established with the aim of addressing the specific purpose of supporting time bound and mission oriented research and development programmes to achieve and maintain world class, reliable and cost effective technology in wind power systems. The Unit continues to improve its knowledge and skills through continuous learning, to keep pace with the State-of-the-Art Technology and excel through innovative approaches. The Unit carries out in-house R&D and coordinates research and development programs through effective networking with academic institutions, industry, experts and consultants working in a wide spectrum of disciplines for the benefit of wind energy sector.<ul class="mt-3">
+              <li>
+                Industrial Research & Acadamic Interaction (IRAI) MoU <span>&nbsp; <a href="{% static '/images/(IRAI)_MoU.pdf' %}" style="color:red;font-size:20px"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></span> &nbsp;<span><a href="{% static '/images/Industrial_Research_and_Academic_Interaction_(IRAI)_MoU (2).docx' %}" style="font-size:20px"><i class="fa fa-file-word-o" aria-hidden="true"></i></a></span>
+              </li>
+              <li>NIWE being the model institution in the entire Asia-pacific accordingly to demonstrate the renewable energy technologies and also to conduct research relevant activities, the following facilities has been established</li>
+            </ul>
+            <ol type="a" class="mt-3">
+              <li>&nbsp;2 MW Variable speed wind turbine</li>
+              <li>&nbsp;600 kW constant speed Wind Turbine</li>
+              <li>&nbsp;200 kW constant speed wind turbines</li>
+              <li>&nbsp;5 kW wind solar hybrid system</li>
+            </ol>
+          </div>
         </div>
-    </section>
-      <div class="container">
-          <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb bg-transparent p-0">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item " aria-current="page"><a href="{% url 'departments' %}" >Department</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"  >Research and Development (R&D)</li>
-                    </ol>
-            </nav>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="rnd_2"><button class="accordion-button collapsed" 
+            type="button" data-bs-toggle="collapse" data-bs-target="#collapse_Rnd2" 
+            aria-expanded="false" aria-controls="collapse_Rnd2">{{ RnD.1.title|safe }}</button></h2>
+        <div id="collapse_Rnd2" class="accordion-collapse collapse" 
+        aria-labelledby=" " data-bs-parent="#rnd_2">
+          <div class="accordion-body">{{ RnD.1.description|safe }}</div>
         </div>
-
-    <section class="rnd-div" id="divContent">
-        <div class="container">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Research and Development (R&D)
-                </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    
-                <div class="accordion-body">
-
-                    {% comment %} {{ data.Research_and_Development|safe }} {% endcomment %}
-                    
-                R&D Unit of NIWE was established with the aim of addressing the specific purpose of supporting time bound and mission oriented research and development programmes to achieve and maintain world class, reliable and cost effective technology in wind power systems. The Unit continues to improve its knowledge and skills through continuous learning, to keep pace with the State-of-the-Art Technology and excel through innovative approaches. The Unit carries out in-house R&D and coordinates research and development programs through effective networking with academic institutions, industry, experts and consultants working in a wide spectrum of disciplines for the benefit of wind energy sector.
-                <ul class="mt-3">
-                    <li>Industrial Research & Acadamic Interaction (IRAI) MoU <span>&nbsp; <a href="{% static '/images/(IRAI)_MoU.pdf' %}" style="color:red;font-size:20px"> <i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></span> &nbsp;<span> <a href="{% static '/images/Industrial_Research_and_Academic_Interaction_(IRAI)_MoU (2).docx' %}" style="font-size:20px"> <i class="fa fa-file-word-o" aria-hidden="true"></i></a></span></li>
-                    <li>NIWE being the model institution in the entire Asia-pacific accordingly to demonstrate the renewable energy technologies and also to conduct research relevant activities, the following facilities has been established</li>  
-                </ul>
-                <ol type="a" class="mt-3">
-                        <li> &nbsp;2 MW Variable speed wind turbine</li>
-                        <li> &nbsp;600 kW constant speed Wind Turbine</li>
-                        <li> &nbsp;200 kW constant speed wind turbines</li>
-                        <li> &nbsp;5 kW wind solar hybrid system   </li>
-                    </ol> 
-                </div>
-                </div>
-            </div>
-            
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                {{RnD.1.title|safe}}
-                </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-
-                    {{RnD.1.description|safe}}
-                  
-                </div>   
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                {{RnD.2.title}}
-                </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-
-                    {{RnD.2.description|safe}}
-                    
-                </div>
-                      
-                </div>
-            </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="rndThree"><button class="accordion-button collapsed" 
+            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" 
+            aria-expanded="false" aria-controls="collapseThree">{{ RnD.2.title }}</button></h2>
+        <div id="collapseThree" class="accordion-collapse collapse" 
+        aria-labelledby="rndThree" data-bs-parent="#accordionRnd3">
+          <div class="accordion-body">{{ RnD.2.description|safe }}</div>
         </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- footer -->
+<!-- footer -->
 
-    {% include 'footer.html' %}
+{% include 'footer.html' %}

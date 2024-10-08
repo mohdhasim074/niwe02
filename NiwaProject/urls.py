@@ -45,6 +45,8 @@ urlpatterns = [
     
     path('', include('search_form.urls')),
     
+    path('', include('home_sections.urls')),
+    
 
     path('careers/', include('Career_Section.urls')),
     path('audit_report/', views.audit_report, name='audit'),

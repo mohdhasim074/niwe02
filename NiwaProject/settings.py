@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-7fmu@^)#2=@4w#6mpc3nh7!owl*t&i33b%&_80yr!=g05uf*)-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['192.168.14.11']
+ALLOWED_HOSTS = ['13.127.123.26']
 
 # https://github.com/mohdhasim074/niwe02.git
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'certification_services',
     'inspection_services',
     'search_form',
+    'home_sections',
     
 ]
 
@@ -91,9 +92,9 @@ WSGI_APPLICATION = 'NiwaProject.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "niwe_project",
-        "USER": "admin",
-        "PASSWORD": "admin04",
+        "NAME": "hasim_db",
+        "USER": "niwe_project",
+        "PASSWORD": "niwe@04",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
