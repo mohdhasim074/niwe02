@@ -30,7 +30,7 @@ class Events(models.Model):
 # for gallery/sub-gallery 
 
 
-class Album(models.Model):
+class Gallery(models.Model):
     title = models.CharField(max_length=255)
     cover_image = models.ImageField(upload_to='albums/')
 
@@ -38,11 +38,27 @@ class Album(models.Model):
         return self.title
 
  
-class SubAlbum(models.Model):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+class SubGallery(models.Model):
+    album = models.ForeignKey(Gallery, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='subalbums/')
 
     def __str__(self):
-        return f"Sub-Album of {self.album.title}"
+        return f"Sub-Gallery of {self.album.title}"
+
+ 
+class Think_Tank(models.Model):
+    title = models.CharField(max_length=155)
+#     cover_image = models.ImageField(upload_to='albums/')
+
+    def __str__(self): 
+        return self.title
+
+ 
+class Sub_Think_Tank(models.Model):
+    album = models.ForeignKey(Think_Tank, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='subalbums/')
+
+    def __str__(self):
+        return f"Sub-Think-tank of {self.album.title}"
 
  

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Award, Citizen_Charter, Events, Album, SubAlbum
+from .models import Award, Citizen_Charter, Events, SubGallery, Gallery, Sub_Think_Tank, Think_Tank
 
 
 @admin.register(Award)
@@ -23,13 +23,26 @@ class EventsAdmin(admin.ModelAdmin):
 
     
     # 
-class SubAlbumInline(admin.TabularInline):
-    model = SubAlbum
+class SubGalleryInline(admin.TabularInline):
+    model = SubGallery
     extra = 1
 
-class AlbumAdmin(admin.ModelAdmin):
-    inlines = [SubAlbumInline]
+class GalleryAdmin(admin.ModelAdmin):
+    inlines = [SubGalleryInline]
+    list_display=('title', 'id',)
+    
+    ordering = ['id']
+admin.site.register(Gallery, GalleryAdmin)
+
+
+class Sub_Think_TankInline(admin.TabularInline):
+    model = Sub_Think_Tank
+    extra = 1
+
+class Think_TankAdmin(admin.ModelAdmin):
+    inlines = [Sub_Think_TankInline]
+    list_display=('title', 'id',)
     ordering = ['id']
 
-admin.site.register(Album, AlbumAdmin)
+admin.site.register(Think_Tank, Think_TankAdmin)
 

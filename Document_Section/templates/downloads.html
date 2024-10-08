@@ -17,11 +17,11 @@
   </nav>
 </div>
 
-<section class="documents-div" id="divContent">
+<section class="rnd-div" id="divContent">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="downloads">
           {% for item in documents %}
           <div class="accordion-item">
             <h2 class="accordion-header" id="heading{{ forloop.counter }}">
@@ -30,7 +30,7 @@
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapse{{ forloop.counter }}"
-                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-expanded="false"
                 aria-controls="collapse{{ forloop.counter }}"
               >
                 {{ item.title|safe }}
@@ -40,7 +40,7 @@
               id="collapse{{ forloop.counter }}"
               class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
               aria-labelledby="heading{{ forloop.counter }}"
-              data-bs-parent="#accordionExample"
+              data-bs-parent="#downloads"
             >
               <div class="accordion-body">{{ item.description|safe }}</div>
             </div>

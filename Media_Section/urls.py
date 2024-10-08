@@ -11,5 +11,8 @@ urlpatterns = [
     path('awards/', views.awards, name='awards'),
     path('gallery/', views.album_list, name='gallery'),
     path('gallery/<int:album_id>/', views.sub_album_list, name='sub_gallery'),
+    
+    path('think_tank/', views.think_tank, name='think_tank'),
+    path('think_tank/<int:think_id>', views.sub_think_tank, name='sub_think_tank'),
 ]
 

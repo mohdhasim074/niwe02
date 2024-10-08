@@ -22,7 +22,9 @@
 
     <!-- fa fa icons -->
     <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}" />
-
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -94,11 +96,11 @@
                   <span class="grade-div"><a href="#">A</a></span>
                   <span class="grade-div"><a href="#">A+</a></span>
                   -->
-                  <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                  <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
                         href="#" id="linkIncrease">A<sup>+</sup></a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                    <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
                         href="#" id="linkReset">A</a>
-                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary text-secondary"
+                    <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
                         href="#" id="linkDecrease">A<sup>-</sup></a>
 
 
@@ -133,12 +135,19 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-3 col-12">
+          <div class="col-lg-1 col-md-3 col-12">
             <a href="https://mnre.gov.in/">
-              <img src="{% static '/images/sidelogo.png' %}" class="amritimg" alt="sidelogo" />
+              <img src="{% static '/images/emblem.png' %}" class="amritimg " style="height: 120px; width: auto;" alt="sidelogo" />
               {% comment %} static/images/indian-emblem.png {% endcomment %}
             </a>
           </div>
+          <div class="col-lg-2 col-md-3 col-12">
+            <a href="https://mnre.gov.in/">
+              <img src="{% static '/images/azadi_75_logo.jpg' %}" class="amritimg" alt="sidelogo" style="height: 145px; width: 110%;" />
+              {% comment %} static/images/indian-emblem.png {% endcomment %}
+            </a>
+          </div>
+
         </div>
       </div>
     </header>
@@ -401,7 +410,7 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'related_links' %}"
+                  <a class="dropdown-item" href="{% url 'related_link' %}"
                     >RELATED LINKS</a
                   >
                 </li>
