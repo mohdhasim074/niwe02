@@ -130,12 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'  # Add a leading slash
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # This is correct
-STATIC_ROOT = '/var/www/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # This is correct
+# STATIC_ROOT = '/var/www/static/'
 # media
 MEDIA_URL = '/media/'  # This is correct
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/var/www/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = '/var/www/media/'
 
 # for file size
 DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 10 MB limit
