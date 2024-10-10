@@ -1,42 +1,82 @@
 <!-- search_results.html -->
 {% include 'header.html' %}
 
-
 <section class="rnd-div" id="divContent">
-    <div class="container">
-        <!-- for about sections -->
+  <div class="container">
+    <!-- start about_section -->
 
-        <ul>
-            {% for about in aboutUs %}
-                <li>{{ about.title }}: {{ about.description }}</li>
-            {% empty %}
-                {% comment %} <li>No data found.</li> {% endcomment %}
-               
-            {% endfor %}
-        </ul>
-        <ul>
-            {% for about in background %}
-                <li>{{ about.description }}</li>
-            {% empty %}
-            {% endfor %}
-        </ul>
-        
-        <ul>
-            {% for department in departments %}
-                <li>{{ department.title }}: {{ department.description }}</li>
-            {% empty %}
-            {% endfor %}
-        </ul>
-        
-        <ul>
-            {% for certification_procedure in certification_procedures %}
-                <li>{{ certification_procedure.title }}: {{ certification_procedure.description }}</li>
-            {% empty %}
-            {% endfor %}
-        </ul>
+    <ul>
+      {% for about in aboutUs %}
+        <h3>{{ about.title }}:</h3>
+        <li>{{ about.description }}</li>
+      {% empty %}
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in background %}
+        <li>{{ about.description }}</li>
+      {% empty %}
 
-    </div>
+      {% endfor %}
+    </ul>
+    
 
+
+
+    <ul>
+      {% for about in DGMessage %}
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in charters %}
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in OrgChart %}
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for about in qualityPolicy %}
+        <li>{{ about.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+
+
+    <!-- End about_section -->
+
+    <!-- start department_section -->
+
+    <ul>
+      {% for department in departments %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+    <!-- start certification_section -->
+
+    <ul>
+      {% for certification_procedure in certification_procedure %}
+        <h3>{{ certification_procedure.title }}:</h3>
+        <li>{{ certification_procedure.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 
 {% include 'footer.html' %}
