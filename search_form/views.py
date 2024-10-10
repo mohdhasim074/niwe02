@@ -65,14 +65,14 @@ def search(request):
             # Search in Department model
             departments = Departments.objects.filter(title__icontains=query) | Departments.objects.filter(description__icontains=query)
             research_development  = Reserach_n_Development.objects.filter(title__icontains=query) | Reserach_n_Development.objects.filter(description__icontains=query)
-            finance_development  = Department_Fna_Finance.objects.filter(title__icontains=query) | Department_Fna_Finance.objects.filter(description__icontains=query)
+            finance_development  = Department_Fna_Finance.objects.filter(title__icontains=query) | Department_Fna_Finance.objects.filter(docs__icontains=query)
             finance_administration  = Finance_and_Administration.objects.filter(description__icontains=query) | Finance_and_Administration.objects.filter(NIWE_Pan_ARN_GST_Details__icontains=query)
-            depart_document  = depart_documents.objects.filter(title__icontains=query)
+            depart_document  = depart_documents.objects.filter(Description__icontains=query)
             depart_skill_development  = Skill_developements_training.objects.filter(title__contains=query)
             depart_owd  = Offshore_Wind_Development.objects.filter(title__icontains=query) | Offshore_Wind_Development.objects.filter(description__icontains=query)
-            depart_wind_resource  = Wind_Resources_Assessment.objects.filter(title_icontains=query) | Wind_Resources_Assessment.objects.filter(description__icontains=query)
+            # depart_wind_resource  = Wind_Resources_Assessment.objects.filter(title_icontains=query) | Wind_Resources_Assessment.objects.filter(description__icontains=query)
 
-            finance_purchase = finance_purchase.objects.filter(annexure__icontains=query)
+            finance_purchase = Department_Fna_Purchase.objects.filter(annexure__icontains=query)
             department_Testing=Testing_and_Standards_Regulation.objects.filter(title__icontains=query) | Testing_and_Standards_Regulation.objects.filter(description__icontains=query)
 
             # Search in Department model

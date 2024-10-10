@@ -1,7 +1,7 @@
 <!-- search_results.html -->
 {% include 'header.html' %}
 
-<section class="rnd-div" id="divContent">
+<section class="dgm-div " id="divContent">
   <div class="container">
     <!-- start about_section -->
 
@@ -24,8 +24,7 @@
     <ul>
       {% for about in DGMessage %}
         <h3>{{ about.title }}</h3>
-        <li>{{ about.Dirs_image }}</li>
-        <li>{{ about.description }}</li>
+        {{ about.description }}
       {% empty %}
 
       {% endfor %}
@@ -104,7 +103,6 @@
 
       {% endfor %}
     </ul>
-
 
     <!-- start department_section -->
 
