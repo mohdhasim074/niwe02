@@ -8,7 +8,7 @@ class AboutUs(models.Model):
 class DirectorGeneralMessage(models.Model):
     title = models.CharField()
     Dirs_image = models.FileField(upload_to="images/", null=True, default=None)
-    description = HTMLField()
+    description = HTMLField() 
 # 
 class Background(models.Model):
     description = HTMLField()    

@@ -1,9 +1,10 @@
 # views.py
 from django.shortcuts import render
 from about_section.models import AboutUs, DirectorGeneralMessage, Background, charter, OrganizationalChart, QualityPolicy
-from Depart_Section.models import Departments
 from certification_services.models import Certification_Procedure
 from Media_Section.models import Award, Citizen_Charter, Events, Gallery, Think_Tank
+from Depart_Section.models import Departments, Reserach_n_Development, Finance_and_Administration, Department_Fna_Finance, Offshore_Wind_Development,  Department_testing_measure,  Department_Fna_Purchase, Testing_and_Standards_Regulation,Wind_Resources_Assessment, Skill_developements_training, Wind_Terbine_photo, depart_documents
+
 from .forms import SearchForm
 
 def search(request):
@@ -26,6 +27,20 @@ def search(request):
     # for department_sections
     departments = [] 
     certification_procedure = []
+    research_development = []
+    finance_development= []
+    finance_administration= [] 
+    finance_purchase = []
+    department_Testing= []
+    depart_document=[]
+    depart_skill_development= []
+    
+    depart_owd= []
+    depart_wind_resource =[]
+    
+    
+    
+    
 
     if 'query' in request.GET:
         form = SearchForm(request.GET)
@@ -41,10 +56,24 @@ def search(request):
 
 
             # Search in media_section models
-            
+            award=   Award.objects.filter(title__icontains=query)  | Award.objects.filter(description__icontains=query) | Award.objects.filter(image_1__icontains=query) | Award.objects.filter(image_2__icontains=query)
+            citizen_charter=   Citizen_Charter.objects.filter(title__icontains=query) | Citizen_Charter.objects.filter(document_File__icontains=query)  
+            events=   Events.objects.filter(title__icontains=query) | Events.objects.filter(document_File__icontains=query) | Events.objects.filter(url__icontains=query)
+            gallery=   Gallery.objects.filter(title__icontains=query) | Gallery.objects.filter(cover_image__icontains=query)
+            thin_tank=   Think_Tank.objects.filter(title__icontains=query)
             
             # Search in Department model
             departments = Departments.objects.filter(title__icontains=query) | Departments.objects.filter(description__icontains=query)
+            research_development  = Reserach_n_Development.objects.filter(title__icontains=query) | Reserach_n_Development.objects.filter(description__icontains=query)
+            finance_development  = Department_Fna_Finance.objects.filter(title__icontains=query) | Department_Fna_Finance.objects.filter(description__icontains=query)
+            finance_administration  = Finance_and_Administration.objects.filter(description__icontains=query) | Finance_and_Administration.objects.filter(NIWE_Pan_ARN_GST_Details__icontains=query)
+            depart_document  = depart_documents.objects.filter(title__icontains=query)
+            depart_skill_development  = Skill_developements_training.objects.filter(title__contains=query)
+            depart_owd  = Offshore_Wind_Development.objects.filter(title__icontains=query) | Offshore_Wind_Development.objects.filter(description__icontains=query)
+            depart_wind_resource  = Wind_Resources_Assessment.objects.filter(title_icontains=query) | Wind_Resources_Assessment.objects.filter(description__icontains=query)
+
+            finance_purchase = finance_purchase.objects.filter(annexure__icontains=query)
+            department_Testing=Testing_and_Standards_Regulation.objects.filter(title__icontains=query) | Testing_and_Standards_Regulation.objects.filter(description__icontains=query)
 
             # Search in Department model
             certification_procedure = Certification_Procedure.objects.filter(title__icontains=query) | Certification_Procedure.objects.filter(description__icontains=query)
@@ -58,7 +87,28 @@ def search(request):
         'charters': charters,
         'OrgChart' : OrgChart, 
         'qualityPolicy' : qualityPolicy,
-        #  for departments
+        
+        # for media_section
+        
+        'award' : award,
+        'citizen_charter': citizen_charter,
+        'events' : events,
+        'gallery': gallery,
+        'thin_tank': thin_tank,
+        
+        # for department_section
+        
         'departments': departments,
+        'research_development' : research_development,
+        'finance_development':finance_development,
+        'finance_administration': finance_administration,
+        'finance_purchase': finance_purchase,
+
+        'depart_document': depart_document, 
+        'depart_skill_development': depart_skill_development,
+        'depart_owd': depart_owd,
+        'depart_wind_resource' :depart_wind_resource,
+        'department_Testing': department_Testing,
+        
         'certification_procedure': certification_procedure,
     })

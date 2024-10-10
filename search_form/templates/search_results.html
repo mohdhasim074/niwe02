@@ -10,6 +10,7 @@
         <h3>{{ about.title }}:</h3>
         <li>{{ about.description }}</li>
       {% empty %}
+
       {% endfor %}
     </ul>
     <ul>
@@ -19,12 +20,11 @@
 
       {% endfor %}
     </ul>
-    
-
-
 
     <ul>
       {% for about in DGMessage %}
+        <h3>{{ about.title }}</h3>
+        <li>{{ about.Dirs_image }}</li>
         <li>{{ about.description }}</li>
       {% empty %}
 
@@ -32,7 +32,9 @@
     </ul>
     <ul>
       {% for about in charters %}
-        <li>{{ about.description }}</li>
+        <li>{{ about.preamble }}</li>
+        <li>{{ about.mission }}</li>
+        <li>{{ about.objectives }}</li>
       {% empty %}
 
       {% endfor %}
@@ -40,21 +42,69 @@
     <ul>
       {% for about in OrgChart %}
         <li>{{ about.description }}</li>
+        <li>{{ about.image }}</li>
       {% empty %}
 
       {% endfor %}
     </ul>
     <ul>
       {% for about in qualityPolicy %}
-        <li>{{ about.description }}</li>
+        <li>{{ about.policyImage }}</li>
       {% empty %}
 
       {% endfor %}
     </ul>
 
+    <!-- Start media_section -->
+    <ul>
+      {% for department in award %}
+        <div>
+          <h3>{{ department.title }}:</h3>
+          <li>{{ department.image_1 }}</li>
+          <li>{{ department.image_2 }}</li>
+          <li>{{ department.description }}</li>
+        </div>
+      {% empty %}
 
+      {% endfor %}
+    </ul>
 
-    <!-- End about_section -->
+    <ul>
+      {% for department in citizen_charter %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.document_File }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in events %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.document_File }}</li>
+        <li>{{ department.url }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for gallerys in gallery %}
+        <h3>{{ gallerys.title }}:</h3>
+        <li>{{ gallerys.cover_image }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for think in thin_tank %}
+        <h3>{{ think.title }}:</h3>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
 
     <!-- start department_section -->
 
@@ -66,6 +116,88 @@
 
       {% endfor %}
     </ul>
+
+    <ul>
+      {% for research in research_development %}
+        <h3>{{ research.title }}:</h3>
+        <li>{{ research.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for finance in finance_administration %}
+        <li>{{ finance.description }}</li>
+        <li>{{ finance.NIWE_Pan_ARN_GST_Details }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in finance_purchase %}
+        <h3>{{ department.annexure }}:</h3>
+        <li>{{ department.docs }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in depart_document %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in depart_skill_development %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in depart_owd %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in finance_development %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in department_Testing %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
+    <ul>
+      {% for department in depart_wind_resource %}
+        <h3>{{ department.title }}:</h3>
+        <li>{{ department.description }}</li>
+      {% empty %}
+
+      {% endfor %}
+    </ul>
+
     <!-- start certification_section -->
 
     <ul>

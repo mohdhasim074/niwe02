@@ -9,7 +9,7 @@ class Award(models.Model):
      image_1 = models.FileField(upload_to='images/', null=True, blank=True)
      image_2 = models.FileField(upload_to='images/', null=True, blank=True)
 
-     def image_Tag(self):
+     def image_Tag(self): 
           return format_html('<img src="/static/{}" style="width:40px;height:40px;border-radius:50%;" />'.format(self.image_1))
      
      image_Tag.short_description = 'Image'
