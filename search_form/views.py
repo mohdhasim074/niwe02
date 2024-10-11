@@ -4,6 +4,7 @@ from about_section.models import AboutUs, DirectorGeneralMessage, Background, ch
 from certification_services.models import Certification_Procedure
 from Media_Section.models import Award, Citizen_Charter, Events, Gallery, Think_Tank
 from Depart_Section.models import Departments, Reserach_n_Development, Finance_and_Administration, Department_Fna_Finance, Offshore_Wind_Development,  Department_testing_measure,  Department_Fna_Purchase, Testing_and_Standards_Regulation,Wind_Resources_Assessment, Skill_developements_training, Wind_Terbine_photo, depart_documents
+from Document_Section.models import GeneralInformation,weg_install_world_wise,WEG_Installation_Details_India, RevisedGuidelinesForProject, RecordsRetentionSchedule, RelatedLinks,Newsletters,  AnnualReport
 
 from .forms import SearchForm
 
@@ -38,9 +39,16 @@ def search(request):
     depart_owd= []
     depart_wind_resource =[]
     
-    
-    
-    
+# for Document_section
+
+    genral_info= []
+    annual_report=[]
+    newsletters= []
+    related_links= []
+    record_retention=[]    
+    weg_Install_world=[]
+    revised_guidelines = []
+    weg_Install_India = []
 
     if 'query' in request.GET:
         form = SearchForm(request.GET)
@@ -78,6 +86,16 @@ def search(request):
             # Search in Department model
             certification_procedure = Certification_Procedure.objects.filter(title__icontains=query) | Certification_Procedure.objects.filter(description__icontains=query)
 
+            # for Document_section
+            genral_info=  GeneralInformation.objects.filter(title__icontains=query) | GeneralInformation.objects.filter(description__icontains=query)
+            # annual_report=  AnnualReport.objetcs.filter(year__icontains=query)
+            newsletters=  Newsletters.objects.filter(issue__icontains=query) | Newsletters.objects.filter(year__icontains=query)
+            weg_Install_world = weg_install_world_wise.objects.filter(position__icontains=query) | weg_install_world_wise.objects.filter(country__icontains=query) | weg_install_world_wise.objects.filter(capacity__icontains=query)
+            weg_Install_India= WEG_Installation_Details_India.objects.filter(sr_no__icontains=query) | WEG_Installation_Details_India.objects.filter(state__icontains=query) | WEG_Installation_Details_India.objects.filter(upto_31_03_2002__icontains=query) | WEG_Installation_Details_India.objects.filter(year_2002_03__icontains=query) | WEG_Installation_Details_India.objects.filter(year_2003_04__icontains=query) | WEG_Installation_Details_India.objects.filter(year_2004_05__icontains=query) | WEG_Installation_Details_India.objects.filter(year_2005_06__icontains=query)
+            revised_guidelines = RevisedGuidelinesForProject.objects.filter(sr_No__icontains=query) | RevisedGuidelinesForProject.objects.filter(description__icontains=query) | RevisedGuidelinesForProject.objects.filter(date__icontains=query)
+            related_links=  RelatedLinks.objects.filter(title__icontains=query) | RelatedLinks.objects.filter(linkTitle__icontains=query) 
+            record_retention=  RecordsRetentionSchedule.objects.filter(ministry_Approval__icontains=query)
+                    
     return render(request, 'search_results.html', {
         'form': form,
         # for about 
@@ -111,4 +129,15 @@ def search(request):
         'department_Testing': department_Testing,
         
         'certification_procedure': certification_procedure,
+        
+        # for Document_section
+        'genral_info' :genral_info,
+        'annual_report' : annual_report,
+        'newsletters' : newsletters,
+        'weg_Install_world' : weg_Install_world,
+        'revised_guidelines' : revised_guidelines,
+        'related_links' : related_links,
+        'record_retention' : record_retention,
+        'weg_Install_India': weg_Install_India,
+
     })

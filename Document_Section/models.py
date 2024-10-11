@@ -21,10 +21,6 @@ class ComparisonBetweenFosilFuelAndWind(models.Model):
     fosil_Fuel = HTMLField()
     Wind_Energy = HTMLField()
 
-
-
-
-
 # 
 class RevisedGuidelinesForProject(models.Model):
      
@@ -69,14 +65,13 @@ def get_docs_url(self):
 
 # 
 class RelatedLinks(models.Model):
-
      title = models.CharField()
      linkTitle = HTMLField()
 
 
 class FAQs(models.Model):
      preamble = HTMLField(null=True, blank=True)
-     Faq = HTMLField()
+     Faq = HTMLField(null=True, blank=True)
 
 #  for table year-wise-country
 
