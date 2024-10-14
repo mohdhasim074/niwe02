@@ -18,7 +18,6 @@ def index(request):
     if dgm.exists:
       return render(request, "index.html", {'dgm': dgm})
 
-
 # sitemap
 def sitemap(request):
     return render(request, 'sitemap.html')
