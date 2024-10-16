@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7fmu@^)#2=@4w#6mpc3nh7!owl*t&i33b%&_80yr!=g05uf*)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['13.127.123.26']
 
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'inspection_services',
     'search_form',
     'home_sections',
-    # 'hi',
+    'hi',
     
 ]
 
@@ -72,7 +72,7 @@ ROOT_URLCONF = 'NiwaProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, '/hi/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,19 +130,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images) 
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'  # Add a leading slash
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    "/var/www/static/",
-    # os.path.join(BASE_DIR, 'hi/static'),
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
-]
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # This is correct
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # STATIC_ROOT = '/var/www/static/'
-# media
-MEDIA_URL = '/media/'  # This is correct
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/var/www/media/'
+
+# Example of media settings (for user-uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_ROOT = '/var/www/media/'
+
+
 
 # for file size
 DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 10 MB limit
@@ -154,3 +155,7 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 10 MB limit
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+

@@ -121,6 +121,8 @@ urlpatterns = [
     #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
      
 ]
+
+# Serve static and media files during development
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 
