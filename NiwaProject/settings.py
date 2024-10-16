@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7fmu@^)#2=@4w#6mpc3nh7!owl*t&i33b%&_80yr!=g05uf*)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['13.127.123.26']
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'inspection_services',
     'search_form',
     'home_sections',
+    # 'hi',
     
 ]
 
@@ -133,6 +134,8 @@ STATIC_URL = '/static/'  # Add a leading slash
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     "/var/www/static/",
+    # os.path.join(BASE_DIR, 'hi/static'),
+
 ]
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # This is correct
 # STATIC_ROOT = '/var/www/static/'

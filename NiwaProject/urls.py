@@ -31,8 +31,11 @@ admin.site.index_title = "NIWE DASHBOARD"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
-    
     path('', views.index),
+    
+    # path('hi/', views.hindi, name='hindi'),,
+    # path('hi/', include('hi.NiwaProject.urls')),  # Add the Hindi routing here
+
     
     path('sitemap/', views.sitemap, name='sitemap'),
     path('screen-reader-access/', views.Screen_Reader, name='screen-reader-access'),
@@ -117,8 +120,7 @@ urlpatterns = [
      path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
     #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
      
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
