@@ -547,7 +547,7 @@
     .main-content {
         position: relative;
         padding: 0px 40px;
-        background-color: #a6a6a642;
+        /* background-color: #a6a6a642; */
     }
 
     .mobile-img {

@@ -96,6 +96,17 @@ ul li {
   justify-content: center;
 }
 
+.gly-card{
+  height:15rem;
+  width:100%;
+  overflow: hidden;
+}
+.gly-card img{
+  height:100%;
+  width:100%;
+  object-fit: cover;
+}
+
 .sub-gallery-card {
   position: relative;
   overflow: hidden;
@@ -277,8 +288,8 @@ ul li {
 /* slider css */
 .carousel-item img {
   width: 100%;
-  height: 25rem;
-  object-fit: cover;
+  height: 32rem; 
+  object-fit: contain;
   background-position: fixed;
 }
 
@@ -576,7 +587,7 @@ ul {
 }
 
 .gallery .card {
-  padding: 5px 5px 10px 5px;
+  padding: 5px 5px 5px 5px;
   text-align: center;
 }
 
@@ -636,15 +647,27 @@ ul {
 .main-content {
   position: relative;
   padding: 10px 12px;
-  background-color: #a6a6a642;
+  /* background-color: #a6a6a642; */
 }
 .main-content .owl-carousel {
   padding: 8px;
 }
-.main-content .owl-carousel .item img {
+
+.main-content .card{
+  height:7rem;
+  padding:5px;
+
+}
+.main-content .card img{ 
+   height:100%;
+   width:100%;
+   object-fit:contain;
+}
+
+/* .main-content .owl-carousel .item img {
   aspect-ratio: 2/1;
   width: 220px;
-}
+} */
 .main-content .owl-theme .custom-nav {
   position: absolute;
   top: 20%;

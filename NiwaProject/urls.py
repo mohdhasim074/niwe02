@@ -32,11 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('', views.index),
-    
-    # path('hi/', views.hindi, name='hindi'),,
-    # path('hi/', include('hi.NiwaProject.urls')),  # Add the Hindi routing here
+        
+        # path('hi/', include('hi.urls')),  # Add the Hindi routing here
 
-    
     path('sitemap/', views.sitemap, name='sitemap'),
     path('screen-reader-access/', views.Screen_Reader, name='screen-reader-access'),
     # 
@@ -78,6 +76,7 @@ urlpatterns = [
     path('tenders/', views.tenders),
     path('wind_potential/', views.wind_potential),
     path('disclaimer/', views.disclaimer),
+    
     path('glossary/', views.glossery),
     path('weg_install_country_wise/', views.weg_install_country_wise),
     path('weg_install_India/', views.weg_install_India),

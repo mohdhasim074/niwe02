@@ -112,86 +112,79 @@
             </li>
           </ul>
         </div>
+<!-- Start slider for web-links-->
 
-        <section class="container mb-3">
-          <div class="row col-12 mx-auto">
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="https://amritmahotsav.nic.in/" target="_blank">
-                  <img
-                    src="{% static '/images/icon/azadi.png' %}"
-                    alt="Picture 1"
-                  />
-                </a>
-              </div>
+<section class="main-content container">
+        <div class="owl-carousel owl-theme">
+          
+            <div class="item card">
+              <a href="https://amritmahotsav.nic.in/" target="_blank">
+                <img
+                  src="{% static '/images/icon/azadi.png' %}"
+                  alt="Picture 1"
+                />
+              </a>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="https://amritmahotsav.nic.in/" target="_blank">
-                  <img
-                    src="{% static '/images/icon/renewble-energy.png' %}"
-                    title="Ministry of New and Renewable Enery"
-                    alt="Picture 2"
-                    title=""
-                  />
-                </a>
-              </div>
+            <div class="item card">
+              <a href="https://amritmahotsav.nic.in/" target="_blank">
+                <img
+                  src="{% static '/images/icon/renewble-energy.png' %}"
+                  title="Ministry of New and Renewable Enery"
+                  alt="Picture 2"
+                  title="renewble-energy"
+                />
+              </a>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
+
+            <div class="item card">
                 <a href="https://www.ireda.in/" target="_blank">
                   <img src="/static/images/icon/ireda.png" alt="Picture 3" />
                 </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="http://windpro.org/" target="_blank">
-                  <img src="/static/images/icon/Iwpa.jpeg" alt="Picture 4" />
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="http://indianwindpower.com/index.php" target="_blank">
-                  <img src="/static/images/icon/iwtma.jpeg" alt="Picture 5" />
-                </a>
-              </div>
             </div>
 
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="https://nise.res.in/" target="_blank">
-                  <img src="/static/images/icon/nise.jpeg" alt="Picture 6" />
-                </a>
-              </div>
-            </div>
-            
+            <div class="item card">
+              <a href="http://windpro.org/" target="_blank">
+                <img src="/static/images/icon/Iwpa.jpeg" alt="Picture 4" />
+              </a>
 
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="http://seci.co.in/" target="_blank">
-                  <img
-                    src="/static/images/icon/seci-logo.png"
-                    alt="Picture 7"
-                  />
-                </a>
-              </div>
+
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-4 col-6">
-              <div class="card foot-ban-img">
-                <a href="http://nibe.res.in/" target="_blank">
-                  <img
-                    src="/static/images/icon/swarn-singh01.jpg"
-                    alt="Picture 8"
-                  />
-                </a>
-              </div>
+
+            <div class="item card">
+              <a href="http://indianwindpower.com/index.php" target="_blank">
+                <img src="/static/images/icon/iwtma.jpeg" alt="Picture 5" />
+              </a>
             </div>
-          </div>
-        </section>
-       
+
+            <div class="item card">
+              <a href="https://nise.res.in/" target="_blank">
+                <img src="/static/images/icon/nise.jpeg" alt="Picture 6" />
+              </a>
+            </div>
+
+            <div class="item card">
+              <a href="http://seci.co.in/" target="_blank">
+                <img
+                  src="/static/images/icon/seci-logo.png"
+                  alt="Picture 7"
+                />
+              </a>
+            </div>
+
+            <div class="item card">
+              <a href="http://nibe.res.in/" target="_blank">
+                <img
+                  src="/static/images/icon/swarn-singh01.jpg"
+                  alt="Picture 8"
+                />
+              </a>
+            </div>
+        </div>
+        
+</section>
+<!-- End slider for web-links-->
+
       </div>
     </div>
   </div>
@@ -214,19 +207,20 @@
       </div>
       <div class="col-md-6 col-12">
         <p>
-          <a href="/disclaimer/" class="text-body"> Disclaimer </a> |
-          <a href="/glossary/" class="text-body">Glossary </a> |
-          <a href="{% url 'sitemap' %} " class="text-body">Sitemap </a> |
-          <a href="/static/pdf/routemap-niwe.pdf" class="text-body">
+          <a href="{% url 'web_ploicy' %}"  > Website Policies </a> |
+          <a href="/disclaimer/"  > Disclaimer </a> |
+          <a href="/glossary/"  >Glossary </a> |
+          <a href="{% url 'sitemap' %} "  >Sitemap </a> |
+          <a href="/static/pdf/routemap-niwe.pdf"  >
             Route Map</a
           >
-          | <a href="/tenders/" class="text-body"> Tenders</a> |
-          <a href="{% url 'career' %}" class="text-body"> Careers</a>
+          | <a href="/tenders/"  > Tenders</a> |
+          <a href="{% url 'career' %}"  > Careers</a>
         </p>
       </div>
       
       <div class="col-md-3 col-12  ">
-        <p>Last update on : <span class="blink_me " style="font-size: 14px;">14 OCTOBER 2024</span></p>
+        <p>Last update on : <span class="blink_me " style="font-size: 14px;"> OCTOBER 2024</span></p>
       </div>
 
     </div>

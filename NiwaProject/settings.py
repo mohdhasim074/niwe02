@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'inspection_services',
     'search_form',
     'home_sections',
-    'hi',
+    # 'hi',
     
 ]
 
@@ -72,7 +72,7 @@ ROOT_URLCONF = 'NiwaProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, '/hi/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,26 +130,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images) 
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+# Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# STATIC_ROOT = '/var/www/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Additional static files directory
+]
+STATIC_ROOT = '/var/www/static/'
 
-# Example of media settings (for user-uploaded files)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-# MEDIA_ROOT = '/var/www/media/'
-
+# Media files (Uploaded files)
+MEDIA_URL = '/media/'  # URL to access media files
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
+MEDIA_ROOT = '/var/www/media/'
 
 
 # for file size
 DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 10 MB limit
 
-# for nginx set images file size
-    # client_max_body_size 20M;
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

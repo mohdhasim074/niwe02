@@ -123,7 +123,8 @@
     <a href="#">
       <i class="fa fa-instagram"></i>
     </a>
-    <a href="# ">Hindi</a>
+    {% comment %} <a href="{% url 'hindi_index' %}">Hindi</a> {% endcomment %}
+    <a href="#">Hindi</a>
     
   </div>
 </div>
@@ -257,7 +258,8 @@
                 <li>
                   <a
                     class="dropdown-item"
-                    href="{% static '/images/ISO_CERTIFICATE.pdf/' %}"
+                    
+                    href="{% static '/images/ISO_CERTIFICATE.pdf' %}"
                     >MANAGEMENT SYSTEM CERTIFICATE</a
                   >
                 </li>
@@ -444,7 +446,7 @@
                     class="dropdown-item"
                     href="{% static '/images/NIWE_website_seurtiy_audit_certificate.pdf' %}"
                     target="_blank"
-                    >NIWE WEBSITE SECURITY AUDIT</a
+                    >NIWE WEBSITE SECURITY AUDIT</a 
                   >
                 </li>
                 <li>

@@ -15,6 +15,8 @@ from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra
 
 def index(request):
     dgm = DirectorGeneralMessage.objects.all()
+    # film = CorporateFilm.objects.first()  # Assuming one film entry
+
     if dgm.exists:
       return render(request, "index.html", {'dgm': dgm})
 
@@ -111,6 +113,7 @@ def glossery(request):
 
 def disclaimer(request):
     return render (request, "disclaimer.html")
+
 
 
 def weg_install_country_wise(request):

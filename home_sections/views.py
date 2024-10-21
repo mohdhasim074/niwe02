@@ -9,3 +9,7 @@ def related_links(request):
     }
     
     return render(request, "relatedlinks1.html", context)
+
+
+def website_policy(request):
+    return render (request, "web-policy.html")

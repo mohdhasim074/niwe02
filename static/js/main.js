@@ -23,26 +23,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // ----------------------
 
     $('.main-content .owl-carousel').owlCarousel({
-        autoplay:false,
-        stagePadding: 50,
-        loop:false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        stagePadding: 30,
+        loop: true,
         margin: 10,
-        nav:false,
-        
+        nav: true,
+        navText: [
+            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
         navContainer: '.main-content .custom-nav',
         responsive: {
-            0: {
-                items: 1
+            0:{
+             items:1
+            },
+            410: {
+                items: 2
             },
             600: {
                 items: 2
             },
-            1000: {
+            991: {
+                items: 3
+            },
+            1200: {
+                items: 4
+            },
+            1400: {
                 items: 6
             }
-        }
-    });
-
+    }
+});
 
     $('.index-gallery').owlCarousel({
         loop: true,
@@ -62,10 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 items: 1
             },
             1000: {
-                items:2
+                items:1
             }
         }
     })
+
+    
 
     $(document).ready(function () {
         $('#search-icn').click(function () {
