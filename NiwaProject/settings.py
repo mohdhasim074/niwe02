@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7fmu@^)#2=@4w#6mpc3nh7!owl*t&i33b%&_80yr!=g05uf*)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['13.127.123.26']
 
@@ -147,12 +147,12 @@ STATIC_ROOT = '/var/www/static/'
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'  # URL to access media files
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
-MEDIA_ROOT = '/var/www/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
+# MEDIA_ROOT = '/var/www/media/'
 
 
 # for file size
-DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 10 MB limit
+DATA_UPLOAD_MAX_MEMORY_SIZE = 40485760  # 40 MB limit
 
 
 # Default primary key field type
