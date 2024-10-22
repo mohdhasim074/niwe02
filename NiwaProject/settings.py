@@ -147,8 +147,8 @@ STATIC_ROOT = '/var/www/static/'
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'  # URL to access media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
-# MEDIA_ROOT = '/var/www/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
+MEDIA_ROOT = '/var/www/media/'
 
 
 # for file size
