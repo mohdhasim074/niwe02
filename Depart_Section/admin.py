@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Departments, Reserach_n_Development, Testing_and_Standards_Regulation, Wind_Resources_Assessment, Offshore_Wind_Development, RelatedImage, Finance_and_Administration, Skill_developements_training
+from .models import Departments, Reserach_n_Development, Testing_and_Standards_Regulation, Wind_Resources_Assessment, Offshore_Wind_Development, Finance_and_Administration, Skill_developements_training
 from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
     Department_testing_measure, Department_testing_measureType, SDT_workshop, \
     SDT_workshop_type, SDT_vayumitra, \
@@ -60,18 +60,12 @@ class WindTerBinephotoAdmin(admin.ModelAdmin):
     list_display = ('image')
     search_fields = ('id',)
     list_filter = ('id',)
-    
     ordering = ['id']
-
-
 admin.site.register(Wind_Terbine_photo)
 # 
-
-
 class Department_Testing_TypeInline(admin.StackedInline):
     model = Department_testing_measureType
     extra = 1
-
 
 @admin.register(Department_testing_measure)
 class DepartTestingMeasureAdmin(admin.ModelAdmin):
@@ -197,8 +191,8 @@ class Wind_Res_Admin(admin.ModelAdmin):
     # inlines = [ImageInline]
 
 
-class RelatedImageInline(admin.StackedInline):
-    model = RelatedImage
+# class RelatedImageInline(admin.StackedInline):
+#     model = RelatedImage
 
     
 @admin.register(WRA_Sale_publication)
@@ -305,7 +299,7 @@ class OwdAdmin(admin.ModelAdmin):
     ordering = ['id']
     list_filter = ('id', 'title',)
     search_fields = ('title', 'id',)
-    inlines = [RelatedImageInline]
+    # inlines = [RelatedImageInline]
 
 
 @admin.register(Finance_and_Administration)

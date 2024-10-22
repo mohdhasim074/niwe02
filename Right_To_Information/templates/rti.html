@@ -1,5 +1,5 @@
 {% include 'header.html' %}
-
+{% load static %}
     <!-- nav end  -->
 
     <section class="head-div">
@@ -16,80 +16,62 @@
                         <li class="breadcrumb-item"><a href="/">Home </a></li>
                         <li class="breadcrumb-item active" aria-current="page">Right To Information</li>
                     </ol>
-                </nav>
-            </div>
+            </nav>
+    </div>
 
     <section class="rti-sec" id="divContent">
             <div class="container">
-                <a href="{% url 'retention' %}" target="blank"><h5>Records Retention Schedule</h5></a>
-                {% for data in rti %}
-                       {% if 'RTI ACT' in data.title or 'Rti Act' in data.title and data.document %}
-                          <a href="{{data.document.url}}" target=blank><h5>{{data.title}}</h5></a>
-                       {% elif 'RTI ACT' in data.title or 'Rti Act' in data.title %}
-                          <a href="#"><h5>{{data.title}}</h5></a>
-                       {% endif %}
-                {% endfor %}
-                <a href="{% url 'audit' %}" target=""><h5>Audit Report of Proactive Disclosure under RTI Act, 2005</h5></a>
-                <a href="{% url 'account' %}" target=""><h5>Annual Accounts   -   1998-99 - onwards</h5></a>
-                <a href="" target=""><h5>Financial Details for Past years ( Grant-in-Aid and Internal Revenue Generation )</h5></a>
-                <a href="" target=""><h5>Memorandum of Understanding (MOU) between MNRE and NIWE</h5></a>
+                <a href="{% url 'retention' %}" target="_blank"><h5>Records Retention Schedule</h5></a>
+                <a href="{% url 'audit' %}" target="_blank"><h5>Audit Report of Proactive Disclosure under RTI Act, 2005</h5></a>
+                <a href="{% url 'account' %}" target="_blank"><h5>Annual Accounts   -   1998-99 - onwards</h5></a>
+                <a href="{% static '/pdf/Financial_details-1998-99_to_2022-23.pdf' %}" target="_blank"><h5>Financial Details for Past years ( Grant-in-Aid and Internal Revenue Generation )</h5></a>
+                <h5>Memorandum of Understanding (MOU) between MNRE and NIWE</h5>
                 
-                <ul class="new-letter pb-3">
+                <ol class="ps-5" type="1">
                     {% for data in rti %}
-                       {% if 'MOU' in data.title and 'MNRE' in data.title and data.document %}
-                    <a href="{{data.document.url}}" target=blank><li>{{data.year}}</li></a>
-                 
-                    {% elif 'MOU' in data.title and 'MNRE' in data.title %}
-                    <a href="#"><li>{{data.year}}</li></a>
-                       {% endif %}
+                    <li class="ps-4"> 
+                        <a href="{{data.document.url}}" target="_blank">
+                        {{data.year}}
+                    </a>
+                </li>
                     {% endfor %}
-                </ul>
+                </ol>
                    
 
                 <h5 class="pb-3 pt-3">Information</h5>
 
+                <ol class="ps-5" type="1">
+                    {% for item in info %}
+                    <li class="ps-4"> 
+                        
+                        {% if item.document != "" %}
+                        <a href="{{item.document.url}} " target="_blank">
+                            {{item.title}}
+                        </a>
+                        {% endif %}
+
+                        {% if item.document == "" %}
+                        <a href="{% url 'subInfo' item.id %}" target="_blank">
+                            {{item.title}}
+                        </a>
+                        {% endif %}
+
+                    </li>
+                
+                    {% endfor %}
+
+                </ol>
 
                 <ul>
-                    <a href="" target=blank><li>Particulars of Organization, Functions and Duties</li></a>
-                    <a href="" target=blank><li>Powers and Duties of Officers and Employees</li></a>
-                    {% for data in rti %}
-                        {% if 'Decision Making process' in data.title and data.document %}
-                    <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
-                        {% elif 'Decision Making process' in data.title %}
-                        {% endif %}
-                    {% endfor %}
-                    <a href="" target=blank><li>Norms for discharge of functions</li></a>
-                    <a href="" target=blank><li>Rules, regulations, instructions, manuals and records</li></a>
-                    <a href="" target=blank><li>Categories of documents</li></a>
-                    <a href="" target=blank><li>Formulation of policy or implementation</li></a>
-                    <a href="" target=blank><li>Statement of the boards, councils, committees and other bodies.</li></a>
-                    <a href="" target=blank><li>Directories of scientists, officers and employees</li></a>
-                    {% for data in rti %}
-                        {% if 'Monthly remuneration' in data.title or 'monthly remuneration' in data.title and data.document %}
-                    <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
-                        {% elif 'Monthly remuneration' in data.title or 'monthly remuneration' in data.title %}
-                        {% endif %}
-                    {% endfor %}
-
-                    {% for data in rti %}
-                        {% if 'Budget allocations' in data.title or 'budget allocations' in data.title and data.document %}
-                    <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
-                        {% elif 'Budget allocations' in data.title or 'budget allocations' in data.title %}
-                        {% endif %}
-                    {% endfor %}
-                    <a href="" target="blank"> <li>Manner of Execution of subsidy programmes</li></a>
-                    <a href="" target="blank"> <li>Particulars of recipients of concessions, permits or authorizations granted by the Authority</li></a>
-                    <a href="" target="blank"> <li>Information available in electronics form</li></a>
+                   <a href="" target="blank"> <li>Information available in electronics form</li></a>
 
                         <ul class="new-letter pb-3">
-                            <a href="" target="blank"> <li>News Letter</li></a>
-                            <a href="" target="blank"> <li>Tender notifications</li></a>
+                            <a href="{% url 'newsletters' %}" target="blank"> <li>News Letter</li></a>
+                            <a href="/tenders/" target="blank"> <li>Tender notifications</li></a>
                             <a href="" target="blank"> <li>Circulars on various training programmes, recruitment, announcements, published reports, saleable data, links to Ministries announcements, etc.</li></a>
                         </ul>
 
-                    <a href="" target="blank"> <li>Particulars of Facilities available to citizen for obtaining information</li></a>
-                    <a href="" target="blank"> <li>Names, designation and other particulars of the Public Information Officers</li></a>
-                    <a href="" target="blank"> <li>Other information</li></a>
+                    
 
                     <ul class="anul-info pb-3">
                             <a href="" target="blank"> <li>Annual Report   -   1998-99 - onwards</li></a>
@@ -105,7 +87,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </ul>
-                            <a href="" target=""><li>FAQs</li></a>
+                            <a href="" target="_blank"><li>FAQs</li></a>
                               {% for data in rti %}
                                 {% if 'damage' in data.title or 'Damage' in data.title and data.document %}
                                   <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
@@ -115,24 +97,6 @@
                               {% endfor %}
                     </ul>
 
-                    <a href="" target=""><li>RTI Applications</li></a>
-                    {% for data in rti %}
-                        {% if 'CAG' in data.title and 'PAC' in data.title and data.document %}
-                            <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
-
-                        {% elif 'CAG' in data.title and 'PAC' in data.title %}
-                        {% endif %}
-                    {% endfor %}
-                    <a href="" target=""><li>Head of Department(HoD) - Executive Director / Director General</li></a>
-                    <a href="" target=""><li>Foreign and Domestic tours by Head of the Department</li></a>
-                    {% for data in rti %}
-                        {% if 'Security Audit' in data.title and 'Security Audit' in data.title and data.document %}
-                            <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
-
-                        {% elif 'Security Audit' in data.title and 'Security Audit' in data.title %}
-                        {% endif %}
-                    {% endfor %}
-          
                 </ul>
             </div>
     </section>

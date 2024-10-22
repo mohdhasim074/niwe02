@@ -24,230 +24,41 @@
   </nav>
 </div>
 
-<section class="rnd-div" >
+<section class="rnd-div" id="divContent">
   <div class="container">
     <div class="row">
       <div class="col-md-8" id="divContent">
-        <div class="tab-content" id="v-pills-tabContent">
-          <!--left side tab content-area -->
+    <!-- accordian start-->
+    <div class="row" >
+      <div class="accordion" id="accordionExample">
+        {% for item in owd %}
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+            <button
+              class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse{{ forloop.counter }}"
+              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="collapse{{ forloop.counter }}"
+            >
+              {{ item.title|safe }}
+            </button>
+          </h2>
           <div
-            class="tab-pane fade rounded bg-white show active"
-            id="wind-energy"
-            role="tabpanel"
-            aria-labelledby="wind-energy"
+            id="collapse{{ forloop.counter }}"
+            class="accordion-collapse collapse {% if forloop.first %}hide{% endif %}"
+            aria-labelledby="heading{{ forloop.counter }}"
+            data-bs-parent="#accordionExample"
           >
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="owdOne">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#owd"
-                    aria-expanded="true"
-                    aria-controls="owd"
-                  >
-                    Offshore Wind Power Development
-                  </button>
-                </h2>
-                <div
-                  id="owd"
-                  class="accordion-collapse collapse hide"
-                  aria-labelledby="owdOne"
-                  data-bs-parent="#owd-1"
-                >
-                  <div class="accordion-body">
-                    <p>
-                      Preliminary studies carried out by NIWE across the
-                      coastline of India indicate good potential both off the
-                      Southern tip of the country and the West coast for
-                      offshore wind farm development in India. The offshore wind
-                      potential was assessed by the FOWIND (Facilitating
-                      Offshore Wind in India) consortium with NIWE as a
-                      knowledge partner. Based on a multi-criteria approach
-                      involving assessment of various parameters such as wind
-                      resource, bathymetry etc., eight zones each off the coast
-                      of Gujarat and Tamil Nadu were identified as potential
-                      offshore wind energy zones.
-                    </p>
-                    <p>
-                      In consideration of the need for the holistic development
-                      of offshore wind farms in the country and in order to
-                      expedite the process, three models have been proposed and
-                      finalized. Additionally, the Potential Zones/Sub-zones
-                      have been identified and a strategy paper for offshore has
-                      been published on the website of the MNRE.
-                    </p>
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/Coast1.png' %}"
-                          alt=""
-                          class="w-100"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/Coast2.png' %}"
-                          alt=""
-                          class="w-100"
-                        />
-                      </div>
-
-                      <div class="col-md-12">
-                        <p>
-                          <b
-                            >Figure showing different zones/sub-zones in the
-                            region of Gulf of Mannar, off Tamil Nadu coast and
-                            Gulf of Khambhat, off Gujarat coast</b
-                          >
-                        </p>
-                      </div>
-                    </div>
-
-                    <h5 class="pt-3">
-                      Marine Spatial Planning for offshore wind farms in Tamil
-                      Nadu
-                    </h5>
-
-                    <p>
-                      Under the Indo-Danish co-operation, NIWE & DEA has jointly
-                      carried out the Marine Spatial Planning studies consisting
-                      of various significant factors such as wind speed, water
-                      depth, marine traffic, hazardous area, Environmental
-                      sensitive zones, etc.,
-                    </p>
-
-                    <p>
-                      Following an analysis of the offshore wind potential in
-                      the Gulf of Mannar, a set of zones and subzones have been
-                      prepared for the identified prospective zones and subzones
-                      for the development of offshore wind farms in the Gulf of
-                      Mannar, which is located off the coast of Tamil Nadu.
-                      Also, the subzones are realigned considering the MNRE
-                      strategy document for the development offshore wind in
-                      Gulf of Mannar, Off TamilNadu coast. The realigned sub
-                      zones are given below under different models as stipulated
-                      in the strategy document.
-                    </p>
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/1.png' %}"
-                          alt=""
-                          class="w-100"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/2.png' %}"
-                          alt=""
-                          class="w-100"
-                        />
-                      </div>
-
-                      <div class="col-md-6 offset-md-3">
-                        <img
-                          src="{% static '/images/3.png' %}"
-                          alt=""
-                          class="w-100 pt-2"
-                        />
-                      </div>
-
-                      <div class="col-md-12">
-                        <p class="text-center">
-                          Figure showing different zones/sub-zones in the region
-                          of Gulf of Mannar, off Tamil Nadu coast
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="owd_2">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#owd2"
-                    aria-expanded="false"
-                    aria-controls="owd2"
-                  >
-                    Met-Ocean Measurements
-                  </button>
-                </h2>
-                <div
-                  id="owd2"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="owd_2"
-                  data-bs-parent="#owdTwo"
-                >
-                  <div class="accordion-body">
-                    <p>
-                      <strong
-                        >Met-Ocean Measurements (Wave, Tide, Current, Water
-                        level etc.) at Gulf of Khambat and Gulf of Mannar for
-                        Fostering the Growth of Offshore Wind in the
-                        Country</strong
-                      >
-                    </p>
-
-                    <p>
-                      MNRE has sponsored a project to NIWE titled “Met-Ocean
-                      Measurements (Wave, Tide, Current, Water level etc.) at
-                      Gulf of Khambat and Gulf of Mannar for Fostering the
-                      Growth of Offshore Wind in the Country”.
-                    </p>
-                    <p>
-                      Under this project, NIWE has initiated LiDAR based
-                      offshore measurements campaign at three locations in Tamil
-                      Nadu coast, at VOC Port (~2.5-3 km from the coast) and
-                      Udangudi (~8 km from the coast).
-                    </p>
-
-                    <div class="row text-center">
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/01.png' %}"
-                          alt=""
-                          class="w-100"
-                        />
-                        <p>LiDAR installed at VOC_Port_1 & VOC_Port_2</p>
-                      </div>
-                      <div class="col-md-6">
-                        <img
-                          src="{% static '/images/02.png' %}"
-                          alt=""
-                          class="w-100"
-                          height="220px"
-                        />
-                        <p>LiDAR installed at Udangudi</p>
-                      </div>
-
-                      <div class="col-md-12">
-                        <img
-                          src="{% static '/images/03.png' %}"
-                          alt=""
-                          class="w-100"
-                          height="100%"
-                        />
-                        <p>LiDAR installed at VOC_Port_1</p>
-                      </div>
-                    </div>
-
-                    <p class="mt-5 pt-1">
-                      ZX300M LiDAR-997 is installed at VOC PORT_2, Electrical
-                      Substation Terrace Near oil Jetty, Thootukudi, Tamilnadu.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="accordion-body">{{ item.description|safe }}</div>
           </div>
         </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- accordian end-->
         <!--div close for tab-pane-->
       </div>
       <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>

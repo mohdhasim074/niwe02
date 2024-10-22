@@ -91,7 +91,7 @@ urlpatterns = [
     
     path('itec_countries/', views.ITEC_training_countries, name='itec_countries'),
     path('itec_feedback/', views.ITEC_training_feedback, name='itec_feedback'),
-    # 
+    #  
      path('newsletters', views.newsletters, name='newsletters'),
     path('annual_reports', views.annual_reports, name='annual_reports'),
     

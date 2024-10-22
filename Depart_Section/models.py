@@ -368,12 +368,12 @@ class WRA_Srra_Station_ams(models.Model):
 # owd
 class Offshore_Wind_Development(models.Model):
     title = models.CharField(max_length=250)
-    description = HTMLField()
+    description = HTMLField( )
 
 
-class RelatedImage(models.Model):
-    OWD = models.ForeignKey(Offshore_Wind_Development, related_name='images', on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to='images/')
+# class RelatedImage(models.Model):
+#     OWD = models.ForeignKey(Offshore_Wind_Development, related_name='images', on_delete=models.CASCADE, null=True, blank=True)
+#     image = models.ImageField(upload_to='images/')
 
 
 #  finance
