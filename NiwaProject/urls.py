@@ -33,7 +33,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', views.index),
         
-        # path('hi/', include('hi.urls')),  # Add the Hindi routing here
+    path('hi/', include('hi.urls')),  # Add the Hindi routing here
 
     path('sitemap/', views.sitemap, name='sitemap'),
     path('screen-reader-access/', views.Screen_Reader, name='screen-reader-access'),
@@ -118,6 +118,12 @@ urlpatterns = [
 
      path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
     #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
+
+    path('events-updates', views.Events, name='evnts_update'),
+    path('whats-new-update', views.whatsNew, name='whatsNew_updates'),
+    path('mnre-updates', views.mnreNew, name='mnreNew_updates'),
+    
+    path('coorporate-film-hindi', views.corporate_film_hindi, name='corporate_film_hindi'),
      
 ]
 

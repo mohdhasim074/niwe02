@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Contact Us</h1>
+    </div>
+  </div>
+</section > 
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="staff-dev" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <!-- sidenav bar -->
+        {% include "sidenav.html" %}
+      </div>
+
+      <div class="col-md-8 col-12">
+        <div class="feedback">
+          {{contact.0.feedback_and_Address|safe}}
+        </div>
+
+        <div class="map">
+          <h3>CHENNAI</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124438.0770408365!2d80.191885!3d12.927641!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525db9969587c9%3A0xf6896d7d3dadeb2d!2sNational%20Institute%20of%20Wind%20Energy!5e0!3m2!1sen!2sus!4v1710931663334!5m2!1sen!2sus"
+            width="100%"
+            height="300px"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-6 col-12">
+            <div class="feedback">
+              {{contact.0.testing_and_Research_Station|safe}} 
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="map2">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3941.293273929511!2d77.723524!3d8.9451!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041d21f5b5b98f%3A0x75c829a2bf30d412!2sNIWE%20WTTS!5e0!3m2!1sen!2sus!4v1710932263138!5m2!1sen!2sus"
+                width="100%"
+                height="325"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

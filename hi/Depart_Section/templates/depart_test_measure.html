@@ -1,0 +1,43 @@
+{% include 'header.html' %} {% load static %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">
+        Overview of Test and Measurements Carried Out and Ongoing
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 's&d' %}"> Testing and Standards & Regulation</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Overview of Test and Measurements Carried Out and Ongoing
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="department-div" id="divContent">
+  <div class="container">
+    {% for item in depart %}
+
+    <ol style="list-style-type: disc" class="pe-4">
+      <a href="{% url 'depart_test_type' item.id %}">
+        <li class="pb-2"><b> {{ item.title }}</b></li>
+      </a>
+      
+    </ol>
+    {% endfor%}
+  </div>
+</section>
+
+{% include 'footer.html' %}

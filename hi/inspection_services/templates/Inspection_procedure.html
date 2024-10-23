@@ -1,0 +1,44 @@
+{% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Inspection Procedure</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home Page</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--   -->
+          <img
+            src="/static/images/certification/Inpsection_procedure.png"
+            alt="flow-chart"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

@@ -1,0 +1,619 @@
+{% load static %} {% include 'hi_header.html' %}
+<!-- slider start -->
+
+<section class="container-fluid p-2 hero-banner">
+  <div class="row">
+    <div class="col-md-8 col-12 offset-md-2 hero-card"> 
+      <div
+        id="carouselExampleControls"
+        class="carousel slide container"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <img
+              src="{% static '/images/slider/img1.jpg' %}" 
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static  '/images/slider/img02.jpg' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/img03.jpg' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="{% static '/images/slider/img10.jpg' %}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">पहले का</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">अगला</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section width="100%" id="divContent">
+  <div class="news">
+    <div class="news-side-div">
+      <h3>हाइलाइट्स</h3>
+    </div>
+
+    <div class="running-news">
+      <marquee width="100%" direction="left" behavior="scroll" class="pt-2">
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          इरेडा द्वारा वित्तपोषित नवीकरणीय ऊर्जा परियोजनाओं की निगरानी के लिए ऋणदाता के वित्तीय सलाहकार (एलएफए) का पैनल तैयार करना</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          नवीनतम समाचारों और ऑफ़र के साथ अपडेट रहें।</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          आईआरईडीए ने 13वें पीएसई उत्कृष्टता पुरस्कार में पांच पुरस्कार जीते</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          नवीनतम समाचारों और ऑफ़र के साथ अपडेट रहें</a
+        >
+        <a href="#">
+          <span class="blink_me"
+            ><img src="{% static '/images/new.png' %}" alt="latest-update"
+          /></span>
+          नवीनतम समाचारों और ऑफ़र के साथ अपडेट रहें</a
+        >
+      </marquee>
+    </div>
+  </div>
+</section>
+
+<!-- about section start -->
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12" >
+        <div class="about-section pt-4">
+          <h2><span style="color: #00899a">निदेशक </span> का संदेश</h2>
+          <div class="line"></div>
+
+          {% for data in dgm %}
+          <div class="row" > 
+            <div class="col-md-4 col-12">
+              <div class="director-img">
+                {% if data.Dirs_image %}
+                <img src="{{data.Dirs_image.url}}" class="pb-1" alt="dgm_img" />
+
+                {% else %}
+
+                <img src="media/images/men.png" class="pb-1" alt="dgm" />
+                {% endif %}
+                <h4 class="text-center">डॉ। राजेश कत्याल</h4>
+                <h6 class="text-center">महानिदेशक</h6>
+              </div>
+            </div>
+            <div class="col-md-8 col-12"  id="divContent">
+              <p>{{data.description|striptags}}</p>
+
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4"  id="divContent">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+            >
+            नया क्या है
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link mx-1"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+            >
+            एमएनआरई में नये
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-contact-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-contact"
+              type="button"
+              role="tab"
+              aria-controls="pills-contact"
+              aria-selected="false"
+            >
+            घटनाक्रम
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent" id="divContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-home"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+          >
+          <ul class="itme-lists">
+            <li><b><a href="assets/Docu/tender/Tender_Internet_connectivity.pdf" target="_blank"> Tender for "Internet Connectivity - 100" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
+            <li><b><a href="assets/Docu/tender/Tender_WAF.pdf" target="_blank"> Tender for "Web Application Firewall (V2) (Q3)" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
+            <li><b><a href="assets/Docu/tender/Tender_Plain_Copier_Paper(V2).pdf" target="_blank"> Tender for "Plain Copier Paper (V2) as per IS 14490 (Q4) , Gift Pen (Q4)" due at 01.00 PM on 01.10.2024 opening at 01.30 PM on 01.10.2024 </a></b></li>
+             
+            <li><b><a href="assets/Docu/tender/Tender_Kayathar_Transformer.pdf" target="_blank"> Tender for "Repair and Rewinding of 250KVA Distribution Transformer at Kayathar" due at 03.30 PM on 30.09.2024 opening at 03.30 PM on 01.10.2024 </a></b></li>
+            <li><b><a href="assets/Docu/tender/Group_Mediclaim_Insurance_Service.pdf" target="_blank"> Bid Document for "Group Mediclaim Insurance Service - Permanent Employees, Retired / Superannuated / Pensioners; Hospitalization for accident & emergency Treatments, Domiciliary treatment, Maternity, All pre-existing illness"  due at 03.00 PM on 24.07.2024 opening at 03.30 PM on 24.07.2024 </a></b>
+              <ol type = "1"> 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li>                                 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_ATC.pdf" target ="_blank"><b>Bid Corrigendum </b></a></li>                                 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_02.docx" target ="_blank"><b>Corrigendum - 03 </b></a></li>                                 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_03.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>                                 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_04.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>                                 
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_05.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_06.png" target ="_blank"><b>Corrigendum - 07 </b></a></li>
+                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_07.pdf" target ="_blank"><b>Corrigendum - 08 </b></a></li>
+  
+              </ol>
+            </li>
+            <li><b><a href="" target="_blank"> सेवाओं के लिए कस्टम बोली - ओडिशा में 3 स्थानों पर 150 मीटर मेट मस्तूल के लिए डिजाइन निर्माण स्थापना कमीशन और परिवहन 16.07.2024 को शाम 07.00 बजे तक जमा करना होगा और 16.07.2024 को शाम 07.30 बजे खुलेगा </a></b>
+              <ol type = "1"> 
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha_150.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li> 
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha_150.png" target ="_blank"><b>Corrigendum - 02 </b></a></li> 
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha1_150.pdf" target ="_blank"><b>Corrigendum - 03 </b></a></li>   
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha2_150.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>       
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha3_150.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha4_150.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha5_150.pdf" target ="_blank"><b>Corrigendum - 07 </b></a></li>
+                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha6_150.png" target ="_blank"><b>Corrigendum - 08 </b></a><span class ="label">NEW</span></li>
+  
+              </ol>
+          </li>
+          <li><b><a href="assets/Docu/tender/Tender_Metmast_Odisha.pdf" target="_blank"> सेवाओं के लिए कस्टम बोली - ओडिशा में 3 स्थानों पर 150 मीटर मेट मस्तूल के लिए डिजाइन निर्माण स्थापना कमीशन और परिवहन 16.07.2024 को शाम 07.00 बजे तक जमा करना होगा और 16.07.2024 को शाम 07.30 बजे खुलेगा</a></b>
+            <ol type = "1"> 
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li>                   
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha1.png" target ="_blank"><b>Corrigendum - 02 </b></a></li>                                 
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha2.pdf" target ="_blank"><b>Corrigendum - 03 </b></a></li>
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha3.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha4.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha5.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha6.pdf" target ="_blank"><b>Corrigendum - 07 </b></a></li>
+                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha7.png" target ="_blank"><b>Corrigendum - 08 </b></a></li>
+                                
+            </ol>
+          </li> 
+
+          <li><b><a href="national_27.php" target="_blank">27<sup>th</sup> National Training Course on "Wind Energy Technology"  18<sup>th</sup> to 20<sup>th</sup> December 2024  <span class="label">NEW</span></a></b></li>	   
+          <li><b><a href="assets/Docu/NIWE_RD Vision_2024.pdf" target="_blank">  R&D Vision Document </a></b></li>                                                                                                                                                                                                                                                                                                                                                                 
+          <li><b><a href="https://www.seci.co.in/whats-new-detail/2606" target="_blank">RfS for Allocation of Sea-bed Lease Rights for 4000 MW Offshore Wind Power Projects </a></b></li>		
+          <li><b><a href="https://www.seci.co.in/whats-new-detail/2603" target="_blank">NIT for Allocation of Sea-bed Lease Rights for Offshore Wind Power Projects in India </a></b></li> 		        
+          <li><b><a href ="assets/Docu/Elevation_certificate_MoD.pdf" target="_blank">Issuance of an elevation certificate for MoD NoC applications of Wind Power Projects </a> </b></li>            
+          <li><b><a href ="wind_potential.php" target="_blank">Wind Potential Sites for setting up Wind Projects_MOD NOC details </a> </b></li>           
+          <li><b><a href="https://vsdp.niwe.res.in" target="_blank">Vayumitra Skill Development Programme</a> </b></li>            
+          <li><b><a href="assets/Docu/Guidelines_for_Offshore_Wind_Power_Assessment_Studies_and_Surveys.pdf" target="_blank">Amendment in the 'Guidelines for Offshore Wind Power Assessment Studies and Surveys'  </a></b></li>           
+          <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank"> Certification of Accreditation </a></b></li>
+          <li><b><a href="https://mnre.gov.in/img/documents/uploads/file_f-1657882722533.pdf" target="_blank">Offshore Strategy Paper</a></b></li>                
+          <li><b><a href="assets/Docu/White_Paper_on_Wind_Turbine_Technology_2020-30.pdf" target="_blank">White Paper on Wind Turbine Technology R&D for India 2020-30 </a></b></li>      
+          <li><b><a href="assets/Docu/Special_Reservation_Cell(SRC)_13.01.2021.pdf" target="_blank">Special Reservation Cell in NIWE </a></b></li>                     
+          <li><b><a href="department_owd_lidar_raw_data.php" target="_blank">Offshore LiDAR raw data (*.STA & *.RTD files) at Gulf of Khambhat off Gujarat coast from Dec 2018 to Nov 2019 </a></b></li>				
+          <li><b><a href="assets/Docu/India's_Wind_Potential_Atlas_at_120m_agl.pdf" target="_blank">India's Wind Potential Atlas at 120m agl</a> </b></li>               
+          <li><b><a href='assets/Docu/MINUTES_OF_THE_MEETING_Ladakh_06.12.2019.pdf' target="_blank">"Minutes of the Meeting - Development of Wind/Solar Power projects in Ladakh region" </a></b></li>
+          <li><b><a href="assets/Docu/Ladakh_Presentation_06.12.2019.pdf" target="_blank">Wind / Solar Resource Assessment studies in Leh Ladakh UT </a></b></li>
+          <li><b><a href="assets/Docu/tender/Notice_for_GeM.pdf" target="_blank"><span class="blink_text">Information :</span> "All Vendors to get registered in Government e-Market place (GeM)" </a></b></li>               
+          <li><b><a href="department_owd_time_series_data.php" target="_blank">Procedure for purchasing the Time Series Wind/Solar Data </a></b></li>          
+          <li><b><a href="assets/Docu/AIRTF_Brochure.pdf" target="_blank">ASEAN-INDIA Research Training Fellowship (AIRTF) Programme </a></b></li>
+          <li><b><a href="assets/Docu/RTF-DCS_Brochure.pdf" target="_blank">Research Training Fellowship - Developing Countries Scientist (RTF-DCS) Scheme </a></b></li>
+          <li><b><a href="assets/Docu/NIWE_Testing_and_certification_Letter_dt_07.02.2018.pdf" target="_blank">"MNRE approved NIWE as Testing and Type Certification body in India for all wind related issues" </a></b></li>          
+          <li><b><a href="assets/Docu/GST_registration_certificate.pdf" target="_blank">NIWE's GST Registration Certificate </a></b></li>
+              
+            
+        </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-profile"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab"
+          >
+          
+          <ul class="itme-lists">
+              
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/08/202408021360620385.pdf" target="_blank">Advertisement for Scientist-F Vacancies at SSS-NIBE </a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/05/202405091646108351.pdf" target="_blank">Joint MTech Program in Renewable Energy (NIT Jalandhar and SSS-NIBE, Kapurthala), Admissions Open for 2024 </a></b></li>
+            <li><b><a href="assets/Docu/Circular draft tender document.pdf" target="_blank">Draft Tender Document for Sea bed leasing for offshore wind energy Projects </a></b></li>
+            <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank">Certificate of Accreditation </a></b></li>
+           
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122768-2.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 13.06.2022)</a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122737.pdf" target="_blank">Participation in Expression of Interest (EoI) for setting up a manufacturing zone on pilot basis for Power & Renewable Energy Sector</a></b></li>
+           
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122768-1.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 05.05.2022)</a></b></li>
+           
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122730-1.pdf" target="_blank">Biogas plant installation enlisted under MGNREGA Act 2005.</a></b></li>
+           
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122783.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 05.04.2022)</a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122777.pdf" target="_blank">Approved Models and Manufacturers of Solar Photovoltaic Modules (Requirements for Compulsory Registration) Order, 2019: Amendment.</a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122790.pdf" target="_blank">Updated (04.03.2022) List-I under ALMM order for Solar PV Modules</a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122733.pdf" target="_blank">Time-extension in Scheduled Commissioning Date of Wind Energy Projects considering disruption due to post-COVID supply chain and monsoon related disruptions.</a></b></li>
+            
+           
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122730.pdf" target="_blank">Administrative Approval and Scheme Guidelines for GEC Phase II</a></b></li>
+            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122724-1.pdf" target="_blank">Amendment in the 'Guidelines for Tariff Based Competitive Bidding Process for procurement of power from Grid Connected Winf Solar Hybrid Projects' issued dated 14.10.2020 and amended on 23.07.2021</a></b></li>
+           
+
+          </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+          >
+
+          <ul class="itme-lists">
+            <a href="#">
+              <li>
+                Event for options for posting of Group B Officers to the grade
+                of Assistant Commissioner vide Office order No. 171/2023 dated
+                10.10.2023 reg.
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+
+            <a href="#">
+              <li>
+                Calling for options for posting of Group B Officers to the
+                grade of Assistant Commissioner vide Office order No. 171/2023
+                dated 10.10.2023 reg.
+              </li>
+            </a>
+          </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Manuals section -->
+<section class="container-fluid bg-light text-center mt-2" id="divContent">
+  <div class="container pt-4 pb-4" id="divContent">
+    <div class="row">
+      <!-- Panel 1: Manuals -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button              
+          class="faq__question"
+          onclick="toggleAnswer('panel1')"
+          aria-expanded="false"
+          aria-controls="panel1"
+        >
+
+        अनुसंधान और विकास (आर एंड डी)
+        </button>
+        <div class="faq__panel d-none" id="panel1">
+          <p class="faq__answer">
+            आरएंडडी पवन ऊर्जा प्रणालियों में विश्व स्तरीय, विश्वसनीय और लागत प्रभावी प्रौद्योगिकी प्राप्त करने के लिए समयबद्ध और मिशन उन्मुख अनुसंधान और विकास कार्यक्रमों का समर्थन करता है। आरडीएएफ पवन और सौर संसाधन माप से प्राप्त बड़े डेटा का विश्लेषण करने के लिए उद्योग का समर्थन करता है। <a href="{% url 'r&d' %}">और देखें...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 2: Transfer & Posting -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel2')"
+          aria-expanded="false"
+          aria-controls="panel2"
+        >
+        प्रमाणन एवं सूचना प्रौद्योगिकी
+        </button>
+        <div class="faq__panel d-none" id="panel2">
+          <p class="faq__answer">
+            यह प्रभाग IS/IEC 61400-22 के आधार पर पवन टर्बाइनों का प्रकार प्रमाणन करता है, तथा सूचना के प्रभावी प्रसार के लिए आवश्यक आईटी अवसंरचना के निर्माण में भी शामिल है।
+
+            <a href="{% url 'certificate' %}">और देखें...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 3: Welfare Schemes -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel3')"
+          aria-expanded="false"
+          aria-controls="panel3"
+        >
+        परीक्षण, मानक और विनियमन (एस&आर)
+        </button>
+        <div class="faq__panel d-none" id="panel3">
+          <p class="faq__answer">
+            यह प्रभाग पवन ऊर्जा क्षेत्र के स्वस्थ और व्यवस्थित विकास के लिए विभिन्न सेवाएँ प्रदान करता है जैसे: पवन ऊर्जा क्षेत्र में मानकीकरण कार्य, पवन टर्बाइनों के प्रोटोटाइप के ग्रिड सिंक्रोनाइजेशन के लिए सुविधा प्रदान करना और पवन टर्बाइनों के मॉडलों और निर्माताओं की संशोधित सूची (आरएलएमएम) के कार्यान्वयन के लिए एमएनआरई को तकनीकी सहायता प्रदान करना। <a href="{% url 's&d' %}">और देखें..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Suggestions -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel4')"
+          aria-expanded="false"
+          aria-controls="panel4"
+        >
+        पवन संसाधन मूल्यांकन
+        </button>
+        <div class="faq__panel d-none" id="panel4">
+          <p class="faq__answer">
+            एनआईडब्ल्यूई द्वारा दी जाने वाली परीक्षण सेवाएँ आईएसओ/आईईसी 17025 की आवश्यकता के अनुसार राष्ट्रीय परीक्षण एवं अंशांकन प्रयोगशाला बोर्ड (एनएबीएल) द्वारा मान्यता प्राप्त हैं। यह प्रभाग पावर प्रदर्शन माप, सुरक्षा और कार्य परीक्षण, लोड माप आदि जैसी सेवाएँ प्रदान करता है। <a href="{% url 'wra' %}">और देखें..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 5: Civil List -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel5')"
+          aria-expanded="false"
+          aria-controls="panel5"
+        >
+        अपतटीय पवन विकास
+        </button>
+        <div class="faq__panel d-none" id="panel5">
+          <p class="faq__answer">
+            यह प्रभाग पवन संसाधन सूक्ष्म सर्वेक्षण करके देश में संसाधन समृद्ध क्षेत्रों की पहचान करता है और पवन फार्म डेवलपर्स को अपनी सेवाएँ प्रदान करता है। देश के लिए पवन मानचित्र तैयार करने के लिए यह पवन संसाधनों का आकलन और विश्लेषण करता है।
+            <a href="{% url 'owd' %}">और देखें..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 6: Ongoing/Upcoming Infrastructure Projects -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel6')"
+          aria-expanded="false"
+          aria-controls="panel6"
+        >
+        कौशल विकास एवं प्रशिक्षण
+        </button>
+        <div class="faq__panel d-none" id="panel6">
+          <p class="faq__answer">
+            पवन ऊर्जा से संबंधित सूचनाओं को एकत्रित, संयोजित और विश्लेषित करके बेहतरीन सूचना केंद्र के रूप में कार्य करना। हितधारकों के लाभ के लिए नियमित रूप से राष्ट्रीय और अंतर्राष्ट्रीय प्रशिक्षण कार्यशालाएँ आयोजित की जा रही हैं।
+            <a href="{% url 'sdt' %}">और देखें..</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Panel 7: Missing APAR/IPR -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel7')"
+          aria-expanded="false"
+          aria-controls="panel7"
+        >
+        एपीएआर/आईपीआर गुम
+        </button>
+        <div class="faq__panel d-none" id="panel7">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+
+      <!-- Panel 8: Half Yearly Brochure -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel8')"
+          aria-expanded="false"
+          aria-controls="panel8"
+        >
+          Half Yearly Brochure
+        </button>
+        <div class="faq__panel d-none" id="panel8">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+
+      <!-- Panel 9: वार्षिक वाहन रिपोर्ट -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel9')"
+          aria-expanded="false"
+          aria-controls="panel9"
+        >
+          वार्षिक वाहन रिपोर्ट
+        </button>
+        <div class="faq__panel d-none" id="panel9">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+
+      <!-- Panel 10: वार्षिक वाहन रिपोर्ट (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel10')"
+          aria-expanded="false"
+          aria-controls="panel10"
+        >
+          वार्षिक वाहन रिपोर्ट
+        </button>
+        <div class="faq__panel d-none" id="panel10">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+
+      <!-- Panel 11: वार्षिक वाहन रिपोर्ट (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel11')"
+          aria-expanded="false"
+          aria-controls="panel11"
+        >
+          वार्षिक वाहन रिपोर्ट
+        </button>
+        <div class="faq__panel d-none" id="panel11">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+
+      <!-- Panel 12: वार्षिक वाहन रिपोर्ट (Duplicate, consider unique content) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <button
+          class="faq__question"
+          onclick="toggleAnswer('panel12')"
+          aria-expanded="false"
+          aria-controls="panel12"
+        >
+          वार्षिक वाहन रिपोर्ट
+        </button>
+        <div class="faq__panel d-none" id="panel12">
+          <p class="faq__answer">आपका उत्तर यहाँ है</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="gallery">
+      <div class="row align-items-center col-12 mx-auto">
+          <div class="col-md-4 col-12">
+              <div class="content">
+                  <h4>हमारी गैलरी</h4>
+
+                  <h1>हमारी फ़ोटो और वीडियो गैलरी देखें</h1>
+                  <a href="{% url 'gallery' %}">
+                    <button class="view-btn mt-3">सभी देखें</button></a
+                  >
+              </div>
+
+          </div>
+          <div class="col-md-8 col-12">
+              <div class="gallery-slider ">
+                  <div class="carousel-wrap">
+                      <div class="owl-carousel index-gallery">
+                          <div class="item">
+                              <div class="card">
+                                  <img src="/static/images/img1725.jpg" class=""  alt="gallery" />
+                              </div>
+                          </div>
+                          <div class="item">
+                            <div class="card">
+                                <img src="/static/images/img1725.jpg" class=""  alt="gallery" />
+                            </div>
+                        </div>
+                        <div class="item">
+                          <div class="card">
+                              <img src="/static/images/img1725.jpg" class=""  alt="gallery" />
+                          </div>
+                      </div>
+
+                      </div>
+                  </div>  
+              </div>
+          </div>
+      </div>
+  </div>
+    </section>
+
+
+
+<!-- footer -->
+
+{% include 'hi_footer.html' %}

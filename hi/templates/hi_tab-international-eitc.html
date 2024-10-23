@@ -1,0 +1,48 @@
+{% include 'hi_header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">e-ITEC Trainings</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Trainings - e-ITEC
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        {% for eitec in eitecs %}
+        <div class="col-12">
+          <p class="font-italic mb-2 text-light bg-success">
+            {{ eitec.serial}} &nbsp &nbsp
+             <a href="{% url 'international_training_sub_eite' eitec.slug %}"  class="text-light">
+
+              {{ eitec.title }}
+            </a>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+{% include 'hi_footer.html' %}

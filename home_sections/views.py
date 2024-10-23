@@ -1,3 +1,5 @@
+from django.utils.translation import get_language
+
 from django.shortcuts import render
 from . models import *
 # Create your views here.

@@ -1,0 +1,53 @@
+{% include 'hi_header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">wind Ward</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="{% url 'hindi_index' %}">मुख्य पृष्ठ</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">wind Ward</li>
+    </ol>
+  </nav>
+</div>
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        <div
+          class="tab-pane fade shadow rounded bg-white p-5 dgm-text"
+          id="awards-for-wind"
+          role="tabpanel"
+          aria-labelledby="awards-for-wind"
+        >
+          <h4 class="font-italic mb-4">wind Ward</h4>
+          <p class="font-italic text-muted mb-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'hi_footer.html' %}

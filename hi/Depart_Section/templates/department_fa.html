@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Finance & Administration (F&A)</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Finance & Administration (F&A)
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="finance-sec" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% for data in fin %} {{data.description|safe}}
+
+        <ol style="list-style-type: none">
+          <a href="">{{data.NIWE_Pan_ARN_GST_Details|safe }}</a>
+        </ol>
+        {% endfor %}
+      </div>
+      <div class="col-md-4">
+       {% include "depart-fa-side-tabs.html" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

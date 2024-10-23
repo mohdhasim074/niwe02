@@ -1,0 +1,104 @@
+{% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">WEG Installation Details India - year Wise</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="/information_weg_installation"> Weg Installation</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        WEG Installation Details India - year Wise
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div" id="divContent">
+  <div class="container mt-4 text-center">
+    <h3 class="text-center">
+      STATE-WISE & YEAR-WISE WIND POWER INSTALLED CAPACITY(MW)
+    </h3>
+    <h5 class="text-center pt-2">(UP TO March 2022)</h5>
+    <!--  table -->
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Sr No.</th>
+          <th scope="col">State</th>
+          <th scope="col">Upto 31.03.2002</th>
+          <th scope="col">2002-03</th>
+          <th scope="col">2003-04</th>
+          <th scope="col">2004-05</th>
+          <th scope="col">2005-06</th>
+          <th scope="col">2006-07</th>
+          <th scope="col">2007-08</th>
+          <th scope="col">2008-09</th>
+          <th scope="col">2009-10</th>
+          <th scope="col">2010-11</th>
+          <th scope="col">2011-12</th>
+          <th scope="col">2012-13</th>
+          <th scope="col">2013-14</th>
+          <th scope="col">2014-15</th>
+          <th scope="col">2015-16</th>
+          <th scope="col">2016-17</th>
+          <th scope="col">2017-18</th>
+          <th scope="col">2018-19</th>
+          <th scope="col">2019-20</th>
+          <th scope="col">2020-21</th>
+          <th scope="col">2021-22</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for detail in details %}
+        <tr>
+          <td>{{ detail.sr_no }}</td>
+          <td>{{ detail.state }}</td>
+          <td>{{ detail.upto_31_03_2002 }}</td>
+          <td>{{ detail.year_2002_03 }}</td>
+          <td>{{ detail.year_2003_04 }}</td>
+          <td>{{ detail.year_2004_05 }}</td>
+          <td>{{ detail.year_2005_06 }}</td>
+          <td>{{ detail.year_2006_07 }}</td>
+          <td>{{ detail.year_2007_08 }}</td>
+          <td>{{ detail.year_2008_09 }}</td>
+          <td>{{ detail.year_2009_10 }}</td>
+          <td>{{ detail.year_2010_11 }}</td>
+          <td>{{ detail.year_2011_12 }}</td>
+          <td>{{ detail.year_2012_13 }}</td>
+          <td>{{ detail.year_2013_14 }}</td>
+          <td>{{ detail.year_2014_15 }}</td>
+          <td>{{ detail.year_2015_16 }}</td>
+          <td>{{ detail.year_2016_17 }}</td>
+          <td>{{ detail.year_2017_18 }}</td>
+          <td>{{ detail.year_2018_19 }}</td>
+          <td>{{ detail.year_2019_20 }}</td>
+          <td>{{ detail.year_2020_21 }}</td>
+          <td>{{ detail.year_2021_22 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% comment %}
+    <h4>YEAR WISE WIND POWER INSTALLED CAPACITY(MW)</h4>
+    {% endcomment %}
+
+    <img src="/static/images/certification/WEG_graph.png" alt="graph" />
+  </div>
+</section>
+
+{% include 'footer.html' %}

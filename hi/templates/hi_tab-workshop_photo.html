@@ -1,0 +1,54 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">{{ item.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="{% url 'hindi_index' %}">मुख्य पृष्ठ</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ item.title }}
+      </li>
+    </ol>
+  </nav>
+</div> 
+
+<section class="dgm-div" id="divContent">
+  <div class="container">
+    <h2>{{ item.title }}</h2>
+
+    <div class="row mx-auto gallery">
+      {% for photo in photos %}
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+        <a href="{{ photo.image.url }}" class="big">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center  sub-gallery-img">
+              <img
+                src="{{ photo.image.url }} "
+                class="card-img-top"
+                alt="workshop image"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

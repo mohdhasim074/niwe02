@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7fmu@^)#2=@4w#6mpc3nh7!owl*t&i33b%&_80yr!=g05uf*)-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['13.127.123.26']
+DEBUG = True
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['13.127.123.26']
 
 # https://github.com/mohdhasim074/niwe02.git
 # Application definition
@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
+    # 
+    
+    # 'modeltranslation',
     'about_section',
     'Media_Section',
     'Depart_Section',
@@ -46,13 +50,12 @@ INSTALLED_APPS = [
     'Staff_Section',
     'Right_To_Information',
     'Career_Section',
-    'tinymce',
     # 
     'certification_services',
     'inspection_services',
     'search_form',
     'home_sections',
-    # 'hi',
+    'hi',
     
 ]
 
@@ -98,7 +101,19 @@ DATABASES = {
         "PASSWORD": "niwe@04",
         "HOST": "127.0.0.1",
         "PORT": "5432",
+    },
+    #  for hindi 
+    
+    "hindi": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "hasim_db",
+        "USER": "niwe_project",
+        "PASSWORD": "niwe@04",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
+    
+    
 }
 
 # Password validation
@@ -121,11 +136,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
+from django.utils.translation import gettext_lazy as _
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('hi', 'Hindi'),
+)
+
 TIME_ZONE = 'UTC'
 USE_I18N = True
+USE_L10N = True
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images) 
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -143,12 +168,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Additional static files directory
 ]
-STATIC_ROOT = '/var/www/static/'
+# STATIC_ROOT = '/var/www/static/'
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'  # URL to access media files
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
-MEDIA_ROOT = '/var/www/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Directory to store uploaded media files
+# MEDIA_ROOT = '/var/www/media/'
 
 
 # for file size

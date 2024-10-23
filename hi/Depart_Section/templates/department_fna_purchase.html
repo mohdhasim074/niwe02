@@ -1,0 +1,47 @@
+{% include 'header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Purchase</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Purchase</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="finance-sec" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p>
+          <a
+            href="/static/pdf/Purchase Procedure (Revised).pdf"
+            class="text-dark"
+            >Purchase Procedure</a
+          >
+        </p>
+
+        <h5>Download</h5>
+        <ol style="list-style-type: disc">
+          {% for item in purchase %}
+          <a href="{{item.docs.url}}" target="_blank"> <li>{{item.annexure}}</li></a>
+          {% endfor %}
+        </ol>
+      </div>
+
+      <div class="col-md-4">{% include "depart-fa-side-tabs.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

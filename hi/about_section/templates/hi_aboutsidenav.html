@@ -1,0 +1,43 @@
+{% load static %}
+
+<div class="about-side-nav">
+  <ul class="nav-tab" style="list-style-type: none">
+    <li>
+      <a href="{% url 'us' %}">About Us</a>
+    </li>
+    <li>
+      <a href="{% url 'dgm' %}">DIRECTOR GENERAL'S MESSAGE</a>
+    </li>
+    <li>
+      <a href="{% url 'background' %}">BACKGROUND</a>
+    </li>
+    <li>
+      <a href="{% url 'charter' %}">CHARTER</a>
+    </li>
+    <li>
+      <a href="{% url 'org' %}">ORGANIZATIONAL CHART</a>
+    </li>
+    <li>
+      <a href="{% url 'quality' %}">QUALITY POLICY</a>
+    </li>
+    <li>
+      <a href="{% static '/images/ISO_CERTIFICATE.pdf' %}"
+        >MANAGEMENT SYSTEM CERTIFICATE</a
+      >
+    </li>
+
+    
+    <!-- 
+      <li>
+        <a href="{% url 'dg_staff' %}">STAFF PROFILE</a>
+      </li>
+  
+      <li>
+        <a href="staff_profile_owd.html"> STAFF PROFILE</a>
+      </li>
+      <li>
+        <a href="staff_profile_fa.html">Finance & Administration (F&A)</a>
+      </li>
+      -->
+  </ul>
+</div>

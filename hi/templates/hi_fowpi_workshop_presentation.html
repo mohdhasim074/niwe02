@@ -1,0 +1,92 @@
+{% include 'header.html' %}
+{% load static %}
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FOWPI Workshop Presentations</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'owd' %}">Offshore Wind Development</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        FFOWPI Workshop Presentations
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="pb-3">FOWPI Foundation Workshop Proceedings</h5>
+        <ol type="I">
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_foundation_design.pdf' %}"
+            target="_blank"
+            ><li>FOWPI foundation design</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI_status_update.pdf' %}"
+            target="_blank"
+            ><li>FOWPI status update</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/FOWPI-NIWE-Offshore_wind_energy_in_India.pdf' %}"
+            target="_blank"
+            ><li>FOWPI-NIWE Offshore wind energy in India</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/Geotechnical_and_Offsgore_solutions.pdf' %}"
+            target="_blank"
+            ><li>Geotechnical and Offsgore solutions</li></a
+          >
+        </ol>
+
+        <h5 class="pb-3 pt-2">FOWPI Metocean Workshop Presentations</h5>
+
+        <ol>
+          <a
+            href="{% static '/pdf/depart-side-tabs/Dr.Jesper_Skourup-Metocean_Studies_02Jun2017.pdf' %}"
+            target="_blank"
+            ><li>"Metocean Studies" by Dr. Jesper Skourup</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/Dr.Rajesh_Katyal-Offshore_wind_energy_02Jun2017.pdf' %}"
+            target="_blank"
+            ><li>"Offshore Wind Energy" by Dr. Rajesh Katyal</li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/Mr.Per_Volund-FOWPI_Project&European_OWF_Exp_02Jun2017.pdf' %}"
+            target="_blank"
+            ><li>
+              "FOWPI Project & European OWF Experience" by Mr. Per Volund
+            </li></a
+          >
+          <a
+            href="{% static '/pdf/depart-side-tabs/Ms.Cecile_Leemans-EU_Energy_Policy17.pdf' %}"
+            target="_blank"
+            ><li>
+              "EU Energy Policy & Offshore Wind" by Ms. Cecile Leemans
+            </li></a
+          >
+        </ol>
+      </div>
+      <div class="col-md-4">{% include 'departments-owd-side-tabs.html' %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

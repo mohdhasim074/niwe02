@@ -1,0 +1,65 @@
+{% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Inspection Scope</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Inspection Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="about-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'inspection_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <!--  your text -->
+          <h5>Scope</h5>
+          <p>
+            NIWE carries out Inspection Services as per the requirements of
+            ISO/IEC 17020:2012 as an Independent Inspection body (Type A) and to
+            demonstrate the effective implementation of the system at NIWE.
+          </p>
+          <p>
+            The scope of the Inspection Body is to carry out the Inspection of
+            Wind Turbines and their Components. The detailed scope is defined
+            below:
+          </p>
+          <ol>
+            <li><strong>IAF Scope 18</strong></li>
+            <strong>Machinery and Equipment </strong>
+            <ol>
+              1.1 Tower, Hub and Nacelle Assembly, Rotor Blades
+            </ol>
+
+            <li><strong>IAF Scope 19a </strong></li>
+            <strong>Electrical equipment </strong>
+            <ol>
+              2.1 Generators, Power Transformers, and Power Converter, and Wind
+              Turbines installed at the Site
+            </ol>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'footer.html' %}

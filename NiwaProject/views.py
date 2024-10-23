@@ -316,3 +316,15 @@ def annual_reports(request):
         return render (request, 'tab-annual.html', context)
     return render (request, 'tab-annual.html')
 
+def Events(request):
+    return render (request, "events.html")
+
+def whatsNew(request):
+    return render (request, "whats_new.html")
+
+def mnreNew(request):
+    return render (request, "mnre_new.html")
+
+
+def corporate_film_hindi(request):
+    return render(request, 'corporate_film.html')

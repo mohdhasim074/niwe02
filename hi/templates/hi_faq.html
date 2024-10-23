@@ -1,0 +1,37 @@
+{% include 'hi_header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">FAQs</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+        <a href="{% url 'hindi_index' %}">मुख्य पृष्ठ</a>
+
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">FAQs</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rrs_section dgm-div ps-2 " id="divContent">
+  <div class="container ">
+
+    <p>{{faqs.0.preamble|safe}}</p>
+    <ul>  
+       
+    </ul>
+  </div>
+</section>
+
+{% include 'hi_footer.html' %}

@@ -1,0 +1,64 @@
+{% load static %} {% include 'hi_header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">ITEC Training</h1>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">ITEC Training</li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       <!-- /h1 -->
+        <div class="itec-img-div ">
+          <div class="row col-12 ms-auto mb-2 tab-itec-div">
+            <div class="col-auto">
+              <a href="/itec/" class="tab-itec"> ITEC </a>
+            </div>
+
+            <div class="col-auto">
+              <a href="{% url 'itec_training' %}" class="tab-itec">
+                TRAININGS
+              </a>
+            </div>
+            <div class="col-auto">
+              <a href="{% url 'itec_countries' %}" class="tab-itec">
+                COUNTRIES
+              </a>
+            </div>
+
+            <div class="col-auto">
+              <a href="{% url 'itec_feedback' %}" class="tab-itec">
+                FEEDBACK
+              </a>
+            </div>
+          </div>
+          <!-- img-country-->
+        </div>
+        <div class="pt-4 itec-img-div ">
+             <h5><b>NO. OF ITEC COUNTRIES COVERED </b></h5>
+          <img src="/static/images/ITEC_partnet.png" alt="img-itec" alt="partnet" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'hi_footer.html' %}

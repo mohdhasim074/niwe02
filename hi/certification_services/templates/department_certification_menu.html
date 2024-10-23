@@ -1,0 +1,62 @@
+{% include 'header.html' %}
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Introduction</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'certificate' %}">Certification</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Certification Services
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">{% include 'certification_sidenav.html' %}</div>
+      <div class="col-md-8">
+        <div class="dgm-text">
+          <div>
+            <h5>Introduction</h5>
+
+            <ul>
+              <p>
+                Wind sector in India is growing at a rapid pace with increased
+                utilization of wind energy for the power development. Type
+                Certification of wind turbines plays an active role to
+                facilitate the orderly growth of wind energy sector in India.
+                MNRE Approved NIWE as Type certification body in India for all
+                wind related issues. NIWE provides the certification services in
+                India based on the IS/IEC 61400-22:2010. The Type Certification
+                of Wind Turbines are being offered by NIWE.
+              </p>
+              <p>
+                <b>Type Certification:</b> Procedure by which a certification
+                body gives written assurance that a wind turbine type conforms
+                to specified requirements.
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

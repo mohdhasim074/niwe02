@@ -1,0 +1,113 @@
+{% include 'hi_header.html' %}
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">Training Calendar for 2023-24</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent pt-2">
+      <li class="breadcrumb-item">
+        <a href="{% url 'hindi_index' %}">मुख्य पृष्ठ</a>
+        
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'departments' %}">Department</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url 'sdt' %}">Skill Development & Training</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Training Calendar
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rnd-div" id="divContent">
+  <div class="container">
+    <div class="row col-12">
+      <div class="col-md-8">
+        <h3 class="font-italic mb-1 text-center text-primary pb-4">
+          TRAINING CALENDAR 2024-25
+        </h3>
+
+        <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-success text-white">
+                <h3 class="text-center">NATIONAL TRAINING COURSES</h3>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th> 
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in national %}
+            {% if item.training_type == "NATIONAL"%}
+
+            <tr>
+              <th scope="row">{{ item.serial }}</th>
+              <td class="text-dark">
+                <a href="{% url 'training_calander_sub' item.id %}" >
+                  {{ item.description }}
+                </a>
+              </td>
+              <td>{{ item.date_from }}</td>
+              <td>{{ item.date_To }}</td>
+              <td>{{ item.duration }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+        <table class="table table-bordered pt-3">
+          <thead>
+            <tr class="table">
+              <th colspan="5" class="bg-primary text-white">
+                <h3 class="text-center">CUSTOMIZED TRAINING COURSES</h3>
+              </th>
+            </tr>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Description</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in national %} 
+            {% if item.training_type == "CUSTOMIZED"%}
+ 
+            <tr>
+              <th scope="row">{{ item.serial }}</th>
+              <td class="text-dark">
+                <a href="#">
+                  {{ item.description }}
+                </a>
+              </td>
+              <td>{{ item.date_from }}</td>
+              <td>{{ item.date_To }}</td>
+              <td>{{ item.duration }}</td>
+            </tr>
+            {% endif %} {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-4">{% include "side-tab.html" %}</div>
+    </div>
+  </div>
+</section>
+
+{% include 'hi_footer.html' %}

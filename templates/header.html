@@ -93,12 +93,7 @@
                 <!-- Google Translate Hidden Element -->
                 <div id="google_translate_element" style="display: flex">
                   <!-- Language Selection Spans with Google Translate -->
-                  <!-- <span class="mx-1" >English</span>
-                  <span class="mx-3">हिन्दी</span>
-                  <span class="grade-div"><a href="#">A-</a></span>
-                  <span class="grade-div"><a href="#">A</a></span>
-                  <span class="grade-div"><a href="#">A+</a></span>
-                  -->
+                  
                   <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
                         href="#" id="linkIncrease">A<sup>+</sup></a>
                     <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
@@ -109,25 +104,29 @@
                 </div>
               </div>
             </div>
-<div class="col-lg-2 d-none  d-lg-block ">
-  <div class="nav social-icon d-flex align-items-center justify-content-center pb-2">
-    <a href="https://www.facebook.com/niwechennai">
-      <i class="fa fa-facebook-f"></i>
-    </a>
-    <a href="https://twitter.com/niwe_chennai">
-      <i class="ri-twitter-x-line"></i>
-                  </a>
-    <a href="#">
-      <i class="fa fa-youtube-play"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-instagram"></i>
-    </a>
-    {% comment %} <a href="{% url 'hindi_index' %}">Hindi</a> {% endcomment %}
-    <a href="#">Hindi</a>
-    
-  </div>
-</div>
+
+            <div class="col-lg-2 d-none  d-lg-block ">
+              <div class="nav social-icon d-flex align-items-center justify-content-center pb-2">
+                <a href="https://www.facebook.com/niwechennai">
+                  <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/niwe_chennai">
+                  <i class="ri-twitter-x-line"></i>
+                              </a>
+                <a href="#">
+                  <i class="fa fa-youtube-play"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram"></i>
+                </a>
+                <!--
+                  <a href="#">Hindi</a>
+                -->
+                <a href="{% url 'hindi_index' %}">Hindi</a>
+                
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -431,7 +430,7 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'related_link' %}"
+                  <a class="dropdown-item" href="{% url 'related_links' %}"
                     >RELATED LINKS</a
                   >
                 </li>
@@ -489,3 +488,5 @@
     </div>
   </body>
 </html>
+
+

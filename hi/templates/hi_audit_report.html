@@ -1,0 +1,65 @@
+{% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+    <div class="overlay d-flex align-items-center">
+        <div class="container">
+            <h1 class="text-white">Audit Report</h1>
+        </div>
+    </div>
+</section>
+
+   <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'hindi_index' %}">मुख्य पृष्ठ</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">audit_report</li>
+                    </ol>
+                </nav>
+            </div>
+
+
+<section class="main-div py-5 header" id="divContent">
+    <div class="container py-1">
+        <div class="row col-12 mx-auto">
+
+            <div class="col-md-9 mt-4 order-lg-1 order-2">
+
+                <div class="tab-content" id="v-pills-tabContent"><!--left side tab content-area -->
+
+                    <div class="tab-pane fade rounded bg-white show  active" id="wind-energy" role="tabpanel"
+                        aria-labelledby="wind-energy">
+
+                        <div class="row col-12 mx-auto px-0">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                <a href="{% url 'amrit_mahotsav_22_23' %}">
+                                    <div class="card sm-card-design text-center px-3 py-4">
+                                         <h6>{{report.0.Year_of_Report}}</h6>
+                                        <h5>AKAM</h5>
+                                    </div>
+                                </a>                                                                                                         
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                                <a href="{% url 'amrit_mahotsav_22_23' %}">
+                                    <div class="card sm-card-design text-center px-3 py-4">
+                                        <h6>{{report.1.Year_of_Report}}</h6>
+                                        <h5>AKAM</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!--div close for row-->
+                    </div><!--div close for tab-pane-->
+                </div><!--div close for tab content-->
+            </div><!--div close for col-md-9-->
+
+
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}

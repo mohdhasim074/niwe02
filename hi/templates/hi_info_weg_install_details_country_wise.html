@@ -1,0 +1,64 @@
+{% include 'header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">WEG Installation Details World - Country Wise</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="{% url 'document' %}">Documents</a>
+      </li>
+      <li class="breadcrumb-item" aria-current="page">
+        <a href="/information_weg_installation"> Weg Installation</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        WEG Installation Details World - Country Wise
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section id="divContent" class="dgm-div">
+  <div class="container mt-4 text-center">
+    <h3 class="text-center">
+      STATE-WISE & YEAR-WISE WIND POWER INSTALLED CAPACITY(MW)
+    </h3>
+    <h5 class="text-center py-2">(UP TO March 2022)</h5>
+    <!--  table -->
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col-md-3">Position</th>
+          <th scope="col">Country</th>
+          <th scope="col">Total Capacity 2021 [MW]</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for detail in country_wise %}
+        <tr>
+          <td>{{ detail.position }}</td>
+          <td>{{ detail.country }}</td>
+          <td>{{ detail.capacity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    <img src="/static/images/certification/WEG_CountyWise.png" alt="graph" />
+  </div>
+</section>
+
+<!-- footer -->
+
+{% include 'footer.html' %}
