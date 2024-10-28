@@ -1,40 +1,40 @@
 {% load static %} {% include 'hi_header.html' %}
 <!-- slider start -->
 
-<section class="container-fluid p-2 hero-banner">
+<section class="container-fluid p-0 m-0 ">
   <div class="row">
-    <div class="col-md-8 col-12 offset-md-2 hero-card"> 
+    <div class="col-md-12 col-12 p-0 m-0">
       <div
         id="carouselExampleControls"
-        class="carousel slide container"
+        class="carousel slide "
         data-bs-ride="carousel"
       >
-        <div class="carousel-inner text-center">
+        <div class="carousel-inner text-center w-100" >
           <div class="carousel-item active">
             <img
               src="{% static '/images/slider/img1.jpg' %}" 
-              class="d-block w-100"
+              class="d-block "
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
               src="{% static  '/images/slider/img02.jpg' %}"
-              class="d-block w-100"
+              class="d-block "
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
               src="{% static '/images/slider/img03.jpg' %}"
-              class="d-block w-100"
+              class="d-block "
               alt="..."
             />
           </div>
           <div class="carousel-item">
             <img
               src="{% static '/images/slider/img10.jpg' %}"
-              class="d-block w-100"
+              class="d-block "
               alt="..."
             />
           </div>
@@ -46,7 +46,7 @@
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">पहले का</span>
+          <span class="visually-hidden">Previous</span>
         </button>
         <button
           class="carousel-control-next"
@@ -55,13 +55,12 @@
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">अगला</span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
   </div>
 </section>
-
 <section width="100%" id="divContent">
   <div class="news">
     <div class="news-side-div">
@@ -139,230 +138,62 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4"  id="divContent">
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4" id="divContent">
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="pills-home-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-home"
-              type="button"
-              role="tab"
-              aria-controls="pills-home"
-              aria-selected="true"
-            >
-            नया क्या है
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+              नया क्या है
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link mx-1"
-              id="pills-profile-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-profile"
-              type="button"
-              role="tab"
-              aria-controls="pills-profile"
-              aria-selected="false"
-            >
-            एमएनआरई में नये
+            <button class="nav-link mx-1" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+              एमएनआरई में नया
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="pills-contact-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-contact"
-              type="button"
-              role="tab"
-              aria-controls="pills-contact"
-              aria-selected="false"
-            >
-            घटनाक्रम
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+              घटनाक्रम
             </button>
           </li>
         </ul>
         <div class="tab-content" id="pills-tabContent" id="divContent">
-          <div
-            class="tab-pane fade show active"
-            id="pills-home"
-            role="tabpanel"
-            aria-labelledby="pills-home-tab"
-          >
-          <ul class="itme-lists">
-            <li><b><a href="assets/Docu/tender/Tender_Internet_connectivity.pdf" target="_blank"> Tender for "Internet Connectivity - 100" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
-            <li><b><a href="assets/Docu/tender/Tender_WAF.pdf" target="_blank"> Tender for "Web Application Firewall (V2) (Q3)" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
-            <li><b><a href="assets/Docu/tender/Tender_Plain_Copier_Paper(V2).pdf" target="_blank"> Tender for "Plain Copier Paper (V2) as per IS 14490 (Q4) , Gift Pen (Q4)" due at 01.00 PM on 01.10.2024 opening at 01.30 PM on 01.10.2024 </a></b></li>
-             
-            <li><b><a href="assets/Docu/tender/Tender_Kayathar_Transformer.pdf" target="_blank"> Tender for "Repair and Rewinding of 250KVA Distribution Transformer at Kayathar" due at 03.30 PM on 30.09.2024 opening at 03.30 PM on 01.10.2024 </a></b></li>
-            <li><b><a href="assets/Docu/tender/Group_Mediclaim_Insurance_Service.pdf" target="_blank"> Bid Document for "Group Mediclaim Insurance Service - Permanent Employees, Retired / Superannuated / Pensioners; Hospitalization for accident & emergency Treatments, Domiciliary treatment, Maternity, All pre-existing illness"  due at 03.00 PM on 24.07.2024 opening at 03.30 PM on 24.07.2024 </a></b>
-              <ol type = "1"> 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li>                                 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_ATC.pdf" target ="_blank"><b>Bid Corrigendum </b></a></li>                                 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_02.docx" target ="_blank"><b>Corrigendum - 03 </b></a></li>                                 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_03.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>                                 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_04.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>                                 
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_05.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_06.png" target ="_blank"><b>Corrigendum - 07 </b></a></li>
-                  <li><a href="assets/Docu/tender/Corrigendum_Group_Mediclaim_Insurance_Service_07.pdf" target ="_blank"><b>Corrigendum - 08 </b></a></li>
-  
-              </ol>
-            </li>
-            <li><b><a href="" target="_blank"> सेवाओं के लिए कस्टम बोली - ओडिशा में 3 स्थानों पर 150 मीटर मेट मस्तूल के लिए डिजाइन निर्माण स्थापना कमीशन और परिवहन 16.07.2024 को शाम 07.00 बजे तक जमा करना होगा और 16.07.2024 को शाम 07.30 बजे खुलेगा </a></b>
-              <ol type = "1"> 
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha_150.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li> 
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha_150.png" target ="_blank"><b>Corrigendum - 02 </b></a></li> 
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha1_150.pdf" target ="_blank"><b>Corrigendum - 03 </b></a></li>   
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha2_150.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>       
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha3_150.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha4_150.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha5_150.pdf" target ="_blank"><b>Corrigendum - 07 </b></a></li>
-                  <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha6_150.png" target ="_blank"><b>Corrigendum - 08 </b></a><span class ="label">NEW</span></li>
-  
-              </ol>
-          </li>
-          <li><b><a href="assets/Docu/tender/Tender_Metmast_Odisha.pdf" target="_blank"> सेवाओं के लिए कस्टम बोली - ओडिशा में 3 स्थानों पर 150 मीटर मेट मस्तूल के लिए डिजाइन निर्माण स्थापना कमीशन और परिवहन 16.07.2024 को शाम 07.00 बजे तक जमा करना होगा और 16.07.2024 को शाम 07.30 बजे खुलेगा</a></b>
-            <ol type = "1"> 
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha.pdf" target ="_blank"><b>Corrigendum - 01 </b></a></li>                   
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha1.png" target ="_blank"><b>Corrigendum - 02 </b></a></li>                                 
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha2.pdf" target ="_blank"><b>Corrigendum - 03 </b></a></li>
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha3.png" target ="_blank"><b>Corrigendum - 04 </b></a></li>
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha4.png" target ="_blank"><b>Corrigendum - 05 </b></a></li>
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha5.png" target ="_blank"><b>Corrigendum - 06 </b></a></li>
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha6.pdf" target ="_blank"><b>Corrigendum - 07 </b></a></li>
-                <li><a href="assets/Docu/tender/Corrigendum_Tender_Metmast_Odisha7.png" target ="_blank"><b>Corrigendum - 08 </b></a></li>
-                                
-            </ol>
-          </li> 
-
-          <li><b><a href="national_27.php" target="_blank">27<sup>th</sup> National Training Course on "Wind Energy Technology"  18<sup>th</sup> to 20<sup>th</sup> December 2024  <span class="label">NEW</span></a></b></li>	   
-          <li><b><a href="assets/Docu/NIWE_RD Vision_2024.pdf" target="_blank">  R&D Vision Document </a></b></li>                                                                                                                                                                                                                                                                                                                                                                 
-          <li><b><a href="https://www.seci.co.in/whats-new-detail/2606" target="_blank">RfS for Allocation of Sea-bed Lease Rights for 4000 MW Offshore Wind Power Projects </a></b></li>		
-          <li><b><a href="https://www.seci.co.in/whats-new-detail/2603" target="_blank">NIT for Allocation of Sea-bed Lease Rights for Offshore Wind Power Projects in India </a></b></li> 		        
-          <li><b><a href ="assets/Docu/Elevation_certificate_MoD.pdf" target="_blank">Issuance of an elevation certificate for MoD NoC applications of Wind Power Projects </a> </b></li>            
-          <li><b><a href ="wind_potential.php" target="_blank">Wind Potential Sites for setting up Wind Projects_MOD NOC details </a> </b></li>           
-          <li><b><a href="https://vsdp.niwe.res.in" target="_blank">Vayumitra Skill Development Programme</a> </b></li>            
-          <li><b><a href="assets/Docu/Guidelines_for_Offshore_Wind_Power_Assessment_Studies_and_Surveys.pdf" target="_blank">Amendment in the 'Guidelines for Offshore Wind Power Assessment Studies and Surveys'  </a></b></li>           
-          <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank"> Certification of Accreditation </a></b></li>
-          <li><b><a href="https://mnre.gov.in/img/documents/uploads/file_f-1657882722533.pdf" target="_blank">Offshore Strategy Paper</a></b></li>                
-          <li><b><a href="assets/Docu/White_Paper_on_Wind_Turbine_Technology_2020-30.pdf" target="_blank">White Paper on Wind Turbine Technology R&D for India 2020-30 </a></b></li>      
-          <li><b><a href="assets/Docu/Special_Reservation_Cell(SRC)_13.01.2021.pdf" target="_blank">Special Reservation Cell in NIWE </a></b></li>                     
-          <li><b><a href="department_owd_lidar_raw_data.php" target="_blank">Offshore LiDAR raw data (*.STA & *.RTD files) at Gulf of Khambhat off Gujarat coast from Dec 2018 to Nov 2019 </a></b></li>				
-          <li><b><a href="assets/Docu/India's_Wind_Potential_Atlas_at_120m_agl.pdf" target="_blank">India's Wind Potential Atlas at 120m agl</a> </b></li>               
-          <li><b><a href='assets/Docu/MINUTES_OF_THE_MEETING_Ladakh_06.12.2019.pdf' target="_blank">"Minutes of the Meeting - Development of Wind/Solar Power projects in Ladakh region" </a></b></li>
-          <li><b><a href="assets/Docu/Ladakh_Presentation_06.12.2019.pdf" target="_blank">Wind / Solar Resource Assessment studies in Leh Ladakh UT </a></b></li>
-          <li><b><a href="assets/Docu/tender/Notice_for_GeM.pdf" target="_blank"><span class="blink_text">Information :</span> "All Vendors to get registered in Government e-Market place (GeM)" </a></b></li>               
-          <li><b><a href="department_owd_time_series_data.php" target="_blank">Procedure for purchasing the Time Series Wind/Solar Data </a></b></li>          
-          <li><b><a href="assets/Docu/AIRTF_Brochure.pdf" target="_blank">ASEAN-INDIA Research Training Fellowship (AIRTF) Programme </a></b></li>
-          <li><b><a href="assets/Docu/RTF-DCS_Brochure.pdf" target="_blank">Research Training Fellowship - Developing Countries Scientist (RTF-DCS) Scheme </a></b></li>
-          <li><b><a href="assets/Docu/NIWE_Testing_and_certification_Letter_dt_07.02.2018.pdf" target="_blank">"MNRE approved NIWE as Testing and Type Certification body in India for all wind related issues" </a></b></li>          
-          <li><b><a href="assets/Docu/GST_registration_certificate.pdf" target="_blank">NIWE's GST Registration Certificate </a></b></li>
-              
-            
-        </ul>
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="assets/Docu/tender/Tender_Internet_connectivity.pdf" target="_blank"> "इंटरनेट कनेक्टिविटी - 100" के लिए निविदा 03.10.2024 को अपराह्न 03.00 बजे जमा करनी होगी तथा 03.10.2024 को अपराह्न 03.30 बजे खुलेगी </a></b></li>                <li><b><a href="assets/Docu/tender/Tender_WAF.pdf" target="_blank"> Tender for "Web Application Firewall (V2) (Q3)" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
+                <li><b><a href="assets/Docu/tender/Tender_Plain_Copier_Paper(V2).pdf" target="_blank"> "आईएस 14490 (Q4) के अनुसार प्लेन कॉपियर पेपर (V2), गिफ्ट पेन (Q4)" के लिए निविदा 01.10.2024 को दोपहर 01.00 बजे तक जमा करनी होगी तथा 01.10.2024 को दोपहर 01.30 बजे खुलेगी</a></b></li>              </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white"  href="{% url 'hi_whatsNew_updates' %}">और देखें</a>
+              </div>
+            </div>
           </div>
-          <div
-            class="tab-pane fade"
-            id="pills-profile"
-            role="tabpanel"
-            aria-labelledby="pills-profile-tab"
-          >
-          
-          <ul class="itme-lists">
-              
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/08/202408021360620385.pdf" target="_blank">Advertisement for Scientist-F Vacancies at SSS-NIBE </a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/05/202405091646108351.pdf" target="_blank">Joint MTech Program in Renewable Energy (NIT Jalandhar and SSS-NIBE, Kapurthala), Admissions Open for 2024 </a></b></li>
-            <li><b><a href="assets/Docu/Circular draft tender document.pdf" target="_blank">Draft Tender Document for Sea bed leasing for offshore wind energy Projects </a></b></li>
-            <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank">Certificate of Accreditation </a></b></li>
-           
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122768-2.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 13.06.2022)</a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122737.pdf" target="_blank">Participation in Expression of Interest (EoI) for setting up a manufacturing zone on pilot basis for Power & Renewable Energy Sector</a></b></li>
-           
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122768-1.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 05.05.2022)</a></b></li>
-           
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122730-1.pdf" target="_blank">Biogas plant installation enlisted under MGNREGA Act 2005.</a></b></li>
-           
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122783.pdf" target="_blank">Revised List of Wind Turbine Models and Manufacturers (As on 05.04.2022)</a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122777.pdf" target="_blank">Approved Models and Manufacturers of Solar Photovoltaic Modules (Requirements for Compulsory Registration) Order, 2019: Amendment.</a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122790.pdf" target="_blank">Updated (04.03.2022) List-I under ALMM order for Solar PV Modules</a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122733.pdf" target="_blank">Time-extension in Scheduled Commissioning Date of Wind Energy Projects considering disruption due to post-COVID supply chain and monsoon related disruptions.</a></b></li>
-            
-           
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122730.pdf" target="_blank">Administrative Approval and Scheme Guidelines for GEC Phase II</a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2022/12/2022122724-1.pdf" target="_blank">Amendment in the 'Guidelines for Tariff Based Competitive Bidding Process for procurement of power from Grid Connected Winf Solar Hybrid Projects' issued dated 14.10.2020 and amended on 23.07.2021</a></b></li>
-           
 
-          </ul>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/08/202408021360620385.pdf" target="_blank">एसएसएस-एनआईबीई में वैज्ञानिक-एफ रिक्तियों के लिए विज्ञापन</a></b></li>                <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/05/202405091646108351.pdf" target="_blank">Joint MTech Program in Renewable Energy (NIT Jalandhar and SSS-NIBE, Kapurthala), Admissions Open for 2024 </a></b></li>
+                <li><b><a href="assets/Docu/Circular draft tender document.pdf" target="_blank">अपतटीय पवन ऊर्जा परियोजनाओं के लिए समुद्र तल पट्टे के लिए मसौदा निविदा दस्तावेज़</a></b></li>          
+                      <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank">मान्यता प्रमाणपत्र </a></b></li>
+              </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white" href="{% url 'hi_mnreNew_updates' %}">और देखें</a>
+              </div>
+            </div>
           </div>
-          <div
-            class="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
 
-          <ul class="itme-lists">
-            <a href="#">
-              <li>
-                Event for options for posting of Group B Officers to the grade
-                of Assistant Commissioner vide Office order No. 171/2023 dated
-                10.10.2023 reg.
-              </li>
-            </a>
-
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-
-            <a href="#">
-              <li>
-                Calling for options for posting of Group B Officers to the
-                grade of Assistant Commissioner vide Office order No. 171/2023
-                dated 10.10.2023 reg.
-              </li>
-            </a>
-          </ul>
-
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="#">कार्यालय आदेश संख्या 171/2023 दिनांक 10.10.2023 के तहत सहायक आयुक्त के ग्रेड में ग्रुप बी अधिकारियों की पोस्टिंग के लिए विकल्प आमंत्रित किए जाने के संबंध में।</a></b></li>
+                <li><b><a href="#">कार्यालय आदेश संख्या 171/2023 दिनांक 10.10.2023 के तहत सहायक आयुक्त के ग्रेड में ग्रुप बी अधिकारियों की पोस्टिंग के लिए विकल्प आमंत्रित किए जाने के संबंध में।</a></b></li>
+                </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white" href="{% url 'hi_evnts_update' %}">और देखें</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   </div>
 </section>
@@ -500,7 +331,7 @@
           aria-expanded="false"
           aria-controls="panel8"
         >
-          Half Yearly Brochure
+        अर्धवार्षिक विवरणिका
         </button>
         <div class="faq__panel d-none" id="panel8">
           <p class="faq__answer">आपका उत्तर यहाँ है</p>
@@ -576,9 +407,8 @@
           <div class="col-md-4 col-12">
               <div class="content">
                   <h4>हमारी गैलरी</h4>
-
                   <h1>हमारी फ़ोटो और वीडियो गैलरी देखें</h1>
-                  <a href="{% url 'gallery' %}">
+                  <a href="{% url 'hi_gallery' %}">
                     <button class="view-btn mt-3">सभी देखें</button></a
                   >
               </div>
@@ -610,10 +440,7 @@
           </div>
       </div>
   </div>
-    </section>
-
-
-
+</section>
 <!-- footer -->
 
 {% include 'hi_footer.html' %}

@@ -24,6 +24,8 @@
 
 <section class="hwed-sec"  id="divContent">
   <div class="container">
+<div class="row">
+  <div class="col-md-8  offset-md-2">
     <div class="table-responsive">
       <table class="table table-bordered table-hover">
         <thead class="table-success">
@@ -37,7 +39,11 @@
         <tbody>
           <tr>
             <th scope="row">{{data.sr_No}}</th>
-            <td colspan="2">{{data.description|safe}}</td>
+            <td colspan="2">
+              <a href="{{data.documents.url}}" target="_blank">
+                {{data.title}}
+              </a>
+            </td>
             <td>{{data.date}}</td>
           </tr>
 
@@ -45,6 +51,8 @@
         {% endfor %}
       </table>
     </div>
+  </div>
+</div>
   </div>
 </section>
 

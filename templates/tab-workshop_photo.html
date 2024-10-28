@@ -3,7 +3,7 @@
 <section class="head-div">
   <div class="overlay d-flex align-items-center">
     <div class="container">
-      <h1 class="text-white">{{ item.title }}</h1>
+      <h1 class="text-white">{{ item.subTitle }}</h1>
     </div>
   </div>
 </section>
@@ -19,7 +19,7 @@
         <a href="{% url 'sdt' %}">Skill Development & Training</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        {{ item.title }}
+        {{ item.subTitle }}
       </li>
     </ol>
   </nav>
@@ -27,7 +27,7 @@
 
 <section class="dgm-div" id="divContent">
   <div class="container">
-    <h2>{{ item.title }}</h2>
+    <h3>{{ item.subTitle }}</h3>
 
     <div class="row mx-auto gallery">
       {% for photo in photos %}

@@ -30,7 +30,8 @@ class DiffAdmin(admin.ModelAdmin):
 @admin.register(RevisedGuidelinesForProject)
 class RevisedGuidelinesAdmin(admin.ModelAdmin):
 
-    list_display = ('sr_No', 'description', 'date')
+    list_display = ('sr_No', 'title', 'date')
+    search_fields= ('sr_No', )
     ordering = ['id']
 
 

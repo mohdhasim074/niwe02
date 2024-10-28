@@ -91,12 +91,12 @@ class SDT_Webinar(models.Model):
         return self.title
 
     def get_url_url(self):
-        return self.docs.url  # Returns the URL of the uploaded file
+        return self.docs.url  # Returns the URL of the  uploaded file
 
 
 class SDT_Short_Term(models.Model):
     title = models.CharField(max_length=255,)
-    image = models.ImageField(upload_to='images/')
+    # image = models.ImageField(upload_to='images/')
     description = HTMLField(null=True, blank=True)
 
     def __str__(self):
@@ -107,7 +107,8 @@ class SDT_Short_Term(models.Model):
 class SDT_GlobalWindDay(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=255)
-    
+    type = models.CharField(max_length=10, default='url')
+    docs = models.FileField(null=True, blank=True)
     def __str__(self):
      return self.title
 
@@ -118,13 +119,29 @@ class SDT_Global_Sub_Wind(models.Model):
     description = HTMLField(null=True, blank=True)
 
 
+class SDT_Ireda_News(models.Model):
+    serial = models.IntegerField()
+    title = models.CharField(max_length=105)
+    
+    def __str__(self):
+     return self.title
+
+
+class SDT_Ireda_Sub_News(models.Model):
+    item = models.ForeignKey(SDT_Ireda_News, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    description = HTMLField(null=True, blank=True)
+
+
+
+
 class SDT_workshop(models.Model):
-    url = models.CharField(max_length=255)  # max_length is required
     title = models.CharField(max_length=255)  # max_length is required
+    subTitle = models.CharField(max_length=255)  # max_length is required
 
 
 class SDT_workshop_type(models.Model):
-    item = models.ForeignKey(SDT_workshop, on_delete=models.CASCADE)
+    item = models.ForeignKey(SDT_workshop, on_delete=models.CASCADE)    
     image = models.ImageField(upload_to='images/')
 
     def __str__(self):
@@ -230,18 +247,13 @@ class SDT_InternationalTraining_sub_eitec(models.Model):
 class SDT_vayumitra(models.Model):
     serial = models.IntegerField()
     title = models.CharField(max_length=205)
+    type= models.CharField(max_length=10, null=True, blank=True)
     # title_type = models.CharField(max_length=20, default='docs', blank=True)
-    # url = models.URLField(max_length=200, blank=True,)
-    docs = models.FileField(upload_to='annual-reports/', blank=True)
+    urls = models.URLField(max_length=200, blank=True, null=True)
+    docs = models.FileField(upload_to='annual-reports/', null=True, blank=True)
 
     def __str__(self):
         return self.title
-    
-# class SDT_Vayumitra_sub(models.Model):
-#     item = models.ForeignKey(SDT_vayumitra, on_delete=models.CASCADE)
-#     files = models.FileField(upload_to='annual-reports/', blank=True)
-#     url = models.URLField(max_length=200, blank=True)
-
 
 class SDT_Library(models.Model):
     title_type = models.CharField(max_length=50, default='Library Type')
@@ -368,12 +380,12 @@ class WRA_Srra_Station_ams(models.Model):
 # owd
 class Offshore_Wind_Development(models.Model):
     title = models.CharField(max_length=250)
-    description = HTMLField()
+    description = HTMLField( )
 
 
-class RelatedImage(models.Model):
-    OWD = models.ForeignKey(Offshore_Wind_Development, related_name='images', on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to='images/')
+# class RelatedImage(models.Model):
+#     OWD = models.ForeignKey(Offshore_Wind_Development, related_name='images', on_delete=models.CASCADE, null=True, blank=True)
+#     image = models.ImageField(upload_to='images/')
 
 
 #  finance

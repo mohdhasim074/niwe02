@@ -1,10 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import request
-from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
-      Department_testing_measure, Department_testing_measureType, \
-    WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential,  WRA_Srra_Station_phases, WRA_Srra_Station_phaseII,\
-    Department_Fna_Purchase, Department_Fna_Finance
+from . models import *
 from . models import Reserach_n_Development, Testing_and_Standards_Regulation, Departments, Wind_Resources_Assessment, Finance_and_Administration, Offshore_Wind_Development, Skill_developements_training
 
 

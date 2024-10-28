@@ -106,154 +106,97 @@
 <section class="about-div" id="divContent">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-12 col-12" >
+      <div class="col-lg-8 col-md-12 col-12">
         <div class="about-section pt-4">
           <h2><span style="color: #00899a">Director’s </span> Message</h2>
           <div class="line"></div>
 
           {% for data in dgm %}
-          <div class="row" > 
+          <div class="row"> 
             <div class="col-md-4 col-12">
               <div class="director-img">
                 {% if data.Dirs_image %}
                 <img src="{{data.Dirs_image.url}}" class="pb-1" alt="dgm_img" />
-
                 {% else %}
-
                 <img src="media/images/men.png" class="pb-1" alt="dgm" />
                 {% endif %}
                 <h4 class="text-center">Dr. Rajesh Katyal</h4>
                 <h6 class="text-center">Director General</h6>
               </div>
             </div>
-            <div class="col-md-8 col-12"  id="divContent">
+            <div class="col-md-8 col-12" id="divContent">
               <p>{{data.description|striptags}}</p>
-
-              {% endfor %}
             </div>
           </div>
-        </div>
-      </div>
+          {% endfor %} 
 
-      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4"  id="divContent">
+        </div>
+
+      </div> 
+
+      <div class="col-lg-4 col-md-12 col-12 p-3 mt-4" id="divContent">
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="pills-home-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-home"
-              type="button"
-              role="tab"
-              aria-controls="pills-home"
-              aria-selected="true"
-            >
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
               What’s New
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link mx-1"
-              id="pills-profile-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-profile"
-              type="button"
-              role="tab"
-              aria-controls="pills-profile"
-              aria-selected="false"
-            >
+            <button class="nav-link mx-1" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
               New in MNRE
             </button>
           </li>
           <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="pills-contact-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-contact"
-              type="button"
-              role="tab"
-              aria-controls="pills-contact"
-              aria-selected="false"
-            >
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
               Events
             </button>
           </li>
         </ul>
         <div class="tab-content" id="pills-tabContent" id="divContent">
-          <div
-            class="tab-pane fade show active"
-            id="pills-home"
-            role="tabpanel"
-            aria-labelledby="pills-home-tab"
-          >
-          <ul class="itme-lists">
-            <li><b><a href="assets/Docu/tender/Tender_Internet_connectivity.pdf" target="_blank"> Tender for "Internet Connectivity - 100" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
-            <li><b><a href="assets/Docu/tender/Tender_WAF.pdf" target="_blank"> Tender for "Web Application Firewall (V2) (Q3)" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
-            <li><b><a href="assets/Docu/tender/Tender_Plain_Copier_Paper(V2).pdf" target="_blank"> Tender for "Plain Copier Paper (V2) as per IS 14490 (Q4) , Gift Pen (Q4)" due at 01.00 PM on 01.10.2024 opening at 01.30 PM on 01.10.2024 </a></b></li>
-            
-            <li > <b>   <a href="{% url 'whatsNew_updates' %}">  view more... </a> </b> </li>
-<!-- view more in 'whats-new page' -->  
-        </ul>
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="assets/Docu/tender/Tender_Internet_connectivity.pdf" target="_blank"> Tender for "Internet Connectivity - 100" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
+                <li><b><a href="assets/Docu/tender/Tender_WAF.pdf" target="_blank"> Tender for "Web Application Firewall (V2) (Q3)" due at 03.00 PM on 03.10.2024 opening at 03.30 PM on 03.10.2024 </a></b></li>
+                <li><b><a href="assets/Docu/tender/Tender_Plain_Copier_Paper(V2).pdf" target="_blank"> Tender for "Plain Copier Paper (V2) as per IS 14490 (Q4) , Gift Pen (Q4)" due at 01.00 PM on 01.10.2024 opening at 01.30 PM on 01.10.2024 </a></b></li>
+              </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white"  href="{% url 'whatsNew_updates' %}">View More</a>
+              </div>
+            </div>
           </div>
-          <div
-            class="tab-pane fade"
-            id="pills-profile"
-            role="tabpanel"
-            aria-labelledby="pills-profile-tab"
-          >
-          
-          <ul class="itme-lists">
-              
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/08/202408021360620385.pdf" target="_blank">Advertisement for Scientist-F Vacancies at SSS-NIBE </a></b></li>
-            <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/05/202405091646108351.pdf" target="_blank">Joint MTech Program in Renewable Energy (NIT Jalandhar and SSS-NIBE, Kapurthala), Admissions Open for 2024 </a></b></li>
-            <li><b><a href="assets/Docu/Circular draft tender document.pdf" target="_blank">Draft Tender Document for Sea bed leasing for offshore wind energy Projects </a></b></li>
-            <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank">Certificate of Accreditation </a></b></li>
-            
-           <li >  <b>  <a href="{% url 'mnreNew_updates' %}">view more... </a> </b>  </li>
 
-  <!-- view more in 'mnrenew page'... -->
-            
-          </ul>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/08/202408021360620385.pdf" target="_blank">Advertisement for Scientist-F Vacancies at SSS-NIBE </a></b></li>
+                <li><b><a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/05/202405091646108351.pdf" target="_blank">Joint MTech Program in Renewable Energy (NIT Jalandhar and SSS-NIBE, Kapurthala), Admissions Open for 2024 </a></b></li>
+                <li><b><a href="assets/Docu/Circular draft tender document.pdf" target="_blank">Draft Tender Document for Sea bed leasing for offshore wind energy Projects </a></b></li>
+                <li><b><a href="assets/Docu/NABL_certificate_of_accreditation_2022-24.pdf" target="_blank">Certificate of Accreditation </a></b></li>
+              </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white" href="{% url 'mnreNew_updates' %}">View More</a>
+              </div>
+            </div>
           </div>
-          <div
-            class="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
 
-          <ul class="itme-lists">
-            <li>
-               <b> 
-                <a href="#">
-                  Event for options for posting of Group B Officers to the grade
-                  of Assistant Commissioner vide Office order No. 171/2023 dated
-                  10.10.2023 reg.
-                </a>
-               </b>
-            </li>
-
-            <li>
-                <b>
-                  <a href="#">
-                    Calling for options for posting of Group B Officers to the
-                    grade of Assistant Commissioner vide Office order No. 171/2023
-                    dated 10.10.2023 reg.
-                </b>
-              </a>
-            </li>
-           <li >  <b>  <a href="{% url 'evnts_update' %}">view more... </a> </b>  </li>
-            <!-- more in events page -->
-
-          </ul>
-
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="tab-cnt-div">
+              <ul class="itme-lists">
+                <li><b><a href="#">Event for options for posting of Group B Officers to the grade of Assistant Commissioner vide Office order No. 171/2023 dated 10.10.2023 reg.</a></b></li>
+                <li><b><a href="#">Calling for options for posting of Group B Officers to the grade of Assistant Commissioner vide Office order No. 171/2023 dated 10.10.2023 reg.</a></b></li>
+              </ul>
+              <div class="view-more">
+                <a class="btn btn-view text-white" href="{% url 'evnts_update' %}">View More</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div> 
+    </div> 
+  </div> <!-- Close container div -->
 </section>
+
 <!-- Manuals section -->
 <section class="container-fluid bg-light text-center mt-2" id="divContent">
   <div class="container pt-4 pb-4" id="divContent">
@@ -502,7 +445,7 @@
                 
                     <div class="item">
                        <div class="card gly-card">
-                        <h3 class="text-center">Corporate film about NIWE</h3>
+                        <h4 class="text-center">Corporate film about NIWE</h4>
                             <video  class="h-100" controls>
                                 <source src="static/video/Corporate_film_about_NIWE.mp4" type="video/mp4"  class="h-100">
                             </video> 
@@ -511,7 +454,7 @@
               </div>
             </div>
         </div>
-
+ 
           <div class="col-md-4 col-12">
               <div class="gallery-slider ">
                   <div class="carousel-wrap">
@@ -523,7 +466,7 @@
                             </div>
                         </div>
                         <div class="item">
-                          <div class="card">
+                          <div class="card gly-card">
                               <img src="/static/images/img1725.jpg" class=""  alt="index-gallery" />
                           </div>
                           
@@ -536,25 +479,6 @@
       </div>
   </div>
 </section>
-
-<!--
-  <script>
-    // JavaScript function to toggle panel visibility
-    function toggleAnswer(panelId) {
-      var panel = document.getElementById(panelId);
-      var button = document.querySelector(`button[aria-controls="${panelId}"]`);
-  
-      if (panel.classList.contains("d-none")) {
-        panel.classList.remove("d-none");
-        button.setAttribute("aria-expanded", "true");
-      } else {
-        panel.classList.add("d-none");
-        button.setAttribute("aria-expanded", "false");
-      }
-    }
-  </script>
-
--->
 
 <!-- footer -->
 

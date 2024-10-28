@@ -1,24 +1,20 @@
 from django.http import HttpResponse, request
 from django.shortcuts import render, redirect, get_object_or_404
-from about_section.models import DirectorGeneralMessage
-from Document_Section.models import WEG_Installation_Details_India, \
-    weg_install_world_wise, AnnualReport, Newsletters
+from about_section.models import *
+from Document_Section.models import *
 
-from Depart_Section.models import SDT_workshop, SDT_workshop_type, SDT_vayumitra, \
-    SDT_InternationalTraining, SDT_National, \
-    SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
-    SDT_National_Page, SDT_InternationalTraining_eitec, \
-    SDT_Customize_Training_Sub, SDT_InternationalTraining_sub_eitec, \
-    SDT_Training_Sub_calender, SDT_Training_calender, SDT_Eitc_Trainings, \
-    SDT_Eitc_Sub_Training, SDT_Library, SDT_Global_Sub_Wind
+from Depart_Section.models import *
 
 
 def index(request):
     dgm = DirectorGeneralMessage.objects.all()
     # film = CorporateFilm.objects.first()  # Assuming one film entry
-
     if dgm.exists:
       return render(request, "index.html", {'dgm': dgm})
+
+def index_hindi(request):
+      return render(request, "index.html")
+
 
 def hindi(request):
       return render(request, "hi/index.html")
@@ -71,9 +67,6 @@ def international_conference_wsra(request):
 def international_workshop_ppt(request):
     return render(request, "international_workshop_ppt.html")
 
-
-def ireda_niwe_annual_awards(request):
-    return render(request, "ireda_niwe_annual_awards.html")
 
 # def media(request):
 #     return render(request, "media.html")
@@ -207,6 +200,22 @@ def gloabl_sub_wind_day(request, global_id):
     return render (request, 'tab-global-sub.html', context)
 
 
+def ireda_niwe_annual_awards(request):
+    ireda= SDT_Ireda_News.objects.all().order_by('id')
+    context= {
+        "ireda" : ireda
+    }
+    return render(request, "ireda_niwe_awards.html", context)
+
+def ireda_niwe_annual_subawards(request, ireda_id):
+    item = get_object_or_404(SDT_Ireda_News, id=ireda_id )
+    subIreda = SDT_Ireda_Sub_News.objects.filter(item=item).order_by('id')
+    context = {
+        "subIreda" : subIreda, "item" : item
+    }
+    
+    return render (request, 'ireda_niwe_awards_sub.html', context)
+
 def webinar(request):
     webinar = SDT_Webinar.objects.all()
     context = {"webinar": webinar}
@@ -301,20 +310,15 @@ def vayumitra_sdt(request):
 # 
 # newsletters :
 def newsletters(request):
-    news = Newsletters.objects.all().order_by('id')
-    if news.exists():
-        context = {'news': news}
-        return render (request, 'tab-news.html', context)
-    return render (request, 'tab-news.html')
-
+    news = Newsletters.objects.all().order_by('-id')
+    context = {'news': news}
+    return render (request, 'tab-news.html', context)
 
 # annual_reports :
 def annual_reports(request):
-    annual = AnnualReport.objects.all().order_by('id')
-    if annual.exists(): 
-        context = {'annual': annual}
-        return render (request, 'tab-annual.html', context)
-    return render (request, 'tab-annual.html')
+    annual = AnnualReport.objects.all().order_by('-id')
+    context = {'annual': annual}
+    return render (request, 'tab-annual.html', context)
 
 def Events(request):
     return render (request, "events.html")
@@ -328,3 +332,4 @@ def mnreNew(request):
 
 def corporate_film_hindi(request):
     return render(request, 'corporate_film.html')
+

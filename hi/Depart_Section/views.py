@@ -1,10 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import request
-from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
-      Department_testing_measure, Department_testing_measureType, \
-    WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential,  WRA_Srra_Station_phases, WRA_Srra_Station_phaseII,\
-    Department_Fna_Purchase, Department_Fna_Finance
+from . models import *
 from . models import Reserach_n_Development, Testing_and_Standards_Regulation, Departments, Wind_Resources_Assessment, Finance_and_Administration, Offshore_Wind_Development, Skill_developements_training
 
 
@@ -50,39 +46,36 @@ def department_owd_lidar_raw_data(request):
 
 # owd
 def department_owd(request):
-    owd = Offshore_Wind_Development.objects.all().order_by('id').prefetch_related('images').order_by('id')
-    # if owd.exists():
-    #     imgObj = owd[1].images.all()
-    #     context = {"owd": owd, 'imgObj': imgObj}
-    #     return render(request, "department_owd.html", context)
-    return render(request, "department_owd.html")
+    owd = Offshore_Wind_Development.objects.all()
+    context = {"owd": owd}
+    return render(request, "department_owd.html", context)
 
     
 # rnd
 def department_rnd(request):
     RnD = Reserach_n_Development.objects.all().order_by('id')
-    if RnD.exists():
-        content = {'RnD': RnD}
-        return render(request, "department_rnd.html", content)        
+    # if RnD.exists():
+    content = {'RnD': RnD}
+    return render(request, "department_rnd.html", content)        
 
 
 # sdt
 def department_sdt(request):
     sdt_list = Skill_developements_training.objects.all().order_by('id')
-    if sdt_list.exists():
-        context = {'Sdt': sdt_list}
-        return render(request, "department_sdt.html", context)
+    # if sdt_list.exists():
+    context = {'Sdt': sdt_list}
+    return render(request, "department_sdt.html", context)
 
 
 # snr
 def department_snr(request):
     snr = Testing_and_Standards_Regulation.objects.all()
     print(snr)
-    if snr.exists():
-        content = {'snr': snr}
-        return render(request, "department_s&r.html", content)
-    else: 
-        return render(request, "department_s&r.html")
+    # if snr.exists():
+    content = {'snr': snr}
+    return render(request, "department_s&r.html", content)
+    # else: 
+        # return render(request, "department_s&r.html")
 
 # 
 
@@ -106,7 +99,6 @@ def depart_test_measure(request):
 
 
 def depart_test_type(request, test_id):
-   
     item = get_object_or_404(Department_testing_measure, id=test_id)
     depart_type = Department_testing_measureType.objects.filter(item=item).order_by('id')
     content = {"item": item, "depart_type":depart_type}
@@ -129,9 +121,9 @@ def department_srra_online_training(request):
 # wra
 def department_wra(request):
     sdt_list = Wind_Resources_Assessment.objects.all().order_by('id')
-    if sdt_list.exists():
-        context = {'wra': sdt_list}
-        return render(request, "department_wra.html", context)
+    # if sdt_list.exists():
+    context = {'wra': sdt_list}
+    return render(request, "department_wra.html", context)
 
 
 def wind_monitor_status(request):
@@ -139,7 +131,7 @@ def wind_monitor_status(request):
 
 
 def wind_sale(request):
-    wra_sale = WRA_Sale_publication.objects.all()
+    wra_sale = WRA_Sale_publication.objects.all().order_by('id')
     context = {"wra_sale": wra_sale} 
     return render (request, 'department_wra_sale.html', context)
 
@@ -226,8 +218,8 @@ def department_wrao_offshore_portal(request):
 def departments(request):
 
     depart = Departments.objects.all().order_by('id')
-    if depart.exists():
-       context = {'depart': depart}
-       return render(request, "departments.html", context)
+    # if depart.exists():
+    context = {'depart': depart}
+    return render(request, "departments.html", context)
 
 # 

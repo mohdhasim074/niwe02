@@ -3,10 +3,10 @@ from . import views
 
 urlpatterns = [
 
-    path('about_background/', views.about_background, name='background'),
-    path('about_charter/', views.about_charter, name='charter'),
-    path('about_dgm/', views.about_dgm, name='dgm'),
-    path('about_org/', views.about_org, name='org'),
-    path('about_qlty_ply/', views.about_qlty_ply, name='quality'),
-    path('about_us/', views.about_us, name='us'),
+    path('about_background/', views.hi_about_background, name='hi_background'),
+    path('about_charter/', views.hi_about_charter, name='hi_charter'),
+    path('about_dgm/', views.hi_about_dgm, name='hi_dgm'),
+    path('about_org/', views.hi_about_org, name='hi_org'),
+    path('about_qlty_ply/', views.hi_about_qlty_ply, name='hi_quality'),
+    path('about_us/', views.hi_about_us, name='hi_us'),
 ]

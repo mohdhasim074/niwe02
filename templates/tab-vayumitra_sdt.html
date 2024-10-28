@@ -24,7 +24,7 @@
   </nav>
 </div>
 
-<section class="rnd-div" id="divContent">
+<section class="dgm-div" id="divContent">
   <div class="container">
     <div class="row col-12">
       <div class="col-md-8">
@@ -62,19 +62,11 @@
             7 days.
           </p>
           <p class="font-italic mb-2">
-            For more details - https://vsdp.niwe.res.in/
+            For more details - <a href="https://vsdp.niwe.res.in/">https://vsdp.niwe.res.in/</a>
           </p>
         </div>
         <div class="row py-2">
           <div class="col-12">
-            <p class="fst-italic mb-2 text-light bg-success">
-              1 &nbsp &nbsp
-              <a href="#" target="_blank" class="text-light">
-                Last date for submission of Expression of Interest (EoI) of
-                Vayumitra Skill Development Programme for the FY 2024-&nbsp &nbsp25 is
-                extended upto 19.03.2024 till 03.30 PM
-              </a>
-            </p>
 
             {% for item in vayumitra %}
             <p class="fst-italic mb-2 text-light bg-success">
@@ -83,7 +75,19 @@
                 {{ item.title }}
               </a>
             </p>
+            {% endfor %}
 
+            {% for item in vayumitra %}
+            
+            {% if item.type ==  "urls" %}              
+              
+            <p class="fst-italic mb-2 text-light bg-success">
+              {{ item.serial}} &nbsp &nbsp
+              <a href="{{ item.urls.url }}" target="_blank" class="text-light">
+                {{ item.title }}
+              </a>
+            </p>
+            {% endif %}
             {% endfor %}
           </div>
         </div>

@@ -30,7 +30,7 @@ def charterHeader(request):
 
 
 def album_list(request): 
-    albums = Gallery.objects.all().order_by('id')
+    albums = Gallery.objects.all().order_by('serial')
     return render(request, 'gallery.html', {'albums': albums})
 
 

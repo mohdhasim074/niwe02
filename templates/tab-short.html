@@ -11,41 +11,35 @@
 <div class="container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-transparent p-0">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
       <li class="breadcrumb-item">
         <a href="{% url 'departments' %}">Department</a>
       </li>
       <li class="breadcrumb-item">
         <a href="{% url 'sdt' %}">Skill Development & Training</a>
       </li>
-      <li class="breadcrumb-item active" aria-current="page">
-        Short-Term Courses
-      </li>
+      <li class="breadcrumb-item active" aria-current="page">Short-Term Courses</li>
     </ol>
   </nav>
 </div>
+
 <section class="rnd-div" id="divContent">
   <div class="container">
     <div class="row col-12">
       <div class="col-md-8">
         <div class="mx-auto">
           {% for item in short %}
-          <div class="col-md-3 col-sm-6 offset-md-4">
-            <div class="sm-card-design text-center">
-              <img src=" {{ item.image.url }}  " alt="img" class="img-fluid" />
-            </div>
-          </div>
 
-          <div class="font-italic my-1 text-center">
-            <b>{{item.title|safe}} </b>
-            {{ item.description|safe }}
-          </div>
-
+            <div class="font-italic my-1 text-center">{{ item.description|safe }}</div>
           {% endfor %}
         </div>
       </div>
 
-      <div class="col-md-4">{% include "side-tab.html" %}</div>
+      <div class="col-md-4">
+        {% include 'side-tab.html' %}
+      </div>
     </div>
   </div>
 </section>

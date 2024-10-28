@@ -75,7 +75,7 @@ ROOT_URLCONF = 'NiwaProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'hi/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,6 +93,8 @@ WSGI_APPLICATION = 'NiwaProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASE_ROUTERS = ['hi.NiwaProject.db_router.HindiRouter']
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -101,18 +103,7 @@ DATABASES = {
         "PASSWORD": "niwe@04",
         "HOST": "127.0.0.1",
         "PORT": "5432",
-    },
-    #  for hindi 
-    
-    "hindi": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "hasim_db",
-        "USER": "niwe_project",
-        "PASSWORD": "niwe@04",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
     }
-    
     
 }
 
@@ -168,7 +159,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Additional static files directory
 ]
-# STATIC_ROOT = '/var/www/static/'
+# STATIC_ROOT = '/var/www/static/' 
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'  # URL to access media files

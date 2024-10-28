@@ -1,20 +1,6 @@
 from django.contrib import admin
-from .models import Departments, Reserach_n_Development, Testing_and_Standards_Regulation, Wind_Resources_Assessment, Offshore_Wind_Development, RelatedImage, Finance_and_Administration, Skill_developements_training
-from Depart_Section.models import Wind_Terbine_photo, depart_documents, \
-    Department_testing_measure, Department_testing_measureType, SDT_workshop, \
-    SDT_workshop_type, SDT_vayumitra, \
-    SDT_InternationalTraining, SDT_National, \
-    SDT_GlobalWindDay, SDT_Webinar, SDT_Customize_Training, SDT_Short_Term, \
-    WRA_Sale_publication, WRA_srra_stations, WRA_Numeric_Wind, WRA_Micro_Servey, \
-    WRA_Estimated_Potential, \
-    SDT_National_Page, SDT_InternationalTraining_eitec, \
-    SDT_InternationalTraining_sub_eitec, SDT_Customize_Training_Sub, \
-    WRA_Srra_Station_phases, WRA_Srra_Station_phaseII, WRA_Srra_Station_meda, \
-    WRA_Srra_Station_anert, WRA_Srra_Station_ams, SDT_Training_Sub_calender, \
-    SDT_Training_calender, SDT_Eitc_Trainings, SDT_Eitc_Sub_Training, \
-    SDT_Library, SDT_Global_Sub_Wind, Department_Fna_Purchase, \
-    Department_Fna_Finance
-
+from .models import Departments, Reserach_n_Development, Testing_and_Standards_Regulation, Wind_Resources_Assessment, Offshore_Wind_Development, Finance_and_Administration, Skill_developements_training
+from  . models import *
 # 
 # class ImageInline(admin.StackedInline):
 #     model = Image
@@ -60,18 +46,12 @@ class WindTerBinephotoAdmin(admin.ModelAdmin):
     list_display = ('image')
     search_fields = ('id',)
     list_filter = ('id',)
-    
     ordering = ['id']
-
-
 admin.site.register(Wind_Terbine_photo)
 # 
-
-
 class Department_Testing_TypeInline(admin.StackedInline):
     model = Department_testing_measureType
     extra = 1
-
 
 @admin.register(Department_testing_measure)
 class DepartTestingMeasureAdmin(admin.ModelAdmin):
@@ -83,7 +63,7 @@ class DepartTestingMeasureAdmin(admin.ModelAdmin):
 
 
 # 
-class Workshop_SDT_PhotosInline(admin.TabularInline):
+class Workshop_SDT_PhotosInline(admin.StackedInline):
     model = SDT_workshop_type
     extra = 1
 
@@ -197,8 +177,8 @@ class Wind_Res_Admin(admin.ModelAdmin):
     # inlines = [ImageInline]
 
 
-class RelatedImageInline(admin.StackedInline):
-    model = RelatedImage
+# class RelatedImageInline(admin.StackedInline):
+#     model = RelatedImage
 
     
 @admin.register(WRA_Sale_publication)
@@ -305,7 +285,7 @@ class OwdAdmin(admin.ModelAdmin):
     ordering = ['id']
     list_filter = ('id', 'title',)
     search_fields = ('title', 'id',)
-    inlines = [RelatedImageInline]
+    # inlines = [RelatedImageInline]
 
 
 @admin.register(Finance_and_Administration)
@@ -339,6 +319,21 @@ class SDT_Global(admin.ModelAdmin):
     inlines = [SDT_Global_SubInline]
     list_display = ('title',)
     ordering = ['id']
+
+
+class SDT_Ireda_SubInline(admin.StackedInline):
+    model = SDT_Ireda_Sub_News
+    extra = 1
+
+
+@admin.register(SDT_Ireda_News)
+class SDT_Ireda(admin.ModelAdmin):
+    inlines = [SDT_Ireda_SubInline]
+    list_display = ('title',)
+    search_fields = ('serial',)
+    ordering = ['id']
+
+
 
 
 @admin.register(SDT_Webinar)

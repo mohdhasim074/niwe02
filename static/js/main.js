@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('.index-gallery').owlCarousel({
         loop: true,
         margin: 10,
-        nav: true,
+        nav: false,
         navText: [
             "<i class='fa fa-caret-left'></i>",
             "<i class='fa fa-caret-right'></i>"

@@ -38,22 +38,49 @@
     <link rel="stylesheet" href="{% static '/css/custom.css' %}" />
     <link rel="stylesheet" href="{% static '/css/simple-lightbox.css' %}" />
     <link rel="stylesheet" href="{% static '/css/responsive.css' %}" />
+
+    <!-- Google Translate Style -->
+    <style>
+      #goog-gt-tt, .goog-te-banner-frame, .goog-te-menu-frame, .goog-te-combo {
+        display: none !important;
+      }
+      body {
+        top: 0 !important;
+      }
+    </style>
+    
     <!-- Google Translate API Script -->
     <script type="text/javascript">
       function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,hi",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,hi',
+          autoDisplay: false
+        });
+      }
+    
+      // Function to toggle language
+      function toggleLanguage() {
+        var translateDropdown = document.querySelector('.goog-te-combo');
+    
+        // If the dropdown is available, toggle the language
+        if (translateDropdown) {
+          if (translateDropdown.value === "en") {
+            translateDropdown.value = "hi";
+            document.getElementById("languageToggle").textContent = "English";
+          } else {
+            translateDropdown.value = "en";
+            document.getElementById("languageToggle").textContent = "Hindi";
+          }
+          translateDropdown.dispatchEvent(new Event("change"));
+        }
       }
     </script>
+    
+    <!-- Load Google Translate script -->
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
   </head>
-
   <body style="top:0px;">
     <!-- header first -->
     <header class="main-head">
@@ -91,7 +118,7 @@
             <div class="col-lg-3 col-md-6 col-12" id="head-m-topbar">
               <div class="language-text text-center">
                 <!-- Google Translate Hidden Element -->
-                <div id="google_translate_element" style="display: flex">
+                <div >
                   <!-- Language Selection Spans with Google Translate -->
                   
                   <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
@@ -99,8 +126,10 @@
                     <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
                         href="#" id="linkReset">A</a>
                     <a class="btn btn-square btn-link rounded-0 border-0  border-secondary text-secondary"
-                        href="#" id="linkDecrease">A<sup>-</sup></a>
-                  
+                        href="#" id="linkDecrease">A<sup>-</sup>
+                      </a>
+                        <button id="languageToggle" onclick="toggleLanguage()">Hindi</button>
+
                 </div>
               </div>
             </div>

@@ -18,15 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
-from . import views
+from . import views 
 
 # 
 import certification_services
 
-admin.site.site_title = "NIWE WEBSITE"
-admin.site.site_header = "NIWE MANAGEMENT"
-admin.site.index_title = "NIWE DASHBOARD"
+admin.site.site_title = "एनआईडब्ल्यूई वेबसाइट"
+admin.site.site_header = "एनआईडब्ल्यूई प्रबंधन"
+admin.site.index_title = "एनआईडब्ल्यूई डैशबोर्ड"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -111,20 +110,27 @@ urlpatterns = [
     path('customize_training/', views.customize_training, name='customize_training'),
     path('customize_training/<int:id>', views.customize_training_sub, name='customize_sub_training'),
 
-     path('training_calander/', views.training_calander, name='training_calander'),
-     path('training_calander/<int:data_id>/', views.training_calander_sub, name='training_calander_sub'),
+     path('training_calander/', views.training_calander, name='hi_training_calander'),
+     path('training_calander/<int:data_id>/', views.training_calander_sub, name='hi_training_calander_sub'),
      
-     path('global_wind_day/', views.global_wind_day, name='global_wind_day'),
-     path('global_wind_day/<int:global_id>', views.gloabl_sub_wind_day, name='gloabl_sub_wind_day'),
+     path('global_wind_day/', views.global_wind_day, name='hi_global_wind_day'),
+     path('global_wind_day/<int:global_id>', views.gloabl_sub_wind_day, name='hi_gloabl_sub_wind_day'),
      
      path('webinar/', views.webinar, name='webinar'),
-     path('workshop_confrence/', views.workshop_confrence, name='workshop_confrence'),
-     path('workshop_confrence/<int:workshop_id>/', views.workshop_confrence_images, name='workshop_confrence_year'),
+     path('workshop_confrence/', views.workshop_confrence, name='hi_workshop_confrence'),
+     path('workshop_confrence/<int:workshop_id>/', views.workshop_confrence_images, name='hi_workshop_confrence_year'),
 
-     path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
+     path('vayumitra_sdt/', views.vayumitra_sdt, name='hi_vayumitra_sdt'),
     #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
-     
+      
+    path('events-updates', views.Events, name='hi_evnts_update'),
+    path('whats-new-update', views.whatsNew, name='hi_whatsNew_updates'),
+    path('mnre-updates', views.mnreNew, name='hi_mnreNew_updates'),
+    
+    path('coorporate-film-hindi', views.corporate_film_hindi, name='hi_corporate_film_hindi'),
 ]
+
+# Serve static and media files during development
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 

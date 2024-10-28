@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+    
 
 from . import views
 
@@ -33,7 +34,9 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('', views.index),
         
-    path('hi/', include('hi.urls')),  # Add the Hindi routing here
+    path('hi/', views.index_hindi, name='hi_index'),
+        
+    path('hi/', include('hi.NiwaProject.urls')),  # Add the Hindi routing here
 
     path('sitemap/', views.sitemap, name='sitemap'),
     path('screen-reader-access/', views.Screen_Reader, name='screen-reader-access'),
@@ -64,7 +67,11 @@ urlpatterns = [
     path('information_weg_installation/', views.information_weg_installation),
     path('international_conference_wsra/', views.international_conference_wsra, name='international_conference_wsra'),
     path('international_workshop_ppt/', views.international_workshop_ppt, name='international_workshop_ppt'),
+    
     path('ireda_niwe_annual_awards/', views.ireda_niwe_annual_awards, name='ireda_niwe_annual_awards'),
+    path('ireda_niwe_annual_awards/<int:ireda_id>', views.ireda_niwe_annual_subawards, name='ireda_niwe_annual_sub_awards'),
+    
+
     # path('media/', views.media),
     path('offshore_EPD_Gujarat/', views.offshore_EPD_Gujarat),
     path('offshore_lidar/', views.offshore_lidar),
@@ -118,7 +125,7 @@ urlpatterns = [
 
      path('vayumitra_sdt/', views.vayumitra_sdt, name='vayumitra_sdt'),
     #  path('vayumitra_sdt/<int:vayumitra_id>', views.vayumitra_sdt_sub, name='vayumitra_sdt_sub'),
-
+ 
     path('events-updates', views.Events, name='evnts_update'),
     path('whats-new-update', views.whatsNew, name='whatsNew_updates'),
     path('mnre-updates', views.mnreNew, name='mnreNew_updates'),
@@ -131,3 +138,8 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+# Hindi admin URL
+urlpatterns += [
+    path('hi-admin/', include('hi_admin.urls')),  # Customize to point to your Hindi app
+]

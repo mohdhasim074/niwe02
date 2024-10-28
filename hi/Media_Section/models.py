@@ -31,6 +31,7 @@ class Events(models.Model):
 
 
 class Gallery(models.Model):
+    serial = models.IntegerField(null=True, blank=True)
     title = models.CharField(max_length=255)
     cover_image = models.ImageField(upload_to='albums/')
 

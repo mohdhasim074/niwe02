@@ -25,8 +25,12 @@ class ComparisonBetweenFosilFuelAndWind(models.Model):
 class RevisedGuidelinesForProject(models.Model):
      
     sr_No = models.IntegerField()
-    description = HTMLField()
+    title = models.CharField(max_length=100)
+    documents=models.FileField(upload_to='pdf/', null=True)
     date = models.DateField(auto_now=False, auto_now_add=False)
+            
+def get_docs_url(self):
+    return self.documents.url  # Returns the URL of the uploaded file
 
 
 class RecordsRetentionSchedule(models.Model):

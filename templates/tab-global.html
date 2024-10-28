@@ -24,7 +24,7 @@
   </nav>
 </div>
 
-<section class="about-div" id="divContent">
+<section class="dgm-div" id="divContent">
   <div class="container">
     <div class="row col-12">
       <div class="col-md-8">
@@ -45,6 +45,8 @@
             over the world, to create awareness on Wind Power.
           </p>
           {% for item in globals %}
+          {% if item.type == "url" %}
+
           <div class="col-12">
             <p class="font-italic mb-2 text-light bg-secondary">
               {{ item.serial}} &nbsp &nbsp
@@ -53,6 +55,22 @@
               </a>
             </p>
           </div>
+          {% endif %}
+          {% endfor %}
+
+          
+          {% for item in globals %}
+          {% if item.type == "docs" %}
+            
+          <div class="col-12">
+            <p class="font-italic mb-2 text-light bg-secondary">
+              {{ item.serial}} &nbsp &nbsp
+              <a href="{{item.docs.url}}" target="_blank" class="text-light">
+                {{ item.title }}
+              </a>
+            </p>
+          </div>
+          {% endif %}
           {% endfor %}
         </div>
       </div>

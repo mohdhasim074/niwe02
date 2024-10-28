@@ -5,7 +5,7 @@
     <div class="container">
       <h1 class="text-white">Library</h1>
     </div>
-  </div>
+  </div> 
 </section>
 <div class="container">
   <nav aria-label="breadcrumb">
@@ -156,7 +156,7 @@
             <tr>
               <th colspan="3">International Journals</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "Journals" %}
+            {% for item in Library %} {% if item.title_type == "InternationalJournals" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -168,7 +168,7 @@
             <tr>
               <th colspan="3">International Magazines</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "Magazines" %}
+            {% for item in Library %} {% if item.title_type == "InternationalMagazines" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -180,7 +180,7 @@
             <tr>
               <th colspan="3">National Journals</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "NJournals" %}
+            {% for item in Library %} {% if item.title_type == "NationalJournals" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -192,7 +192,7 @@
             <tr>
               <th colspan="3">National Magazines</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "NMagazines" %}
+            {% for item in Library %} {% if item.title_type == "NationalMagazines" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -204,7 +204,7 @@
             <tr>
               <th colspan="3">Institutional Membership</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "Membership" %}
+            {% for item in Library %} {% if item.title_type == "InstitutionalMembership" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -216,7 +216,7 @@
             <tr>
               <th colspan="3">National Daily News Papers</th>
             </tr>
-            {% for item in Library %} {% if item.title_type == "NewsPapers" %}
+            {% for item in Library %} {% if item.title_type == "NationalDailyNewsPapers" %}
 
             <tr>
               <td>{{ item.serial}}</td>
@@ -225,6 +225,7 @@
             </tr>
             {% endif %} {% endfor %}
           </tbody>
+
         </table>
         <div class="#">
           <p>AutoLib Library Management Software Systems</p>
@@ -235,6 +236,7 @@
             </a>
           </p>
         </div>
+
         <div class="accordion" id="general">
           <div class="accordion-item">
             <h2 class="accordion-header" id="heading{{ forloop.counter }}">
