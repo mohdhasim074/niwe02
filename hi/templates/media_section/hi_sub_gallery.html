@@ -1,0 +1,52 @@
+{% include 'hi_header.html' %}
+
+<!-- nav end  -->
+
+<div class="container">
+  <h1 class="text-white">उप-गैलरी</h1>
+  </div>
+  </div>
+  </section>
+  <div class="container">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-transparent p-0">
+  <li class="breadcrumb-item"><a href="hindi_index">होम </a></li>
+  <li class="breadcrumb-item">
+  <a href="{% url 'hi_medias' %}">मीडिया</a>
+  </li>
+  <li class="breadcrumb-item">
+  <a href="{% url 'hi_gallery' %}">गैलरी</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">उप-गैलरी</li>
+  </ol>
+  </nav>
+  </div>
+
+<section class="main-div" id="divContent">
+  <div class="container">
+    
+    <div class="row mx-auto gallery">
+      <h4>{{ album.title }}</h4>
+      {% for sub_album in sub_albums %}
+
+      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+        <a href="{{ sub_album.image.url }}" class="big">
+          <div class="card sub-gallery-card p-0">
+            <div class="card-body text-center p-2 sub-gallery-img">
+              <img
+                src="{{ sub_album.image.url }} "
+                title="{{ album.title }}"
+                class="card-img-top"
+                alt="Sub-gallery image"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include 'hi_footer.html' %}

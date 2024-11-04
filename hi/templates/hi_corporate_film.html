@@ -1,0 +1,29 @@
+{% include 'hi_header.html' %}
+<section class="head-div">
+<div class="overlay d-flex align-items-center">
+<div class="container">
+<h1 class="text-white">कॉर्पोरेट फिल्म का हिंदी संस्करण</h1>
+</div>
+</div>
+</section>
+
+<div class="container">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb bg-transparent p-0">
+<li class="breadcrumb-item">
+<a href="{% url 'hindi_index' %}">होम</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">कॉर्पोरेट फिल्म का हिंदी संस्करण</li>
+</ol>
+</nav>
+</div>
+<section class="dgm-div" id="div-content">
+<div class="container">
+<h1>कॉर्पोरेट फिल्म का हिंदी संस्करण</h1>
+<video class="h-100" controls>
+<source src="static/video/Corporate_film_about_NIWE.mp4" type="video/mp4" class="h-100" />
+</video>
+</div>
+</section>
+
+{% include 'hi_footer.html' %}

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-    
+from hi.admin import hindi_admin_site
 
 from . import views
 
@@ -31,12 +31,14 @@ admin.site.index_title = "NIWE DASHBOARD"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hindi-admin/', hindi_admin_site.urls),
+
     path('tinymce/', include('tinymce.urls')),
     path('', views.index),
         
     path('hi/', views.index_hindi, name='hi_index'),
         
-    path('hi/', include('hi.NiwaProject.urls')),  # Add the Hindi routing here
+    path('hi/', include('hi.urls')),  # Add the Hindi routing here
 
     path('sitemap/', views.sitemap, name='sitemap'),
     path('screen-reader-access/', views.Screen_Reader, name='screen-reader-access'),
@@ -139,7 +141,3 @@ if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
-# Hindi admin URL
-urlpatterns += [
-    path('hi-admin/', include('hi_admin.urls')),  # Customize to point to your Hindi app
-]

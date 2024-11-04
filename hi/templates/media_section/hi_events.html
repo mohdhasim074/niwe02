@@ -1,0 +1,147 @@
+{% include 'hi_header.html' %}
+
+<!-- nav end  -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+  <div class="container">
+  <h1 class="text-white">ईवेंट</h1>
+  </div>
+  </div>
+  </section>
+  
+  <div class="container">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-transparent p-0">
+  <li class="breadcrumb-item"><a href="{% url 'hindi_index' %}">होम पेज</a></li>
+  <li class="breadcrumb-item" aria-current="page">
+  <a href="{% url 'hi_medias' %}">मीडिया</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">ईवेंट</li>
+  </ol>
+  </nav>
+  </div>
+
+<section class="main-div" id="divContent">
+  <div class="container">
+    <!--SESI awards row-->
+    <div class="row col-12 mx-auto">
+      <div class="col-md-12">
+        <div class="grd-box">
+          <div class="head1">
+            <h4>ईवेंट</h4>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <ol type="I" class="event-list">
+            <li class="li-items">
+              <a href="{% url 'sub-gallery' %}">
+                वैश्विक पवन दिवस 2022 और राष्ट्रीय पवन ऊर्जा संस्थान का रजत जयंती समारोह <span class="new-icon">
+                  <img
+                  src="/statics/images/icon/new-icon.png"
+                  alt="global
+                  रजत
+                  जयंती"
+                  /></span>
+                  </a>
+                  </li>
+                  <li class="li-items">
+                  <a href="{% url 'ireda_niwe_annual_awards' %}">
+                  IREDA - NIWE वार्षिक पुरस्कार 2022
+                  </a>
+            </li>
+            <li class="li-items">
+              <a href="{% url 'amrit_mahotsav' %}"> आज़ादी का अमृत महोत्सव </a>
+              </li>
+              <li class="li-items">
+              <a href="{{events.0.document_File.url}}"> {{events.0.title}} </a>
+              </li>
+              <li class="li-items">
+              <a href="{% url 'ireda_niwe_annual_awards' %}">
+              IREDA - NIWE वार्षिक पुरस्कार 2021
+              </a>
+              </li>
+              <li class="li-items">
+              <a href="{{events.1.document_File.url}}"> {{events.1.title}} </a>
+              </li>
+              <li class="li-items">
+              <a href="{% url 'ireda_niwe_annual_awards' %}">
+              IREDA - NIWE वार्षिक पवन ऊर्जा पुरस्कार 2020
+              </a>
+            </li>
+            <li class="li-items">
+              <a href="{% url 'sub-gallery' %}">
+
+                दूसरी अखिल भारतीय अनुसंधान नेटवर्क बैठक "उद्योग और शिक्षा
+                समामेलन" - 6 जनवरी 2020
+                
+                </a>
+                
+                </li>
+                
+                <li class="li-items">
+                
+                <a href="{% url 'international_conference_wsra' %}">
+                
+                प्रो. डॉ. अन्नामणि शताब्दी समारोह अंतर्राष्ट्रीय
+                
+                "पवन और सौर संसाधन मूल्यांकन" पर सम्मेलन - 13 और 14
+                
+                दिसंबर 2019
+                
+                </a>
+                
+                </li>
+                
+                <li class="li-items">
+                
+                <a href="{{events.2.document_File.url}}"> {{events.2.title}} </a>
+                
+                </li>
+                
+                <li class="li-items">
+                
+                <a href="{% url 'sub-gallery' %}">
+                दूसरी वैश्विक पुनर्निवेश बैठक - 3 से 5 अक्टूबर, 2018
+                </a>
+            </li>
+            <li class="li-items">
+              <a href="{% url 'pan-india_workshop' %}">
+                अखिल भारतीय अनुसंधान नेटवर्क बैठक
+                </a>
+                </li>
+                <li class="li-items">
+                <a href="{% url 'international_workshop_ppt' %}">
+                पवन और सौर ऊर्जा पूर्वानुमान में वर्तमान अभ्यास - प्रस्तुतियाँ
+                </a>
+                </li>
+                <li class="li-items">
+                <a href="{% url 'department_srra_online_training' %}">
+                नवीन और नवीकरणीय ऊर्जा मंत्रालय, NIWE ने सौर ऊर्जा पर ऑनलाइन
+                प्रशिक्षण कार्यक्रम शुरू किया
+                </a>
+                </li>
+                <li class="li-items">
+                <a href="{% url 'swe&hsp' %}">
+                "लघु पवन ऊर्जा और हाइब्रिड
+                प्रणालियाँ और दूरसंचार टावरों के लिए इसकी प्रासंगिकता" पर एक दिवसीय तकनीकी कार्यशाला 1 जुलाई, 2016 को पुणे में आयोजित - प्रस्तुति
+                </a>            </li>
+            <li class="li-items">
+              <a href="{{events.4.url}}"> {{events.4.title}} </a>
+            </li>
+            <li class="li-items">
+              <a href="{{events.3.document_File.url}}"> {{events.3.title}} </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!--div close for row-->
+  </div>
+  <!--div close for the main container-->
+</section>
+
+<!-- footer -->
+
+{% include 'hi_footer.html' %}

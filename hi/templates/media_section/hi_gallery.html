@@ -1,0 +1,55 @@
+{% include 'hi_header.html' %}
+
+<!-- nav end -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">गैलरी</h1>
+    </div>
+    </div>
+    </section>
+    <div class="container">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+    <li class="breadcrumb-item">
+    <a href="{% url 'hindi_index' %}">होम</a>
+    </li>
+    <li class="breadcrumb-item" aria-current="page">
+    <a href="{% url 'hi_medias' %}">मीडिया</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">गैलरी</li>
+    </ol>
+    </nav>
+    </div>
+<section class="main-div" id="divContent">
+  <div class="container">
+    <div class="row">
+      {% for gallery in gallery %}
+        <div class="col-lg-3 col-md-4 col-sm-7 col-12">
+          <a href="{% url 'hi_sub_gallery' gallery.id %}">
+            <div class="card">
+              <img src="{{ gallery.cover_image.url }}" class="card-img-top" alt="{{ gallery.title }}" />
+              <div class="card-body">
+                <h6 class="card-title text-center">{{ gallery.title }}</h6>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      <div class="col-lg-3 col-md-4 col-sm-7 col-12">
+        <div class="card">
+          <a href="{% url 'hi_think_tank' %}">
+            <img src="/static/images/sub-gallery/think-tank_img.jpg" class="card-img-top" 
+            alt="technology-think-tank" />
+          <div class="card-body">
+            <h6 class="card-title text-center">टेक्नोलॉजी थिंक टैंक (TTT)</h6>
+          </div>
+        </div>
+      </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% include 'hi_footer.html' %}

@@ -1,0 +1,59 @@
+{% include 'hi_header.html' %} {% load static %}
+
+<!-- nav end -->
+
+<section class="head-div">
+<div class="overlay d-flex align-items-center">
+<div class="container">
+<h1 class="text-white">IREDA - NIWE पुरस्कार</h1>
+</div>
+</div>
+</section>
+
+<div class="container">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb bg-transparent p-0">
+<li class="breadcrumb-item">
+<a href="{% url 'hindi_index' %}">होम</a>
+</li>
+<li class="breadcrumb-item">
+<a href="{% url 'departments' %}">विभाग</a>
+</li>
+<li class="breadcrumb-item">
+<a href="{% url 'sdt' %}">कौशल विकास और प्रशिक्षण</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">IREDA - NIWE पुरस्कार</li>
+</ol>
+</nav>
+</div>
+
+<section class="main-div py-5 header" id="divContent">
+<div class="container py-1">
+
+<div class="row">
+<div class="col-md-8">
+
+<div class="col-12">
+
+{% for item in ireda %}
+<div class="col-12">
+<p class="font-italic mb-2 text-light bg-secondary">
+{{ item.serial}} &nbsp &nbsp
+<a href="{% url 'ireda_niwe_annual_sub_awards' item.id %}" target="_blank" class="text-light">
+{{ item.title }}
+</a>
+</p>
+</div>
+{% endfor %}
+</div>
+</div>
+<div class="col-md-4">
+{% include 'side-tab.html' %}
+</div>
+</div>
+
+</div>
+</section>
+<!-- FOOTER लेख -->
+
+{% include 'hi_footer.html' %}

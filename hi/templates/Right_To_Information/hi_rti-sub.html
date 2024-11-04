@@ -1,0 +1,35 @@
+{% include 'hi_header.html' %}
+{% load static %}
+<!-- nav end -->
+
+<section class="head-div">
+  <div class="overlay d-flex align-items-center">
+    <div class="container">
+      <h1 class="text-white">{{item.title}}</h1>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent p-0">
+      <li class="breadcrumb-item">
+        <a href="{% url 'hindi_index' %}">होम</a>
+      </li>
+      <li class="breadcrumb-item active"  aria-current="page">
+        <a href="{% url 'hi_rti' %}">Right To Information</a>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<section class="rti-sec" id="divContent">
+  <div class="container">    
+    {% for item in subInfo %}
+    {{item.description|safe }}
+    {% endfor %}
+
+  </div>
+</section>
+
+{% include 'hi_footer.html' %}

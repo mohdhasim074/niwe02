@@ -75,7 +75,7 @@
               <a href="#">प्रशिक्षुता प्रशिक्षण</a>
             </li>
             <li>
-              <a href="/library/">लाइब्रेरी</a>
+              <a href="{% url 'hi_library' %}">लाइब्रेरी</a>
             </li>
             <li>
               <a href="{% url 'hi_career' %} ">कैरियर</a>
@@ -213,14 +213,14 @@
         </p>
       </div>
       <div class="col-md-6 col-12">
-        <p>
-          <a href="/disclaimer/" class="text-body"> डिसक्लेमर  </a> |
-          <a href="/glossary/" class="text-body">ग्लोसरी  </a> |
+        <p> 
+          <a href="{% url 'hi_disclaimer' %}" class="text-body"> डिसक्लेमर  </a> |
+          <a href="{% url 'hi_glossary' %}" class="text-body">ग्लोसरी  </a> |
           <a href="{% url 'hi_sitemap' %} " class="text-body">साइट मैप </a> |
           <a href="/static/pdf/routemap-niwe.pdf" class="text-body">
             रूटमैप</a
           >
-          | <a href="/tenders/" class="text-body"> टेंडर</a> |
+          | <a href="{% url 'hi_tenders' %}" class="text-body"> टेंडर</a> |
           <a href="{% url 'hi_career' %}" class="text-body"> करियर</a>
         </p>
       </div>

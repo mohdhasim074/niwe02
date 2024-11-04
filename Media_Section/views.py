@@ -6,8 +6,8 @@ from .models import Award,  Events, Citizen_Charter, Gallery, SubGallery, Think_
 # 
 def awards(request):
     award = Award.objects.all().order_by('id')
-    if award.exists():
-     return render(request, "awards.html", {'award':award})
+    # if award.exists():
+    return render(request, "awards.html", {'award':award})
 # 
 def events(request): 
     events = Events.objects.all().order_by('id')

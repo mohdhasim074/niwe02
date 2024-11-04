@@ -18,14 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views 
+from . import views  
 
 # 
-import certification_services
+# import certification_services
 
-admin.site.site_title = "एनआईडब्ल्यूई वेबसाइट"
-admin.site.site_header = "एनआईडब्ल्यूई प्रबंधन"
-admin.site.index_title = "एनआईडब्ल्यूई डैशबोर्ड"
+# admin.site.site_title = "एनआईडब्ल्यूई वेबसाइट"
+# admin.site.site_header = "एनआईडब्ल्यूई प्रबंधन"
+# admin.site.index_title = "एनआईडब्ल्यूई डैशबोर्ड"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -80,14 +80,14 @@ urlpatterns = [
     path('sub-gallery/', views.sub_gallery, name='sub-gallery'),
     path('tenders/', views.tenders, name='hi_tenders'),
     path('wind_potential/', views.wind_potential),
-    path('disclaimer/', views.disclaimer),
-    path('glossary/', views.glossery),
-    path('weg_install_country_wise/', views.weg_install_country_wise),
+    path('disclaimer/', views.disclaimer,name='hi_disclaimer'),
+    path('glossary/', views.glossery, name='hi_glossary'),
+    path('weg_install_country_wise/', views.weg_install_country_wise, name='hi_weg_country_wise'),
     path('weg_install_India/', views.weg_install_India),
     # side tabs
     
-    path('academy/', views.Academy),
-    path('library/', views.Library),
+    path('academy/', views.Academy, name='hi_academy'),
+    path('library/', views.Library, name='hi_library'),
     
     path('itec/', views.ITEC_training),
     path('itec_training/', views.ITEC_trainings, name='itec_training'),

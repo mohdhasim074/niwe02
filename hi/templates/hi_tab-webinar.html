@@ -2,24 +2,25 @@
 <section class="head-div">
   <div class="overlay d-flex align-items-center">
     <div class="container">
-      <h1 class="text-white">webinar</h1>
+      <h1 class="text-white">वेबिनार</h1>
     </div>
   </div>
 </section>
+
 <div class="container">
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb bg-transparent p-0">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item">
-        <a href="{% url 'departments' %}">Department</a>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="{% url 'sdt' %}">Skill Development & Training</a>
-      </li>
-      <li class="breadcrumb-item active" aria-current="page">webinar</li>
-    </ol>
+  <ol class="breadcrumb bg-transparent p-0">
+  <li class="breadcrumb-item"><a href="{% url 'hindi_index' %}">होम</a></li>
+  <li class="breadcrumb-item">
+  <a href="{% url 'departments' %}">विभाग</a>
+  </li>
+  <li class="breadcrumb-item">
+  <a href="{% url 'sdt' %}">कौशल विकास और प्रशिक्षण</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">वेबिनार</li>
+  </ol>
   </nav>
-</div>
+  </div>
 
 <section class="rnd-div" id="divContent">
   <div class="container">
@@ -27,7 +28,7 @@
       <div class="col-md-8" >
         {% for item in webinar %}
 
-        <h4 class="font-italic mb-1"> NIWE Webinar Schedule</h4>
+        <h4 class="font-italic mb-1">एनआईडब्ल्यूई वेबिनार अनुसूची</h4>
         <div class="card mx-auto">
           <div class="col-lg-2 col-md-2 col-sm-6 offset-md-4">
             <a href="{{ item.docs.url }}" target="_blank">

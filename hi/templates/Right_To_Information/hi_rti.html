@@ -1,0 +1,109 @@
+{% include 'hi_header.html' %}
+{% load static %}
+    <!-- nav end  -->
+
+    <section class="head-div">
+        <div class="overlay d-flex align-items-center">
+            <div class="container">
+                <h1 class="text-white">Right To Information</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'hindi_index' %}">होम</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Right To Information</li>
+                    </ol>
+            </nav>
+    </div>
+
+    <section class="rti-sec" id="divContent">
+            <div class="container">
+                <a href="{% url 'retention' %}" target="_blank"><h5>Records Retention Schedule</h5></a>
+                <a href="{% url 'audit' %}" target="_blank"><h5>Audit Report of Proactive Disclosure under RTI Act, 2005</h5></a>
+                <a href="{% url 'account' %}" target="_blank"><h5>Annual Accounts   -   1998-99 - onwards</h5></a>
+                <a href="{% static '/pdf/Financial_details-1998-99_to_2022-23.pdf' %}" target="_blank"><h5>Financial Details for Past years ( Grant-in-Aid and Internal Revenue Generation )</h5></a>
+                <h5>Memorandum of Understanding (MOU) between MNRE and NIWE</h5>
+                
+                <ol class="ps-5" type="1">
+                    {% for item in rtis %}
+                    <li class="ps-4"> 
+                        <a href="{{item.document.url}}" target="_blank">
+                        {{item.year}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ol>
+                   
+
+                <h5 class="pb-3 pt-3">Information</h5>
+
+                <ol class="ps-5" type="1">
+                    {% for item in info %}
+                    <li class="ps-4"> 
+                        
+                        {% if item.document != "" %}
+                        <a href="{{item.document.url}} " target="_blank">
+                            {{item.title}}
+                        </a>
+                        {% endif %}
+
+                        {% if item.document == "" %}
+                        <a href="{% url 'hi_subInfo' item.id %}" target="_blank">
+                            {{item.title}}
+                        </a>
+                        {% endif %}
+
+                    </li>
+                
+                    {% endfor %}
+
+                </ol>
+
+                <ul>
+                   <a href="" target="blank"> <li>Information available in electronics form</li></a>
+
+                        <ul class="new-letter pb-3">
+                            <a href="{% url 'newsletters' %}" target="blank"> <li>News Letter</li></a>
+                            <a href="hi_tenders" target="blank"> <li>Tender notifications</li></a>
+                            <a href="" target="blank"> <li>Circulars on various training programmes, recruitment, announcements, published reports, saleable data, links to Ministries announcements, etc.</li></a>
+                        </ul>
+
+                    
+
+                    <ul class="anul-info pb-3">
+                            <a href="" target="blank"> <li>Annual Report   -   1998-99 - onwards</li></a>
+                            <a href="" target="blank"> <li>Details of the Annual Report / Financial Report and Performance Report in Bilingual (Hindi & English) Laid on the table of Both Houses of Parliament :</li></a>
+
+                            <ul class="new-letter pb-3">
+                                {% for data in rti %}
+                                    {% if 'Annual Report' in data.title and 'Financial Report' in data.title and data.document %}
+                                       <a href="{{data.document.url}}" target=blank><li>{{data.year}}</li></a>
+                          
+                                    {% elif 'Annual Report' in data.title and 'Financial Report' in data.title %}
+                                        <a href="#"><li>{{data.year}}</li></a>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <a href="" target="_blank"><li>FAQs</li></a>
+                              {% for data in rti %}
+                                {% if 'damage' in data.title or 'Damage' in data.title and data.document %}
+                                  <a href="{{data.document.url}}" target=blank><li>{{data.title}}</li></a>
+
+                                {% elif 'damage' in data.title or 'Damage' in data.title %}
+                                {% endif %}
+                              {% endfor %}
+                    </ul>
+
+                </ul>
+            </div>
+    </section>
+
+
+    <!-- footer -->
+
+    {% include 'hi_footer.html' %}

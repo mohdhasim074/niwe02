@@ -3,13 +3,13 @@ from .models import RightToInformation, Information, subInformation
 
 def rti(request):
 
-    rti = RightToInformation.objects.all().order_by('id')
+    rtis = RightToInformation.objects.all().order_by('id')
     info= Information.objects.all().order_by('id')
     
     context = {
-        'rti': rti, "info"  :info
+        'rtis': rtis, "info"  :info
                 }
-    return render(request, "rti.html", context)
+    return render(request, "Right_To_Information/hi_rti.html", context)
 
 
 def subInfo(request, info_id):
@@ -19,4 +19,4 @@ def subInfo(request, info_id):
     context = {
         "subInfo" : subInfo, "item": item
     }
-    return render(request, "rti-sub.html", context)
+    return render(request, "hi_rti-sub.html", context)
